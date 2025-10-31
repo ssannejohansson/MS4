@@ -1,0 +1,34 @@
+ /* Import font */
+ @font-face {
+     font-family: "Hatolie";
+     src: local('hatolie'),
+         url(../fonts/Hatolie.otf) format("opentype");
+ }
+
+ /* CSS Variables */
+ :root {
+    --primary-background-color: #424536;
+    --secondary-background-color: #C7C9BA;
+    --warm-brown: #825F45;
+    --dark-brown: #312721;
+    --orange: #d08c60;
+    --yellow: #ffcb69;
+     --logo-font: "Hatolie";
+ }
+
+ h1 {
+    font-family: "Hatolie";
+    color: var(--dark-brown);
+ }
+
+ body {
+    height: 100vh;
+    background-color: var(--primary-background-color);
+ }
+
+ #background-wrapper {
+        height: 90%;
+    width: 90%; 
+    background-color: var(--secondary-background-color);
+
+ }
