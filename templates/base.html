@@ -32,15 +32,22 @@
     {% block extra_js %}
     {% endblock %}
 
-    <title>Title{% block extra_title %}{% endblock %}</title>
+    <title>The Poster Vault{% block extra_title %}{% endblock %}</title>
   </head>
-  <body class="d-flex flex-column align-items-center justify-content-center">
-    <header class="container-fluid fixed-top"></header>
+  <body class="d-flex flex-column align-items-center">
+    <header class="container">
+  
 
-    <section class="container" id="background-wrapper">
+      <div class="row justify-content-center" id="logo">
+        <h1 id="logo-text">The Poster Vault</h1>
+      </div>
 
  
 
+
+
+
+</header>
     {% if messages %}
         <div class="message-container">
 
@@ -57,6 +64,5 @@
     {% block postloadjs %}
     {% endblock %}
 
-   </section>
   </body>
 </html>

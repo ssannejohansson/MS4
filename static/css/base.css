@@ -7,28 +7,33 @@
 
  /* CSS Variables */
  :root {
-    --primary-background-color: #424536;
-    --secondary-background-color: #C7C9BA;
+    --primary-background-color: #2c2e24;
+    --body-background-color: #080a05;
+    --primary-text-color: #F1E9E4;
     --warm-brown: #825F45;
     --dark-brown: #312721;
-    --orange: #d08c60;
+    --orange: #bc6d38;
     --yellow: #ffcb69;
-     --logo-font: "Hatolie";
+    --logo-font: "Hatolie";
  }
 
- h1 {
+ /* LOGO */ 
+ #logo-text {
     font-family: "Hatolie";
-    color: var(--dark-brown);
+    font-size: 6rem;
+    letter-spacing: 0.3rem;
+    color: var(--yellow);
+    text-shadow: -3px -3px 5px rgba(0,0,0,.8), 1px 1px 2px rgba(255,255,255,.45);
+    mix-blend-mode: difference;
  }
 
  body {
     height: 100vh;
-    background-color: var(--primary-background-color);
- }
+    background-color: var(--body-background-color);
+    background-image: url("/media/leather.png");  
+}
 
- #background-wrapper {
-        height: 90%;
-    width: 90%; 
-    background-color: var(--secondary-background-color);
 
- }
+
+
+ 
