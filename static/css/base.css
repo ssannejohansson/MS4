@@ -17,6 +17,7 @@
     --yellow: #ffcb69;
     --dark-yellow: #c8993e;
     --logo-font: "Hatolie";
+    --primary-font: "Crimson Pro", serif; 
  }
 
 body {
@@ -29,7 +30,7 @@ body {
  /* LOGO */ 
  #logo-text {
     font-family: "Hatolie";
-    font-size: 4rem;
+    font-size: 6rem;
     letter-spacing: 0.3rem;
     color: var(--yellow);
     text-shadow: -3px -3px 5px rgba(0,0,0,.8), 1px 1px 2px rgba(255,255,255,.45);
@@ -43,28 +44,56 @@ nav {
     height: 40px; 
     width: 100%; 
     margin-bottom: none;
+    font-family: var(--primary-font);
 }
 
 .head-btns a {
     color: var(--dark-yellow);
     text-shadow: -1px -1px 3px rgba(0,0,0,.8), 1px 1px 2px rgba(255,255,255,.45);
+        font-family: var(--primary-font);
+        font-size: 1.2rem;
+        text-transform: uppercase;
 }
 
-.search-field {
-    background-color: transparent;
-    border: 1px solid var(--dark-yellow);
+
+.head-search input {
+    border: 2px solid var(--dark-yellow);
     box-shadow: -1px -1px 3px rgba(0,0,0,.8), 1px 1px 2px rgba(255,255,255,.45);
-    border-radius: 20px;  
+    border-radius: 20px;
+  outline: none;
+   background-color: transparent;
+  background-size: 22px;
+  background-position: 13px;
+  width: 250px;
+  height: 45px;
+  padding: 25px;
+  padding-left: 60px;
+  transition: all 0.5s;
+          font-family: var(--primary-font);
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        color: var(--dark-yellow);
+            text-shadow: -1px -1px 3px rgba(0,0,0,.8), 1px 1px 2px rgba(255,255,255,.45);
 }
 
-.search-field input {
-    background-color: transparent; 
-    border: none; 
-}
 
-.search-field i {
+.head-search-input::placeholder {
     color: var(--dark-yellow);
+          text-shadow: -1px -1px 3px rgba(0,0,0,.8), 1px 1px 2px rgba(255,255,255,.45);
+
 }
+
+.head-search i {
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  padding-left: 20px;
+  transform: translateY(-50%);
+  color: var(--dark-yellow);
+      text-shadow: -1px -1px 3px rgba(0,0,0,.8), 1px 1px 2px rgba(255,255,255,.45);
+}
+
+
  
 /* INDEX */
 #header-index img {
