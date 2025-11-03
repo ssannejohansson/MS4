@@ -39,8 +39,10 @@
     <title>The Poster Vault{% block extra_title %}{% endblock %}</title>
   </head>
   <body class="d-flex flex-column align-items-center">
+
+    <!-- Header -->
     <header class="container-fluid">
-       <div id="topnav" class="row pt-lg-2 align-items-center">
+       <div id="topnav" class="row pt-lg-2 d-none d-lg-flex align-items-center">
   
         <!-- Search (fix to working search bar later, just placeholder for now)-->
          <div class="col-3 my-auto mx-auto py-1 py-lg-0 head-btns">
@@ -97,12 +99,15 @@
           </li>
         </ul>
       </div>
-</div>
-  <nav class="navbar navbar-expand-lg navbar-light w-100">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
+</div> 
+{% include 'includes/mobile-top-header.html' %}
+  <nav class="navbar navbar-expand-lg navbar-dark w-100">
+        
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
           aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+        
         {% include 'includes/main-nav.html' %}
       </nav>
 
