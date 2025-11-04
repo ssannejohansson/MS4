@@ -30,7 +30,7 @@ body {
  /* LOGO */ 
  #logo-text {
     font-family: "Hatolie";
-    font-size: 1.5rem;
+    font-size: 2rem;
     letter-spacing: 0.3rem;
     color: var(--yellow);
     text-shadow: -3px -3px 5px rgba(0,0,0,.8), 1px 1px 2px rgba(255,255,255,.45);
@@ -49,12 +49,14 @@ nav {
 
 /* HEADER */
 #mobile-header {
-    height: 120px; 
+    margin-top: -10px;
+    height: 45px; 
+    margin-bottom: 10px;
 }
 
 #mobile-header i,
 #mobile-header p {
-    font-size: 18px;
+    font-size: 22px;
 }
 
 #mobile-logo-container {
@@ -64,6 +66,14 @@ nav {
 .head-btns a {
     color: var(--dark-yellow);
     text-shadow: -1px -1px 3px rgba(0,0,0,.8), 1px 1px 2px rgba(255,255,255,.45);
+        font-family: var(--primary-font);
+        font-size: 1.3rem;
+        text-transform: uppercase;
+}
+
+
+.head-btns-mobile a {
+    color: var(--dark-yellow);
         font-family: var(--primary-font);
         font-size: 1.3rem;
         text-transform: uppercase;
@@ -113,6 +123,18 @@ nav {
       text-shadow: -1px -1px 3px rgba(0,0,0,.8), 1px 1px 2px rgba(255,255,255,.45);
 }
 
+/* Custom bootstrap toggler */ 
+.custom-toggler.navbar-toggler {
+    border: none;
+}
+/* Changing rgba in the background url link changes color on the bars */ 
+.custom-toggler .navbar-toggler-icon {
+background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(200, 153, 62, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    text-shadow: -1px -1px 3px rgba(0,0,0,.8), 1px 1px 2px rgba(255,255,255,.45);
+}
+  
+
+  
 
  
 /* INDEX */

@@ -1,12 +1,24 @@
 
-<section class="d-flex flex-column align-items-center">
+<section class="d-flex flex-column align-items-center d-lg-none">
+
+
+       <div class="text-center mt-3 p-0" id="logo">
+        <h1 id="logo-text">The Poster Vault</h1>
+      </div>
+
 <div class="row justify-content-between align-items-center d-lg-none w-100" id="mobile-header">
 
-        <li class="list-inline-item head-btns">
+      <div class="navbar navbar-expand-lg navbar-dark w-100 p-0">
+        
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
+          aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>   
+    
+    <li class="list-inline-item head-btns-mobile">
     <a class="nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
-            <div><i class="fas fa-search fa-lg"></i></div>
-            <p class="my-0">Search</p>
+            <div><i class="fas fa-search"></i></div>
         </div>
     </a>
     <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
@@ -26,12 +38,10 @@
     </div>
 </li>
 
+    
 
-       <div class="text-center mt-3 p-0" id="logo">
-        <h1 id="logo-text">The <br>
-            Poster <br>
-            Vault</h1>
-      </div>
+
+
         
 <!--
 <li class="list-inline-item dropdown">
@@ -58,19 +68,20 @@
 
 
   
-<li class="list-inline-item head-btns">
+<li class="list-inline-item head-btns-mobile">
     <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none" href="">
         <div class="text-center">
-            <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-            <p class="my-0">
+            <div><i class="fas fa-shopping-bag"></i></div>
+          <!-- <p class="my-0">
                 {% if grand_total %}
                     ${{ grand_total|floatformat:2 }}
                 {% else %}
                     $0.00
                 {% endif %}
-            </p>
+            </p>--> 
         </div>
     </a>
-</li></div>
+</li>
+</div></div>
 
 </section>
