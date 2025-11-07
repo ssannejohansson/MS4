@@ -1,0 +1,10 @@
+[
+    {
+        "pk": 1,
+        "model": "products.category",
+        "fields": {
+            "name": "category_name",
+            "friendly_name": "Category Name"
+        }
+    }
+]

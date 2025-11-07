@@ -1,0 +1,115 @@
+[
+   {
+      "pk":1,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5001340155",
+         "name":"Product name",
+         "description":"Product description",
+         "price":20.00,
+         "category":1,
+         "rating":4.6,
+         "image_url":"",
+         "image":"1.jpg"
+      }
+   },
+   {
+      "pk":2,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5001600425",
+        "name":"Product name",
+         "description":"Product description",
+         "price":20.00,
+         "category":1,
+         "rating":4.6,
+         "image_url":"",
+         "image":"2.jpg"
+      }
+   },
+   {
+      "pk":3,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5001730010",
+           "name":"Product name",
+         "description":"Product description",
+         "price":20.00,
+         "category":1,
+         "rating":4.6,
+         "image_url":"",
+         "image":"3.jpg"
+      }
+   },
+   {
+      "pk":4,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5001890157",
+         "name":"Product name",
+         "description":"Product description",
+         "price":20.00,
+         "category":1,
+         "rating":4.6,
+         "image_url":"",
+         "image":"4.jpg"
+      }
+   },
+   {
+      "pk":5,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5002111605",
+              "name":"Product name",
+         "description":"Product description",
+         "price":20.00,
+         "category":1,
+         "rating":4.6,
+         "image_url":"",
+         "image":"5.jpg"
+      }
+   },
+   {
+      "pk":6,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5002260206",
+           "name":"Product name",
+         "description":"Product description",
+         "price":20.00,
+         "category":1,
+         "rating":4.6,
+         "image_url":"",
+         "image":"6.jpg"
+      }
+   },
+   {
+      "pk":7,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5002440521",
+            "name":"Product name",
+         "description":"Product description",
+         "price":20.00,
+         "category":1,
+         "rating":4.6,
+         "image_url":"",
+         "image":"7.jpg"
+      }
+   },
+   {
+      "pk":8,
+      "model":"products.product",
+      "fields":{
+         "sku":"pp5002601115",
+            "name":"Product name",
+         "description":"Product description",
+         "price":20.00,
+         "category":1,
+         "rating":4.6,
+         "image_url":"",
+         "image":"8.jpg"
+      }
+   }
+]
+
