@@ -12,44 +12,18 @@
             </div>
         </li>
 
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Link1
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">1</a>
-                <a href="" class="dropdown-item">2</a>
-                <a href="" class="dropdown-item">3</a>
-                <a href="" class="dropdown-item">4</a>
-            </div>
-        </li>
-
-               <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Link2
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">1</a>
-                <a href="" class="dropdown-item">2</a>
-                <a href="" class="dropdown-item">3</a>
-                <a href="" class="dropdown-item">4</a>
-            </div>
-        </li>
-
-               <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Link3
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">1</a>
-                <a href="" class="dropdown-item">2</a>
-                <a href="" class="dropdown-item">3</a>
-                <a href="" class="dropdown-item">4</a>
-            </div>
+ <li class="nav-item">
+          <a class="logo-font font-weight-bold nav-link text-white mr-5" href="{% url 'products' %}?category=new_arrivals" aria-labelledby="new-arrivals-link">New Arrivals</a>
         </li>
 
 
+ <li class="nav-item">
+          <a class="logo-font font-weight-bold nav-link text-white mr-5" href="{% url 'products' %}?category=best_sellers" aria-labelledby="best-sellers-link">Best Sellers</a>
+        </li>
 
-   
+
+ <li class="nav-item">
+          <a class="logo-font font-weight-bold nav-link text-white mr-5" href="{% url 'products' %}?category=deals" aria-labelledby="deals-link">Deals</a>
+        </li>
     </ul>
 </div>
