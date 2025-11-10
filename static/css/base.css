@@ -25,6 +25,11 @@ body {
     max-width: 1920px;
     background-color: var(--body-background-color);
     background-image: url("../images/leather.png");  
+    font-family: var(--primary-font);
+}
+
+h2 {
+    text-transform: uppercase;
 }
 
  /* LOGO */ 
@@ -138,13 +143,22 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30
 
  
 /* INDEX */
-#header-index img {
-    width: 100%;
+#header-index {
+    background-image: url("../images/index-hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     height: 400px;
-    object-fit: cover;
 }
 
+/* products */
+.product-wrapper {
+    background-color: #14141473;
+}
 
+.product-wrapper h2 {
+    color: var(--primary-text-color);
+}
 
 
 
@@ -163,7 +177,7 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30
     font-size: 6rem;
 }
 
-     #header-index img {
+     #header-index {
          height: 600px;
      }
  }
