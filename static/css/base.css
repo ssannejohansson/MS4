@@ -142,8 +142,13 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30
 }
   
 
-  
+#product-sorting, #product-sorting a {
+    color: var(--dark-yellow);
+}
 
+#sort-selector {
+    background-color: var(--primary-text-color);
+}
  
 /* INDEX */
 #header-index {
