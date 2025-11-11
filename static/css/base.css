@@ -149,6 +149,26 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30
 #sort-selector {
     background-color: var(--primary-text-color);
 }
+
+.btt-button {
+    font-size: 20px;
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+}
+
+.btt-link {
+    color: var(--dark-yellow);
+    cursor: pointer;
+}
+
+.btt-link:hover {
+    text-decoration: none;
+    color: var(--orange);
+    cursor: pointer;
+}
  
 /* INDEX */
 #header-index {
