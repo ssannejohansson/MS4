@@ -241,8 +241,14 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30
     color: var(--secondary-text-color);
 }
 
+/* SHOPPING BAG */ 
+.bag-content table {
+    color: var(--primary-text-color);
+}
 
-
+.bag-content img {
+    border: 5px solid var(--primary-accent-color);
+}
 
 
 
