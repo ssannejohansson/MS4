@@ -11,6 +11,7 @@
     --body-background-color: #080a05;
     --nav-background-color: #141414;
     --primary-text-color: #F1E9E4;
+    --primary-accent-color: #F1E9E4;
     --secondary-text-color: #232120;
     --warm-brown: #825F45;
     --dark-brown: #312721;
@@ -41,6 +42,44 @@ h2 {
 
 .wrapper h2 {
     color: var(--primary-text-color);
+}
+
+.custom-form-control {
+    background-color: var(--primary-accent-color);
+    border-radius: 0;
+    outline: none;
+    border: none; 
+}
+
+.custom-form-control:focus,
+.custom-form-control:active {
+    background-color: var(--primary-accent-color);
+    outline: none;
+    border: none; 
+}
+
+.custom-text-muted {
+    color: var(--dark-yellow) !important;
+}
+
+.leather-btn {
+    background-color: var(--warm-brown);
+    background-image: linear-gradient(to bottom right, #825F45 30%,#6B4E38);
+    transform: skew(-1deg) rotate(0.2deg);
+    box-shadow: 
+    -2px -2px 7px 0 #8C6547 inset, 2px 2px 7px 0 #5E4632 inset, /* Make the parts outside the seams appear to stand out */
+    1px 1px 5px 0 #4B3626;  /* Shadow */
+    margin: 3px;
+  color: var(--primary-text-color);
+  text-decoration: none;
+  padding: 10px;
+  margin: 5px;
+  outline: 1px dashed #A67C5A;
+  outline-offset: -5px;
+  border-radius: 0;
+  transform: skew(-0.5deg);
+  text-shadow: 0 0 1px rgba(130, 95, 69, 0.8), -1px -1px 0 #4B3626,
+    1px 1px 0 rgba(166, 124, 90, 0.8), 2px 2px 0 rgba(150, 110, 79, 0.8);
 }
 
 
@@ -156,7 +195,7 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30
 }
 
 #sort-selector {
-    background-color: var(--primary-text-color);
+    background-color: var(--primary-accent-color);
 }
 
 .btt-button {
@@ -188,12 +227,17 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30
     height: 400px;
 }
 
-/* PRODUCTS */
+/* PRODUCT DETAILS PAGE */
+.image-container {
+    border: 5px solid var(--primary-accent-color); 
+}
+
+
 
 
 /* PRODUCT CARDS */
 .card, .card-footer {
-    background-color: var(--primary-text-color);
+    background-color: var(--primary-accent-color);
     color: var(--secondary-text-color);
 }
 
