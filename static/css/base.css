@@ -15,7 +15,7 @@
     --secondary-text-color: #232120;
     --warm-brown: #825F45;
     --dark-brown: #312721;
-    --orange: #bc6d38;
+    --red: #b42e02;
     --yellow: #ffcb69;
     --dark-yellow: #c8993e;
     --logo-font: "Hatolie";
@@ -49,6 +49,7 @@ h2 {
     border-radius: 0;
     outline: none;
     border: none; 
+    color: var(--secondary-text-color);
 }
 
 .custom-form-control:focus,
@@ -80,6 +81,18 @@ h2 {
   transform: skew(-0.5deg);
   text-shadow: 0 0 1px rgba(130, 95, 69, 0.8), -1px -1px 0 #4B3626,
     1px 1px 0 rgba(166, 124, 90, 0.8), 2px 2px 0 rgba(150, 110, 79, 0.8);
+}
+
+/* Overwrites bootstraps default disabled btn */ 
+.btn:disabled {
+    background-color: #ccc5c0;
+    opacity: 100% !important; 
+}
+
+/* Overwrites bootstraps default text-danger class to match color scheme*/ 
+.text-danger {
+    color: var(--red) !important;
+
 }
 
 
@@ -212,9 +225,15 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30
     cursor: pointer;
 }
 
+.update-link:hover,
+.remove-item:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
 .btt-link:hover {
     text-decoration: none;
-    color: var(--orange);
+    color: var(--dark-brown);
     cursor: pointer;
 }
  
@@ -249,6 +268,13 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30
 .bag-content img {
     border: 5px solid var(--primary-accent-color);
 }
+
+.quantity-btn {
+    background-color: var(--primary-accent-color);
+    color: var(--secondary-text-color);
+    border-radius: 0;
+}
+
 
 
 
