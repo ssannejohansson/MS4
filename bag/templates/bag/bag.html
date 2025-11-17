@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bag_tools %}
 
 {% block page_header%}
 <div class="container header-container">
@@ -50,7 +51,7 @@
                                 <p class="my-0">${{ item.product.price }}</p>
                             </td>
                             <td class="py-3 w-25">
-                                <form class="form update-form" method="POST" action="">
+                                <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                     {% csrf_token %}
                                     <div class="form-group">
                                         <div class="input-group">
@@ -86,12 +87,12 @@
 
                                 <a class="update-link custom-text-muted float-left"><small>Update</small></a>
                                 <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"
-                                    data-size="{{ item.size }}"><small>Remove</small></a>
+                                    data-product_size="{{ item.size }}"><small>Remove</small></a>
 
 
                             </td>
                             <td class="py-3">
-                                <p class="my-0">${{ item.product.price }}</p>
+                                <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
                             </td>
                         </tr>
                         {% endfor %}
@@ -145,45 +146,45 @@
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
 <script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
-        // Update quantity on click 
-        document.querySelectorAll('.update-link').forEach(link => {
-            link.addEventListener('click', function (e) {
-                const form = this.previousElementSibling;
-                if (form && form.classList.contains('update-form')) {
-                    form.submit();
-                }
-            });
+    // Update quantity on click
+    document.querySelectorAll('.update-link').forEach(link => {
+        link.addEventListener('click', function () {
+            const form = this.previousElementSibling;
+            if (form && form.classList.contains('update-form')) {
+                form.submit();
+            }
         });
-
-        // Remove item and reload on click 
-        document.querySelectorAll('.remove-item').forEach(button => {
-            button.addEventListener('click', function (e) {
-                const csrfToken = "{{ csrf_token }}";
-                const itemId = this.id.replace("remove_", "");
-                const size = this.dataset.size;
-
-                const url = `/bag/remove/${itemId}`;
-                const data = new FormData();
-                data.append('csrfmiddlewaretoken', csrfToken);
-                data.append('size', size);
-
-                fetch(url, {
-                        method: 'POST',
-                        body: data,
-                    })
-                    .then(response => {
-                        if (response.ok) {
-                            location.reload();
-                        } else {
-                            console.error("Failed to remove item.");
-                        }
-                    })
-                    .catch(err => console.error("Error:", err));
-            });
-        });
-
     });
+// Remove item and reload on click
+    document.querySelectorAll('.remove-item').forEach(link => {
+        link.addEventListener('click', function () {
+            const csrfToken = "{{ csrf_token }}";
+            const itemId = this.id.replace("remove_", ""); 
+            const size = this.dataset.product_size;
+            const url = `/bag/remove/${itemId}/`;
+
+            // Build POST data like jQuery $.post
+            const formData = new FormData();
+            formData.append('csrfmiddlewaretoken', csrfToken);
+            formData.append('product_size', size);
+
+            fetch(url, {
+                method: "POST",
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    location.reload();
+                } else {
+                    console.error("Error removing item.");
+                }
+            })
+            .catch(err => console.error("Network error:", err));
+        });
+    });
+
+});
 </script>
 {% endblock %}
