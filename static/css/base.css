@@ -287,10 +287,18 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30
 
 .custom-toast {
     overflow: visible;
+    background-color: var(--primary-accent-color);
+    color: var(--secondary-text-color);
 }
 
 .toast-capper {
     height: 2px;
+}
+
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto; 
 }
 
 
