@@ -81,34 +81,38 @@ card.addEventListener('change', function (event) {
  */
 const form = document.getElementById('payment-form');
 const submitButton = document.getElementById('submit-button');
+const loadingOverlay = document.getElementById('loading-overlay');
 
 form.addEventListener('submit', function (ev) {
     ev.preventDefault();
 
-    // Disable card + button
+    // Disable inputs during payment attempt
     card.update({ disabled: true });
     submitButton.disabled = true;
 
+    // Fade out form / fade in loading
+    form.classList.add('hidden');
+    loadingOverlay.classList.remove('hidden');
+
     stripe.confirmCardPayment(clientSecret, {
-        payment_method: {
-            card: card,
-        }
+        payment_method: { card: card }
     }).then(function (result) {
         const errorDiv = document.getElementById('card-errors');
 
         if (result.error) {
-            const html = `
+            errorDiv.innerHTML = `
                 <span class="icon" role="alert">
                     <i class="fas fa-times"></i>
                 </span>
                 <span>${result.error.message}</span>
             `;
-            errorDiv.innerHTML = html;
 
-            // Re-enable
+            // Show form again / hide loading
+            form.classList.remove('hidden');
+            loadingOverlay.classList.add('hidden');
+
             card.update({ disabled: false });
             submitButton.disabled = false;
-
         } else {
             if (result.paymentIntent.status === 'succeeded') {
                 form.submit();

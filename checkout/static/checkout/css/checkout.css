@@ -1,0 +1,34 @@
+
+#loading-overlay {
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #2c2e24ab;
+    z-index: 9999;
+}
+
+.loading-spinner {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100%;
+}
+
+.loading-spinner i {
+    color: var(--dark-yellow);
+}
+
+.fade-toggle {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.fade-toggle.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;   /* prevents blocking the UI when invisible */
+}
