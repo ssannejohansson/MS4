@@ -68,16 +68,7 @@ card.addEventListener('change', function (event) {
 });
 
 /**
- * Handles the Stripe payment form submission process.
- *
- * - Prevents the default form submit behavior.
- * - Disables the card element and submit button to prevent duplicate submissions.
- * - Sends the payment details to Stripe using confirmCardPayment().
- * - If Stripe returns an error, it displays the error message and re-enables the form.
- * - If the payment succeeds, the form is submitted normally to the server.
- *
- * This function handles both real-time error display and the secure confirmation
- * of card payment intent using the client secret provided by the backend.
+NEW DOCSTRING! 
  */
 const form = document.getElementById('payment-form');
 const submitButton = document.getElementById('submit-button');
@@ -93,13 +84,65 @@ form.addEventListener('submit', function (ev) {
     // Fade out form / fade in loading
     form.classList.add('hidden');
     loadingOverlay.classList.remove('hidden');
+    const saveInfoCheckbox = document.getElementById('id-save-info');
+    const saveInfo = saveInfoCheckbox ? saveInfoCheckbox.checked : false;
+    const csrfToken = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
 
-    stripe.confirmCardPayment(clientSecret, {
-        payment_method: { card: card }
-    }).then(function (result) {
+    const postData = new URLSearchParams();
+    postData.append('csrfmiddlewaretoken', csrfToken);
+    postData.append('client_secret', clientSecret);
+    postData.append('save_info', saveInfo);
+
+    const url = '/checkout/cache_checkout_data/';
+
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: postData.toString()
+    })
+    .then(function(response) {
+        if (!response.ok) {
+            throw new Error('Network error saving checkout data');
+        }
+
+        // --- Only continue to payment after Django accepts POST ---
+        return stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
+                card: card,
+                billing_details: {
+                    name: form.full_name.value.trim(),
+                    phone: form.phone_number.value.trim(),
+                    email: form.email.value.trim(),
+                    address: {
+                        line1: form.street_address1.value.trim(),
+                        line2: form.street_address2.value.trim(),
+                        city: form.town_or_city.value.trim(),
+                        country: form.country.value.trim(),
+                        state: form.county.value.trim(),
+                    }
+                }
+            },
+            shipping: {
+                name: form.full_name.value.trim(),
+                phone: form.phone_number.value.trim(),
+                address: {
+                    line1: form.street_address1.value.trim(),
+                    line2: form.street_address2.value.trim(),
+                    city: form.town_or_city.value.trim(),
+                    country: form.country.value.trim(),
+                    postal_code: form.postcode.value.trim(),
+                    state: form.county.value.trim(),
+                }
+            }
+        });
+    })
+    .then(function(result) {
         const errorDiv = document.getElementById('card-errors');
 
         if (result.error) {
+            // Show Stripe error
             errorDiv.innerHTML = `
                 <span class="icon" role="alert">
                     <i class="fas fa-times"></i>
@@ -107,16 +150,21 @@ form.addEventListener('submit', function (ev) {
                 <span>${result.error.message}</span>
             `;
 
-            // Show form again / hide loading
+            // Restore form / hide loader
             form.classList.remove('hidden');
             loadingOverlay.classList.add('hidden');
 
             card.update({ disabled: false });
             submitButton.disabled = false;
+
         } else {
             if (result.paymentIntent.status === 'succeeded') {
                 form.submit();
             }
         }
+    })
+    .catch(function() {
+        location.reload();
     });
+
 });
