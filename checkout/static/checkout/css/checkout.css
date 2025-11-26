@@ -32,3 +32,13 @@
     visibility: hidden;
     pointer-events: none;   /* prevents blocking the UI when invisible */
 }
+
+select,
+select option {
+    color: var(--secondary-text-color);
+}
+
+select:invalid,
+select option[value=""] {
+    color: aab7c4 !important;
+}
