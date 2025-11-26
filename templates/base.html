@@ -66,28 +66,29 @@
       </div>
 
 <div class="col-3 my-auto py-1 py-lg-0 head-btns">
-        <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-          <!--<li class="list-inline-item dropdown">
-            <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
-              <div class="text-center">
-                <div><i class="fas fa-user fa-lg"></i></div>
-                <p class="my-0">My Account</p>
-              </div>
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="user-options">
-              {% if request.user.is_authenticated %}
-              {% if request.user.is_superuser %}
-              <a href="" class="dropdown-item">Product Management</a>
-              {% endif %}
-              <a href="" class="dropdown-item">My Profile</a>
-              <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-              {% else %}
-              <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-              <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-              {% endif %}
-            </div>
-          </li>-->
+        <ul class="list-inline list-unstyled text-center text-lg-end my-0">
+<li class="list-inline-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="user-options" 
+     data-bs-toggle="dropdown" aria-expanded="false">
+    <div class="text-center">
+      <div><i class="fas fa-user fa-lg"></i></div>
+      <p class="my-0">My Account</p>
+    </div>
+  </a>
+
+  <ul class="dropdown-menu border-0" aria-labelledby="user-options">
+    {% if request.user.is_authenticated %}
+      {% if request.user.is_superuser %}
+        <li><a class="dropdown-item" href="">Product Management</a></li>
+      {% endif %}
+      <li><a class="dropdown-item" href="">My Profile</a></li>
+      <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+    {% else %}
+      <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
+      <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
+    {% endif %}
+  </ul>
+</li>
           <li class="list-inline-item">
             <a class="nav-link" href="{% url 'view_bag' %}">
               <div class="text-center">
