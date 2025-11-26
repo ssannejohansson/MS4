@@ -1,29 +1,48 @@
 <div class="collapse navbar-collapse" id="main-nav">
-    <ul class="navbar-nav w-auto mx-auto">
+    <ul class="navbar-nav mx-auto">
+
+        <!-- All Products Dropdown -->
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="all-products-link" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle"
+               href="#"
+               id="all-products-link"
+               role="button"
+               data-bs-toggle="dropdown"
+               aria-expanded="false">
                 All Products
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
-                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
-                <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
-            </div>
+
+            <ul class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=asc">By Price</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc">By Rating</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?sort=category&direction=asc">By Category</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}">All Products</a></li>
+            </ul>
         </li>
 
- <li class="nav-item">
-          <a class="nav-link" href="{% url 'products' %}?category=new_arrivals" aria-labelledby="new-arrivals-link">New Arrivals</a>
+        <!-- New Arrivals -->
+        <li class="nav-item">
+            <a class="nav-link" id="new-arrivals-link"
+               href="{% url 'products' %}?category=new_arrivals">
+                New Arrivals
+            </a>
         </li>
 
-
- <li class="nav-item">
-          <a class="nav-link" href="{% url 'products' %}?category=best_sellers" aria-labelledby="best-sellers-link">Best Sellers</a>
+        <!-- Best Sellers -->
+        <li class="nav-item">
+            <a class="nav-link" id="best-sellers-link"
+               href="{% url 'products' %}?category=best_sellers">
+                Best Sellers
+            </a>
         </li>
 
-
- <li class="nav-item">
-          <a class="nav-link" href="{% url 'products' %}?category=deals" aria-labelledby="deals-link">Deals</a>
+        <!-- Deals -->
+        <li class="nav-item">
+            <a class="nav-link" id="deals-link"
+               href="{% url 'products' %}?category=deals">
+                Deals
+            </a>
         </li>
+
     </ul>
 </div>

@@ -99,7 +99,7 @@ h2 {
  /* LOGO */ 
  #logo-text {
     font-family: "Hatolie";
-    font-size: 2rem;
+    font-size: 3rem;
     letter-spacing: 0.3rem;
     color: var(--yellow);
     text-shadow: -3px -3px 5px rgba(0,0,0,.8), 1px 1px 2px rgba(255,255,255,.45);
@@ -140,57 +140,59 @@ nav {
         text-transform: uppercase;
 }
 
-
 .head-btns-mobile a {
     color: var(--dark-yellow);
         font-family: var(--secondary-font);
-        font-size: 1.3rem;
+        font-size: 1rem;
         text-transform: uppercase;
 }
 
-.head-search input {
-    border: none; 
-  outline: none;
-   background-color: transparent;
-  background-size: 22px;
-  background-position: 13px;
-  width: 90px;
-  height: 45px;
-  margin-left: 40px; 
-  transition: all 0.5s;
-          font-family: var(--secondary-font);
-        font-size: 1.2rem;
-        text-transform: uppercase;
-        color: var(--dark-yellow);
-            text-shadow: -1px -1px 3px rgba(0,0,0,.8), 1px 1px 2px rgba(255,255,255,.45);
-              transition: all 0.5s;
-
-}
-
-
-
-.head-search-input:focus {
-    width: 250px; 
-    border-bottom: 2px solid var(--dark-yellow);
-
-}
-
-.head-search-input::placeholder {
-    color: var(--dark-yellow);
-    font-size: 1.4rem;
-          text-shadow: -1px -1px 3px rgba(0,0,0,.8), 1px 1px 2px rgba(255,255,255,.45);
-         
-
+/* SEARCH BAR */ 
+.head-search {
+    position: relative; 
 }
 
 .head-search i {
   font-size: 25px;
   position: absolute;
   top: 50%;
+  left: 20px;
   transform: translateY(-50%);
   color: var(--dark-yellow);
       text-shadow: -1px -1px 3px rgba(0,0,0,.8), 1px 1px 2px rgba(255,255,255,.45);
 }
+.head-search input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    background-size: 22px;
+    background-position: 13px;
+    width: 160px;
+    height: 45px;
+    padding-left: 60px;
+    transition: all 0.5s;
+    font-family: var(--secondary-font);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: var(--dark-yellow);
+    text-shadow: -1px -1px 3px rgba(0, 0, 0, .8), 1px 1px 2px rgba(255, 255, 255, .45);
+    transition: all 0.5s;
+}
+
+.head-search input:focus {
+    width: 260px;
+    border-bottom: 2px solid var(--dark-yellow);
+    padding-left: 60px; 
+}
+
+
+.head-search-input::placeholder {
+    color: var(--dark-yellow);
+    font-size: 1.4rem;
+          text-shadow: -1px -1px 3px rgba(0,0,0,.8), 1px 1px 2px rgba(255,255,255,.45);    
+
+}
+
 
 /* Custom bootstrap toggler */ 
 .custom-toggler.navbar-toggler {
@@ -311,6 +313,7 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30
  @media screen and (min-width: 992px) {
 #logo-text {
     font-size: 6rem;
+    line-height: 4.5rem; 
 }
 
      #header-index {
