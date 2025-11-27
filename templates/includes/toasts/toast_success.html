@@ -36,11 +36,11 @@
                 </div>
 
                 <div class="col-9">
-                    <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                    <p class="my-0"><strong>{{ item.variant.product.name }}</strong></p>
                     <p class="my-0 small">
                         Size: 
-                        {% if item.product.has_sizes %}
-                            {{ item.size|upper }}
+                        {% if item.variant.size %}
+                            {{ item.variant.size|upper }}
                         {% else %}
                             N/A
                         {% endif %}

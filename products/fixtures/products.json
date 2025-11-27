@@ -4,8 +4,8 @@
       "model":"products.product",
       "fields":{
          "sku":"product01",
-         "name":"Product name",
-         "description":"Product description",
+         "name":"Vintage Library Shelves",
+         "description":"Vertical view of multiple shelves packed with antique, leather-bound books in a library.",
          "category":1,
          "image":"1.jpg"
       }
@@ -15,8 +15,8 @@
       "model":"products.product",
       "fields":{
          "sku":"product02",
-        "name":"Product name",
-         "description":"Product description",
+        "name":"Gritty Found Objects",
+         "description":"Gritty, close-up shot of dirty, decaying cloth and paper scraps, including a vintage ticket marked '20'.",
          "category":1,
          "image":"2.jpg"
       }
@@ -26,8 +26,8 @@
       "model":"products.product",
       "fields":{
          "sku":"product03",
-           "name":"Product name",
-         "description":"Product description",
+           "name":"Wall of Sound",
+         "description":"A wall installation of music amplifiers (Marshall, Epiphone, Vox) and stacks of CDs/tapes surrounding a retro TV.",
          "category":1,
          "image":"3.jpg"
       }
@@ -37,8 +37,8 @@
       "model":"products.product",
       "fields":{
          "sku":"product04",
-         "name":"Product name",
-         "description":"Product description",
+         "name":"Rusted Garden Gate",
+         "description":"Close-up of a rusted, weathered metal gate/doorframe with out-of-focus palm plants in the background.",
          "category":2,
          "image":"4.jpg"
       }
@@ -48,8 +48,8 @@
       "model":"products.product",
       "fields":{
          "sku":"product05",
-              "name":"Product name",
-         "description":"Product description",
+              "name":"Stack of Vintage Suitcases",
+         "description":"A stacked pile of colorful, vintage leather and fabric suitcases with travel stickers.",
          "category":2,
          "image":"5.jpg"
       }
@@ -59,8 +59,8 @@
       "model":"products.product",
       "fields":{
          "sku":"product06",
-           "name":"Product name",
-         "description":"Product description",
+           "name":"Soft-Focus White Blossoms",
+         "description":"Soft-focus, brightly lit close-up of clusters of small white spring blossoms on a tree branch.",
 
          "category":2,
          "image":"6.jpg"
