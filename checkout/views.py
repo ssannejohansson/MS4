@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.conf import settings
 from .forms import OrderForm
 from .models import Order, OrderLineItem
-from products.models import Product
+from products.models import ProductVariant
 from bag.contexts import bag_contents
 import stripe
 import json
@@ -54,37 +54,27 @@ def checkout(request):
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
             order.save()
-            for item_id, item_data in bag.items():
+
+            for variant_id, quantity in bag.items():
                 try:
-                    product = Product.objects.get(id=item_id)
-                    if isinstance(item_data, int):
-                        order_line_item = OrderLineItem(
-                            order=order,
-                            product=product,
-                            quantity=item_data,
-                        )
-                        order_line_item.save()
-                    else:
-                        for size, quantity in (
-                                item_data["items_by_size"].items()):
-                            order_line_item = OrderLineItem(
-                                order=order,
-                                product=product,
-                                quantity=quantity,
-                                product_size=size,
-                            )
-                            order_line_item.save()
-                except Product.DoesNotExist:
+                    variant = ProductVariant.objects.get(pk=variant_id)
+
+                    order_line_item = OrderLineItem(
+                        order=order,
+                        variant=variant,
+                        quantity=quantity,
+                    )
+                    order_line_item.save()
+
+                except ProductVariant.DoesNotExist:
                     messages.error(
                         request,
-                        (
-                            "One of the products in your bag wasn't found in"
-                            "our database."
-                            "Please contact us to solve this error."
-                        ),
+                        "One of the product variants in your bag could not be found. "
+                        "Please contact us for assistance."
                     )
                     order.delete()
                     return redirect(reverse("view_bag"))
+
 
             request.session["save_info"] = "save-info" in request.POST
             return redirect(reverse("checkout_success",

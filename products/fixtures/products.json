@@ -6,7 +6,6 @@
          "sku":"product01",
          "name":"Product name",
          "description":"Product description",
-         "price":20.00,
          "category":1,
          "image":"1.jpg"
       }
@@ -18,7 +17,6 @@
          "sku":"product02",
         "name":"Product name",
          "description":"Product description",
-         "price":20.00,
          "category":1,
          "image":"2.jpg"
       }
@@ -30,7 +28,6 @@
          "sku":"product03",
            "name":"Product name",
          "description":"Product description",
-         "price":20.00,
          "category":1,
          "image":"3.jpg"
       }
@@ -42,7 +39,6 @@
          "sku":"product04",
          "name":"Product name",
          "description":"Product description",
-         "price":20.00,
          "category":2,
          "image":"4.jpg"
       }
@@ -54,7 +50,6 @@
          "sku":"product05",
               "name":"Product name",
          "description":"Product description",
-         "price":20.00,
          "category":2,
          "image":"5.jpg"
       }
@@ -66,7 +61,7 @@
          "sku":"product06",
            "name":"Product name",
          "description":"Product description",
-         "price":20.00,
+
          "category":2,
          "image":"6.jpg"
       }
@@ -78,7 +73,7 @@
          "sku":"product07",
             "name":"Rocky Vista at Sunset",
          "description":"A rugged hilltop landscape bathed in the warm, hazy glow of sunset.",
-         "price":20.00,
+
          "category":3,
          "image":"7.jpg"
       }
@@ -90,7 +85,7 @@
          "sku":"product08",
             "name":"Woman in Rapeseed Field",
          "description":"A cinematic view of a woman running through a vast, golden field at twilight.",
-         "price":20.00,
+
          "category":3,
          "image":"8.jpg"
       }
@@ -102,7 +97,7 @@
          "sku":"product09",
             "name":"Love Locks on Rusty Grid",
          "description":"Padlocks symbolizing lasting romance fastened to a dark, rusted metal grid.",
-         "price":20.00,
+
          "category":3,
          "image":"9.jpg"
       }
@@ -114,7 +109,7 @@
          "sku":"product10",
             "name":"Classic Yellow Mercedes-Benz",
          "description":"A detailed, moody shot of a vintage yellow Mercedes-Benz coupe on an overcast day.",
-         "price":20.00,
+
          "category":3,
          "image":"10.jpg"
       }
@@ -126,7 +121,7 @@
          "sku":"product11",
             "name":"Eclectic Interior Still Life",
          "description":"A vibrant, bohemian stack of books, plants, and antiques against a brick wall and gold mirror.",
-         "price":20.00,
+
          "category":3,
          "image":"11.jpg"
       }
@@ -138,7 +133,7 @@
          "sku":"product12",
             "name":"Vintage Film Projector and Reels",
          "description":"A nostalgic collection of a classic film projector and large movie reels with a moody, retro vibe.",
-         "price":20.00,
+
          "category":3,
          "image":"12.jpg"
       }
@@ -150,7 +145,7 @@
          "sku":"product13",
             "name":"Denim Jacket on Vintage 4x4",
          "description":"An old-school Land Rover parked in scrubland, with a denim jacket hanging on the door.",
-         "price":20.00,
+
          "category":3,
          "image":"13.jpg"
       }
@@ -162,7 +157,7 @@
          "sku":"product14",
             "name":"Soft Focus Sunflower in Field",
          "description":"A close-up of a warm-toned sunflower, focusing on its texture against a dark, dramatic background.",
-         "price":20.00,
+
          "category":3,
          "image":"14.jpg"
       }
@@ -174,7 +169,7 @@
          "sku":"product15",
             "name":"Flowers Through Gold Frame",
          "description":"A hand holding a small, ornate gold frame to capture delicate white blossoms.",
-         "price":20.00,
+
          "category":3,
          "image":"15.jpg"
       }
@@ -186,7 +181,7 @@
          "sku":"product16",
             "name":"Vinyl Records and Woman",
          "description":"An overhead view of a woman surrounded by and posing with classic vinyl records on a patterned rug.",
-         "price":20.00,
+
          "category":3,
          "image":"16.jpg"
       }

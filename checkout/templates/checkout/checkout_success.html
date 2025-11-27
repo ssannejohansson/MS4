@@ -46,7 +46,7 @@
                     {% for item in order.lineitems.all %}
                     <div class="row">
                         <div class="col-12 col-md-4 small fw-bold">
-                            {{ item.product.name }}{% if item.product_size %} - Size {{ item.product.size|upper }}{% endif %}
+                            {{ item.variant.product.name }} - {{item.variant.size }}
                         </div>
                         <div class="col-12 col-md-8 text-md-end small">
                             {{ item.quantity }} @ ${{ item.product.price }} each
