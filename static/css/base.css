@@ -304,6 +304,35 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30
 }
 
 
+/* Allauth form formatting */ 
+.allauth-form-inner-content p {
+    margin-top: 1.5rem; 
+    color: var(--primary-text-color); 
+}
+
+.allauth-form-inner-content input {
+    border-color: var(--secondary-text-color);
+    border-radius: 0;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: var(--secondary-text-color);
+}
+
+.allauth-form-inner-content a {
+	color: var(--dark-yellow);
+}
+
+.allauth-form-inner-content .lb-account {
+    color: var(--primary-text-color);
+}
+
+
+
 /* Media query: tablet and larger (768px and up) */
  @media screen and (min-width: 768px) {
 
