@@ -1,0 +1,18 @@
+#profile-update-form .form-control {
+    color: var(--secondary-text-color);
+    background-color: var(--primary-accent-color) !important;
+}
+
+#profile-update-form input::placeholder {
+    color: var(--muted-sec-text-color);
+}
+
+#id_default_country,
+#id_default_country option:not(:first-child) {
+    background-color: var(--primary-accent-color);
+    color: var(--secondary-text-color);
+}
+
+#id_default_country option:first-child {
+    color: var(--muted-sec-text-color);
+}
