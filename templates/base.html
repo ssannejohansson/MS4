@@ -58,7 +58,7 @@
 <header class="container-fluid">
 
     <!-- Desktop top nav -->
-    <div id="topnav" class="row pt-lg-2 d-none d-lg-flex align-items-center">
+    <div id="topnav" class="row pt-lg-4 d-none d-lg-flex align-items-center">
 
         <!-- Search Bar -->
         <div class="col-3 my-auto text-lg-start head-btns">
@@ -71,7 +71,7 @@
         </div>
 
         <!-- Logo -->
-        <div class="row col-6 justify-content-center text-center mt-3" id="logo">
+        <div class="row col-6 justify-content-center text-center mt-3 mb-3" id="logo">
             <a href="{% url 'home' %}" class="nav-link main-logo-link">
                 <h1 id="logo-text">The Poster Vault</h1>
             </a>
@@ -92,16 +92,16 @@
                         </div>
                     </a>
 
-                    <ul class="dropdown-menu border-0" aria-labelledby="user-options">
+                    <ul class="dropdown-menu custom-dropdown-menu border-0" aria-labelledby="user-options">
                         {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
-                                <li><a class="dropdown-item" href="">Product Management</a></li>
+                                <li><a class="dropdown-item custom-dropdown-item" href="">Product Management</a></li>
                             {% endif %}
-                            <li><a class="dropdown-item" href="{% url 'profile' %}">My Profile</a></li>
-                            <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+                            <li><a class="dropdown-item custom-dropdown-item" href="{% url 'profile' %}">My Profile</a></li>
+                            <li><a class="dropdown-item custom-dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
                         {% else %}
-                            <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
-                            <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
+                            <li><a class="dropdown-item custom-dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
+                            <li><a class="dropdown-item custom-dropdown-item" href="{% url 'account_login' %}">Login</a></li>
                         {% endif %}
                     </ul>
                 </li>
@@ -131,9 +131,9 @@
     {% include 'includes/mobile-top-header.html' %}
 
     <!-- MAIN NAV -->
-    <nav class="navbar navbar-expand-lg navbar-dark w-100">
+    <div class="navbar navbar-expand-lg navbar-dark w-100 p-0">
         {% include 'includes/main-nav.html' %}
-    </nav>
+    </div>
 
 </header>
 

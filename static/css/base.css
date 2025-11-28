@@ -8,10 +8,11 @@
  /* CSS Variables */
  :root {
     --primary-background-color: #2c2e24;
+    --secondary-background-color: #F1E9E4;
     --body-background-color: #080a05;
     --nav-background-color: #141414;
     --primary-text-color: #F1E9E4;
-    --primary-accent-color: #F1E9E4;
+    --ptc-h: #ddd1c9; /* Primary text color :hover */
     --secondary-text-color: #232120;
     --muted-sec-text-color: #81726c;
     --warm-brown: #825F45;
@@ -19,6 +20,7 @@
     --red: #b42e02;
     --yellow: #ffcb69;
     --dark-yellow: #c8993e;
+    --dark-yellow-hover: #ab812e;
     --logo-font: "Hatolie";
     --primary-font: "Lato", sans-serif;
     --secondary-font: "Crimson Pro", serif; 
@@ -97,11 +99,25 @@ h2 {
 
 }
 
+.custom-dropdown-menu {
+    background-color: var(--nav-background-color);
+}
+.custom-dropdown-menu a {
+    font-family: var(--primary-font) !important;
+    text-transform: capitalize !important;
+    color: var(--primary-text-color) !important;
+    text-shadow: none;
+}
+
+.custom-dropdown-item:hover {
+    background-color: var(--nav-background-color) !important; 
+    color: var(--dark-yellow) !important;
+}
 
  /* LOGO */ 
  #logo-text {
     font-family: "Hatolie";
-    font-size: 3rem;
+    font-size: 4rem;
     letter-spacing: 0.3rem;
     color: var(--yellow);
     text-shadow: -3px -3px 5px rgba(0,0,0,.8), 1px 1px 2px rgba(255,255,255,.45);
@@ -118,20 +134,43 @@ nav {
     font-family: var(--primary-font);
 }
 
+nav a {
+    color: var(--primary-text-color) !important;
+}
+
+nav a:hover {
+    color: var(--dark-yellow) !important;
+}
+
+#main-nav.collapse.show {
+    background-color: var(--nav-background-color);
+}
+
+#main-nav.collapse.show .nav-link {
+    background-color: var(--nav-background-color);
+    color: var(--primary-text-color);
+    width: 100%;
+    padding-left: 15px; 
+    padding-bottom: 15px;
+}
+
+#main-nav.collapse.show .nav-link:hover {
+    color: #ffcc00;
+}
+
+
+
 /* HEADER */
+
+
 #mobile-header {
-    margin-top: -10px;
     height: 45px; 
-    margin-bottom: 10px;
+    background-color: var(--nav-background-color);
 }
 
 #mobile-header i,
 #mobile-header p {
-    font-size: 22px;
-}
-
-#mobile-logo-container {
-    height: 50px;
+    font-size: 20px;
 }
 
 .head-btns a {
@@ -147,6 +186,31 @@ nav {
         font-family: var(--secondary-font);
         font-size: 1rem;
         text-transform: uppercase;
+}
+
+.head-btns a:hover,
+.head-btns a:focus,
+.head-btns-mobile a:hover,
+.head-btns-mobile a:focus {
+    color: var(--dark-yellow-hover);
+}
+
+.custom-badge {
+    background-color: var(--dark-brown);
+}
+
+.bag-icon-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.bag-count-badge {
+    position: absolute; 
+    top: -10px;    
+    right: -10px;  
+    font-size: 0.65rem;
+    padding: 3px 6px;  
+    z-index: 99999;
 }
 
 /* SEARCH BAR */ 
@@ -194,6 +258,20 @@ nav {
           text-shadow: -1px -1px 3px rgba(0,0,0,.8), 1px 1px 2px rgba(255,255,255,.45);    
 
 }
+
+#mobile-searchbar, #mobile-searchbar input {
+    background-color: var(--nav-background-color);
+    border: none;
+    border-bottom: 1px solid var(--muted-sec-text-color);
+    outline: none;
+    color: var(--primary-text-color);
+}
+
+#mobile-searchbar input::placeholder {
+    color: var(--primary-text-color);
+}
+
+
 
 
 /* Custom bootstrap toggler */ 
@@ -351,8 +429,6 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30
          height: 600px;
      }
  }
-
- 
 
  /* Media query: desktop and larger (1200px and up) */
  @media screen and (min-width: 1200px) {

@@ -1,22 +1,23 @@
-<div class="collapse navbar-collapse" id="main-nav">
+<nav class="collapse navbar-collapse" id="main-nav">
+
     <ul class="navbar-nav mx-auto">
         <!-- All Products -->
         <li class="nav-item">
-            <a class="nav-link" id="all-products-link" href="{% url 'products' %}">
+            <a class="nav-link me-4" id="all-products-link" href="{% url 'products' %}">
                 All Products
             </a>
         </li>
 
         <!-- New Arrivals -->
         <li class="nav-item">
-            <a class="nav-link" id="new-arrivals-link" href="{% url 'products' %}?category=new_arrivals">
+            <a class="nav-link me-4" id="new-arrivals-link" href="{% url 'products' %}?category=new_arrivals">
                 New Arrivals
             </a>
         </li>
 
         <!-- Best Sellers -->
         <li class="nav-item">
-            <a class="nav-link" id="best-sellers-link" href="{% url 'products' %}?category=best_sellers">
+            <a class="nav-link me-4" id="best-sellers-link" href="{% url 'products' %}?category=best_sellers">
                 Best Sellers
             </a>
         </li>
@@ -27,6 +28,5 @@
                 Deals
             </a>
         </li>
-
     </ul>
-</div>
+</nav>
