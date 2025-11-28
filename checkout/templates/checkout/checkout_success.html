@@ -120,12 +120,17 @@
             </div>
         </div>
 
-        <!-- Call to Action -->
         <div class="row mt-4">
-            <div class="col text-end">
-                <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="btn leather-btn my-2 text-uppercase">
-                    Now check out the latest deals!
+            <div class="col-12 text-end">
+                {% if from_profile %}
+                <a href="{% url 'profile' %}" class="btn leather-btn my-2 text-uppercase">
+                    Go to Profile
                 </a>
+                {% else %}
+                <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="btn leather-btn my-2 text-uppercase">
+                    Keep shopping!
+                </a>
+                {% endif %}
             </div>
         </div>
 
