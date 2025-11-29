@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.db.models import Q, Min, Max
 from django.db.models.functions import Lower
 from .models import Product, Category
-from .forms import ProductForm
+from .forms import ProductForm, ProductVariantFormSet
 
 
 # Create your views here.
@@ -78,11 +78,26 @@ def product_detail(request, product_id):
 
 
 def add_product(request):
-    """Add products to the store"""
-    form = ProductForm()
-    template = 'products/add_product.html'
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        formset = ProductVariantFormSet(request.POST)
+
+        if form.is_valid() and formset.is_valid():
+            product = form.save()
+            formset.instance = product
+            formset.save()
+            messages.success(request, 'Product successfully added!')
+            return redirect('products')
+        else:
+            messages.error
+            (request, 'Failed to upload product. Please check your form.')
+    else:
+        form = ProductForm()
+        formset = ProductVariantFormSet()
+
     context = {
         'form': form,
+        'formset': formset,
     }
 
-    return render(request, template, context)
+    return render(request, 'products/add_product.html', context)

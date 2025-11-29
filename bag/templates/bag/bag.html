@@ -39,7 +39,11 @@
                         <tr>
                             <!-- IMAGE -->
                             <td class="p-3 w-25">
-                                <img class="img-fluid" src="{{ item.variant.product.image.url }}" alt="">
+                                {% if item.product.image %}
+                                    <img class="img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                {% else %}
+                                    <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="No image available">
+                                {% endif %}
                             </td>
 
                             <!-- PRODUCT INFO -->
