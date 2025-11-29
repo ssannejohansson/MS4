@@ -49,7 +49,7 @@ h2 {
 }
 
 .custom-form-control {
-    background-color: var(--primary-accent-color);
+    background-color: var(--secondary-background-color);
     border-radius: 0;
     outline: none;
     border: none; 
@@ -58,7 +58,7 @@ h2 {
 
 .custom-form-control:focus,
 .custom-form-control:active {
-    background-color: var(--primary-accent-color);
+    background-color: var(--secondary-background-color);
     outline: none;
     border: none; 
 }
@@ -290,7 +290,7 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30
 }
 
 #sort-selector {
-    background-color: var(--primary-accent-color);
+    background-color: var(--secondary-background-color);
 }
 
 .btt-button {
@@ -330,7 +330,7 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30
 
 /* PRODUCT DETAILS PAGE */
 .image-container {
-    border: 5px solid var(--primary-accent-color); 
+    border: 5px solid var(--secondary-background-color); 
 }
 
 
@@ -338,7 +338,7 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30
 
 /* PRODUCT CARDS */
 .card, .card-footer {
-    background-color: var(--primary-accent-color);
+    background-color: var(--secondary-background-color);
     color: var(--secondary-text-color);
 }
 
@@ -348,11 +348,11 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30
 }
 
 .bag-content img {
-    border: 5px solid var(--primary-accent-color);
+    border: 5px solid var(--secondary-background-color);
 }
 
 .quantity-btn {
-    background-color: var(--primary-accent-color);
+    background-color: var(--secondary-background-color);
     color: var(--secondary-text-color);
     border-radius: 0;
 }
@@ -369,7 +369,7 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30
 
 .custom-toast {
     overflow: visible;
-    background-color: var(--primary-accent-color);
+    background-color: var(--secondary-background-color);
     color: var(--secondary-text-color);
 }
 

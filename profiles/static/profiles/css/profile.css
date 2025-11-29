@@ -1,7 +1,7 @@
 /* Profile info section */ 
 #profile-update-form .form-control {
     color: var(--secondary-text-color);
-    background-color: var(--primary-accent-color) !important;
+    background-color: var(--secondary-background-color) !important;
 }
 
 #profile-update-form input::placeholder {
@@ -10,7 +10,7 @@
 
 #id_default_country,
 #id_default_country option:not(:first-child) {
-    background-color: var(--primary-accent-color);
+    background-color: var(--secondary-background-color);
     color: var(--secondary-text-color);
 }
 

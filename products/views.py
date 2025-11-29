@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q, Min, Max
 from django.db.models.functions import Lower
-from .models import Product, Category
+from django.forms import inlineformset_factory
+from .models import Product, ProductVariant, Category
 from .forms import ProductForm, ProductVariantFormSet
 
 
@@ -18,7 +19,7 @@ def all_products(request):
     query = None
     categories = None
     sort = None
-    direction = None 
+    direction = None
 
     if request.GET:
         if 'sort' in request.GET:
@@ -27,7 +28,7 @@ def all_products(request):
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
-                
+
             if sortkey == 'category':
                 sortkey = 'category__name'
 
@@ -101,3 +102,43 @@ def add_product(request):
     }
 
     return render(request, 'products/add_product.html', context)
+
+
+def edit_product(request, product_id):
+    """ Edit a product and its variants in the store """
+    product = get_object_or_404(Product, pk=product_id)
+
+    ProductVariantFormSet = inlineformset_factory(
+        Product,
+        ProductVariant,
+        fields=('size', 'price'),
+        extra=1,
+        can_delete=True
+    )
+
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        formset = ProductVariantFormSet(request.POST, instance=product)
+
+        if form.is_valid() and formset.is_valid():
+            form.save()
+            formset.save()
+            messages.success
+            (request, f"Successfully updated product '{product.name}'")
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error
+            (request, "Failed to update product. Please check the form.")
+    else:
+        form = ProductForm(instance=product)
+        formset = ProductVariantFormSet(instance=product)
+        messages.info(request, f"You are editing '{product.name}'")
+
+    template = 'products/edit_product.html'
+    context = {
+        'form': form,
+        'formset': formset,
+        'product': product,
+    }
+
+    return render(request, template, context)
