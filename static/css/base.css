@@ -340,6 +340,12 @@ max-height: 70%
     border-radius: 0;
 }
 
+.quantity-btn:hover {
+    background-color: #e1d6cf;
+    color: var(--secondary-text-color);
+
+}
+
 .update-link:hover,
 .remove-item:hover {
     cursor: pointer;
@@ -349,8 +355,8 @@ max-height: 70%
 /* -- BOOTSTRAP TOASTS -- */
 .message-container {
     position: fixed;
-    top: 200px;
-    right: 15px;
+    top: 120px;
+    right: 13px;
     z-index: 99999999999;
 }
 
