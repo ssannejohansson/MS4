@@ -26,6 +26,7 @@
     --secondary-font: "Crimson Pro", serif; 
  }
 
+/* Global styles */  
 body {
     height: 100vh;
     max-width: 1920px;
@@ -41,7 +42,7 @@ h2 {
 }
 
 .wrapper {
-    background-color: #14141473;
+    background-color: #141414b3;
 }
 
 .wrapper h2 {
@@ -67,36 +68,14 @@ h2 {
     color: var(--dark-yellow) !important;
 }
 
-.leather-btn {
-    background-color: var(--warm-brown);
-    background-image: linear-gradient(to bottom right, #825F45 30%,#6B4E38);
-    transform: skew(-1deg) rotate(0.2deg);
-    box-shadow: 
-    -2px -2px 7px 0 #8C6547 inset, 2px 2px 7px 0 #5E4632 inset, /* Make the parts outside the seams appear to stand out */
-    1px 1px 5px 0 #4B3626;  /* Shadow */
-    margin: 3px;
-  color: var(--primary-text-color);
-  text-decoration: none;
-  padding: 10px;
-  margin: 5px;
-  outline: 1px dashed #A67C5A;
-  outline-offset: -5px;
-  border-radius: 0;
-  transform: skew(-0.5deg);
-  text-shadow: 0 0 1px rgba(130, 95, 69, 0.8), -1px -1px 0 #4B3626,
-    1px 1px 0 rgba(166, 124, 90, 0.8), 2px 2px 0 rgba(150, 110, 79, 0.8);
+.custom-select {
+    border: none;
 }
 
-/* Overwrites bootstraps default disabled btn */ 
-.btn:disabled {
-    background-color: #ccc5c0;
-    opacity: 100% !important; 
-}
-
-/* Overwrites bootstraps default text-danger class to match color scheme*/ 
-.text-danger {
-    color: var(--red) !important;
-
+.custom-select:focus,
+.custom-select:active {
+    border: none;
+    outline: none; 
 }
 
 .custom-dropdown-menu {
@@ -114,7 +93,41 @@ h2 {
     color: var(--dark-yellow) !important;
 }
 
- /* LOGO */ 
+.leather-btn {
+    background-color: var(--warm-brown);
+    background-image: linear-gradient(to bottom right, #825F45 30%, #6B4E38);
+    transform: skew(-1deg) rotate(0.2deg);
+    box-shadow:
+        -2px -2px 7px 0 #8C6547 inset, 2px 2px 7px 0 #5E4632 inset,
+        /* Make the parts outside the seams appear to stand out */
+        1px 1px 5px 0 #4B3626;
+    /* Shadow */
+    margin: 3px;
+    color: var(--primary-text-color);
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px;
+    outline: 1px dashed #A67C5A;
+    outline-offset: -5px;
+    border-radius: 0;
+    transform: skew(-0.5deg);
+    text-shadow: 0 0 1px rgba(130, 95, 69, 0.8), -1px -1px 0 #4B3626,
+        1px 1px 0 rgba(166, 124, 90, 0.8), 2px 2px 0 rgba(150, 110, 79, 0.8);
+}
+
+/* Overwrites bootstraps default disabled btn */ 
+.btn:disabled {
+    background-color: #ccc5c0;
+    opacity: 100% !important; 
+}
+
+/* Overwrites bootstraps default text-danger class to match color scheme*/ 
+.text-danger {
+    color: var(--red) !important;
+}
+
+/* -- HEADER -- */
+/* Logo */ 
  #logo-text {
     font-family: "Hatolie";
     font-size: 4rem;
@@ -124,44 +137,14 @@ h2 {
     mix-blend-mode: difference;
  }
 
-
-/* NAV */ 
-nav {
-    background-color: var(--nav-background-color);
-    height: 40px; 
-    width: 100%; 
-    margin-bottom: none;
-    font-family: var(--primary-font);
+/* Buttons */
+.head-btns a {
+    color: var(--dark-yellow);
+    text-shadow: -1px -1px 3px rgba(0,0,0,.8), 1px 1px 2px rgba(255,255,255,.45);
+        font-family: var(--secondary-font);
+        font-size: 1.3rem;
+        text-transform: uppercase;
 }
-
-nav a {
-    color: var(--primary-text-color) !important;
-}
-
-nav a:hover {
-    color: var(--dark-yellow) !important;
-}
-
-#main-nav.collapse.show {
-    background-color: var(--nav-background-color);
-}
-
-#main-nav.collapse.show .nav-link {
-    background-color: var(--nav-background-color);
-    color: var(--primary-text-color);
-    width: 100%;
-    padding-left: 15px; 
-    padding-bottom: 15px;
-}
-
-#main-nav.collapse.show .nav-link:hover {
-    color: #ffcc00;
-}
-
-
-
-/* HEADER */
-
 
 #mobile-header {
     height: 45px; 
@@ -171,14 +154,6 @@ nav a:hover {
 #mobile-header i,
 #mobile-header p {
     font-size: 20px;
-}
-
-.head-btns a {
-    color: var(--dark-yellow);
-    text-shadow: -1px -1px 3px rgba(0,0,0,.8), 1px 1px 2px rgba(255,255,255,.45);
-        font-family: var(--secondary-font);
-        font-size: 1.3rem;
-        text-transform: uppercase;
 }
 
 .head-btns-mobile a {
@@ -213,7 +188,7 @@ nav a:hover {
     z-index: 99999;
 }
 
-/* SEARCH BAR */ 
+/* Searchbar */ 
 .head-search {
     position: relative; 
 }
@@ -271,9 +246,6 @@ nav a:hover {
     color: var(--primary-text-color);
 }
 
-
-
-
 /* Custom bootstrap toggler */ 
 .custom-toggler.navbar-toggler {
     border: none;
@@ -284,42 +256,40 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30
     text-shadow: -1px -1px 3px rgba(0,0,0,.8), 1px 1px 2px rgba(255,255,255,.45);
 }
   
-
-#product-sorting, #product-sorting a {
-    color: var(--dark-yellow);
+/* -- NAVIGATION -- */ 
+nav {
+    background-color: var(--nav-background-color);
+    height: 40px; 
+    width: 100%; 
+    margin-bottom: none;
+    font-family: var(--primary-font);
 }
 
-#sort-selector {
-    background-color: var(--secondary-background-color);
+nav a {
+    color: var(--primary-text-color) !important;
 }
 
-.btt-button {
-    font-size: 20px;
-    height: 42px;
-    width: 42px;
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
+nav a:hover {
+    color: var(--dark-yellow) !important;
 }
 
-.btt-link {
-    color: var(--dark-yellow);
-    cursor: pointer;
+#main-nav.collapse.show {
+    background-color: var(--nav-background-color);
 }
 
-.update-link:hover,
-.remove-item:hover {
-    cursor: pointer;
-    text-decoration: none;
+#main-nav.collapse.show .nav-link {
+    background-color: var(--nav-background-color);
+    color: var(--primary-text-color);
+    width: 100%;
+    padding-left: 15px; 
+    padding-bottom: 15px;
 }
 
-.btt-link:hover {
-    text-decoration: none;
-    color: var(--dark-brown);
-    cursor: pointer;
+#main-nav.collapse.show .nav-link:hover {
+    color: #ffcc00;
 }
- 
-/* INDEX */
+
+/* -- INDEX PAGE -- */
 #header-index {
     background-image: url("../images/index-hero.jpg");
     background-size: cover;
@@ -328,21 +298,34 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30
     height: 400px;
 }
 
-/* PRODUCT DETAILS PAGE */
-.image-container {
-    border: 5px solid var(--secondary-background-color); 
+/* -- PRODUCT PAGE -- */ 
+#product-sorting, #product-sorting a {
+    color: var(--dark-yellow);
 }
 
+#sort-selector {
+    background-color: var(--secondary-background-color);
+}
 
-
-
-/* PRODUCT CARDS */
+/* Cards */
 .card, .card-footer {
     background-color: var(--secondary-background-color);
     color: var(--secondary-text-color);
+    border: none; 
+    border-radius: 0;
 }
 
-/* SHOPPING BAG */ 
+.card img {
+    border-radius: 0;    
+}
+
+/* -- PRODUCT DETAILS PAGE -- */
+.image-container img {
+max-height: 70%
+}
+
+
+/* -- SHOPPING BAG -- */ 
 .bag-content table {
     color: var(--primary-text-color);
 }
@@ -357,9 +340,13 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30
     border-radius: 0;
 }
 
+.update-link:hover,
+.remove-item:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
 
-
-/* BOOTSTRAP TOASTS */
+/* -- BOOTSTRAP TOASTS -- */
 .message-container {
     position: fixed;
     top: 200px;
@@ -384,7 +371,7 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30
 }
 
 
-/* Allauth form formatting */ 
+/* -- Allauth form formatting -- */ 
 .allauth-form-inner-content p {
     margin-top: 1.5rem; 
     color: var(--primary-text-color); 

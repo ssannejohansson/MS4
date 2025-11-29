@@ -65,10 +65,12 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
-    """ A view to show individual product details"""
+    product = Product.objects.annotate(
+        min_price=Min('variants__price'),
+        max_price=Max('variants__price')
+    ).get(pk=product_id)
 
-    product = get_object_or_404(Product, pk=product_id)
-    variants = product.variants.all().order_by('size')
+    variants = product.variants.all()
 
     context = {
         'product': product,

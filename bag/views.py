@@ -10,7 +10,7 @@ def view_bag(request):
     return render(request, 'bag/bag.html')
 
 
-def add_to_bag(request, item_id):
+def add_to_bag(request, product_id):
     """ Add a variant to the shopping bag """
 
     variant_id = request.POST.get('variant_id')
@@ -18,7 +18,7 @@ def add_to_bag(request, item_id):
     redirect_url = request.POST.get('redirect_url')
 
     if not variant_id:
-        messages.error(request, "No size/variant selected.")
+        messages.error(request, "No size selected.")
         return redirect(redirect_url)
 
     variant = get_object_or_404(ProductVariant, pk=variant_id)
