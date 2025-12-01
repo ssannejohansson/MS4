@@ -31,7 +31,7 @@ class ProductForm(forms.ModelForm):
 
         # Add Bootstrap 5 classes to all widgets
         for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'form-control border-black rounded-0'
+            field.widget.attrs['class'] = 'custom-form-control rounded-0'
 
 
 class ProductVariantForm(forms.ModelForm):
@@ -47,7 +47,7 @@ class ProductVariantForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         # Add Bootstrap 5 classes to all variant widgets
         for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'form-control border-black rounded-0'
+            field.widget.attrs['class'] = 'custom-form-control rounded-0'
 
 
 # Inline formset to manage multiple variants per product

@@ -126,6 +126,10 @@ h2 {
 }
 
 /* Custom checkbox styling */
+.form-check .form-check-input { 
+    background-color: var(--secondary-background-color);
+    border-radius: 0;
+}
 input[type="checkbox"] {
     appearance: none;
     -webkit-appearance: none;
