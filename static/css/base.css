@@ -125,6 +125,28 @@ h2 {
     color: var(--red) !important;
 }
 
+/* Custom checkbox styling */
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: var(--secondary-background-color);
+    cursor: pointer;
+}
+
+/* Change the background color when checkbox is checked */
+input[type="checkbox"]:checked {
+    background-color: var(--dark-yellow);
+    border: 1px solid var(--dark-yellow-hover);
+}
+
+input[type="checkbox"]:focus,
+input[type="checkbox"]:active {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
 /* -- HEADER -- */
 /* Logo */ 
  #logo-text {
@@ -430,6 +452,29 @@ max-height: 70%
     color: var(--primary-text-color);
 }
 
+.allauth-form-inner-content .form-control {
+        background-color: var(--secondary-background-color);
+    border-radius: 0;
+    outline: none;
+    border: none; 
+    color: var(--secondary-text-color);
+}
+
+.allauth-form-inner-content .form-control:focus,
+.allauth-form-inner-content .form-control:active {
+    background-color: var(--secondary-background-color);
+    outline: none;
+    border: none; 
+    box-shadow: none;
+}
+
+.form-text li {
+    color: var(--dark-yellow)
+}
+
+#login-btn a {
+    color: var(--primary-text-color);
+}
 
 
 /* Media query: tablet and larger (768px and up) */
