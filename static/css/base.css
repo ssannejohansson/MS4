@@ -330,6 +330,10 @@ text-shadow: 3px 2px 7px rgba(44,46,36,0.71);
 max-height: 70%
 }
 
+/* -- EDIT/ADD PRODUCT PAGES -- */
+#preview-img {
+    border: 2px solid var(--secondary-background-color);
+}
 
 /* -- SHOPPING BAG -- */ 
 .bag-content table {
