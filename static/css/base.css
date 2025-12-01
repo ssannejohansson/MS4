@@ -114,6 +114,13 @@ h2 {
         1px 1px 0 rgba(166, 124, 90, 0.8), 2px 2px 0 rgba(150, 110, 79, 0.8);
 }
 
+.leather-btn:hover,
+.leather-btn-index:hover {
+    background-image: linear-gradient(to bottom right, #8c664a 30%, #73523c);
+    transition: background-image 0.5s ease;
+}
+
+
 /* Overwrites bootstraps default disabled btn */ 
 .btn:disabled {
     background-color: #ccc5c0;
@@ -326,8 +333,33 @@ nav a:hover {
 #hero-text {
     color: var(--primary-text-color);
     font-family: var(--logo-font);
-    font-size: 5rem;
-text-shadow: 3px 2px 7px rgba(44,46,36,0.71);
+    font-size: 4rem;
+    line-height: 3rem;
+    letter-spacing: 0.3rem;
+text-shadow: -2px 2px 8px rgba(19,20,16,0.88);
+}
+
+.leather-btn-index {
+    width: 200px;
+        background-color: var(--warm-brown);
+    background-image: linear-gradient(to bottom right, #825F45 30%, #6B4E38);
+    transform: skew(-1deg) rotate(0.2deg);
+    box-shadow:
+        -2px -2px 7px 0 #8C6547 inset, 2px 2px 7px 0 #5E4632 inset, /* Make the parts outside the seams appear to stand out */
+        1px 1px 5px 0 #4B3626;   /* Shadow */
+ 
+    margin: 3px;
+    color: var(--primary-text-color);
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px;
+    outline: 1px dashed #A67C5A;
+    outline-offset: -5px;
+    border-radius: 0;
+    transform: skew(-0.5deg);
+    text-shadow: 0 0 1px rgba(130, 95, 69, 0.8), -1px -1px 0 #4B3626,
+        1px 1px 0 rgba(166, 124, 90, 0.8), 2px 2px 0 rgba(150, 110, 79, 0.8);
+
 }
 
 /* -- PRODUCT PAGE -- */ 
@@ -504,6 +536,11 @@ max-height: 70%
 
      #header-index {
          height: 600px;
+     }
+
+     #hero-text {
+        font-size: 8rem;
+        line-height: 7rem;
      }
  }
 
