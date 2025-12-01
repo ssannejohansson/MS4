@@ -14,11 +14,8 @@
 <div class="container-fluid">
     <div class="wrapper">
     <div class="row">
-        <div class="col-12 col-md-6 ps-5">
-            <hr>
-            <h2 class="mb-4">Product Management</h2>
-            <h5 class="text-muted custom-text-muted">Add a Product</h5>
-            <hr>
+        <div class="col-12 col-md-6 ps-5 mt-4 mb-3">
+            <h2 class="mb-4">Product Management | <span class="text-muted custom-text-muted">Add Product</span></h2>
         </div>
     </div>
 
@@ -26,7 +23,7 @@
         <div class="col-12 col-md-6 ps-5">
             <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
-                <h3> Product Details</h3>
+                <h5> Product Details</h5>
                 <!-- Renders the form with crispy forms, but excludes the image field to make it possible to use custom widget -->
                 {% for field in form %}
                 {% if field.name != 'image' %}
@@ -46,10 +43,10 @@
                     {{ form|crispy }}
                 </div>
                 {% endfor %}
+
                 <div class="text-end">
                     <button class="btn leather-btn" type="submit">Add Product</button>
                     <a class="btn leather-btn rounded-0" href="{% url 'products' %}">Cancel</a>
-
                 </div>
             </form>
         </div>

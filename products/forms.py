@@ -55,6 +55,6 @@ ProductVariantFormSet = inlineformset_factory(
     Product,
     ProductVariant,
     form=ProductVariantForm,
-    extra=1,       # Number of empty variant forms to display
+    extra=4,       # Number of empty variant forms to display
     can_delete=True  # Allow removing variants
 )
