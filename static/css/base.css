@@ -347,6 +347,15 @@ text-shadow: 3px 2px 7px rgba(44,46,36,0.71);
     border-radius: 0;    
 }
 
+.deal-badge {
+    background: var(--red);
+    color: var(--primary-text-color);
+    padding: 4px 8px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+
 /* -- PRODUCT DETAILS PAGE -- */
 .image-container img {
 max-height: 70%
