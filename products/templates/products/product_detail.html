@@ -50,6 +50,8 @@
                     </p>
                     {% endif %}
 
+        
+
                     <p class="mt-3">{{ product.description }}</p>
 
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
@@ -91,6 +93,15 @@
                                     </div>
                                 </div>
                             </div>
+
+                            {% if request.user.is_superuser %}
+                            <div class="mt-4 text-uppercase">
+                            <small class="ml-3">
+                                <a href="{% url 'edit_product' product.id %}">Edit product</a> | 
+                                <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete product</a>
+                            </small>
+                        </div>
+                            {% endif %}
 
                             <div class="col-12 mt-4">
                                 <a href="{% url 'products' %}" class="btn leather-btn ms-0">

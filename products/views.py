@@ -90,7 +90,7 @@ def add_product(request):
             formset.instance = product
             formset.save()
             messages.success(request, 'Product successfully added!')
-            return redirect('products')
+            return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error
             (request, 'Failed to upload product. Please check your form.')
@@ -107,7 +107,7 @@ def add_product(request):
 
 
 def edit_product(request, product_id):
-    """ Edit a product and its variants in the store """
+    """Edit a product and its variants from the store"""
     product = get_object_or_404(Product, pk=product_id)
 
     ProductVariantFormSet = inlineformset_factory(
@@ -144,3 +144,11 @@ def edit_product(request, product_id):
     }
 
     return render(request, template, context)
+
+
+def delete_product(request, product_id):
+    """Delete product from the store"""
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    messages.success(request, 'Product successfully deleted.')
+    return redirect(reverse('products'))
