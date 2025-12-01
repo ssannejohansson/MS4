@@ -23,14 +23,3 @@
     max-height: 500px; 
     overflow-y: auto;
 }
-
-.custom-table,
-.custom-table th,
-.custom-table td {
-    background-color: var(--secondary-background-color);
-    color: var(--secondary-text-color);
-}
-
-.custom-table td a {
-    color: var(--muted-sec-text-color);
-}

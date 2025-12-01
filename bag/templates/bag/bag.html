@@ -2,29 +2,20 @@
 {% load static %}
 {% load bag_tools %}
 
-{% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
-</div>
-{% endblock %}
-
 {% block content %}
-<div class="container-fluid mb-2">
-    <div class="wrapper d-flex flex-column align-items-center text-center">
+<main class="container-fluid mb-2">
+    <section class="wrapper d-flex flex-column align-items-center text-center">
         <div class="row">
-            <div class="col">
+            <div class="col mt-4 mb-3">
                 <h2 class="mb-4">Shopping Bag</h2>
             </div>
         </div>
 
         <div class="row">
-            <div class="col">
-
+            <div class="col ps-5 pe-5">
                 {% if bag_items %}
                 <div class="table-responsive bag-content">
-                    <table class="table table-sm table-borderless">
+                    <table class="table bag-table table-sm table-borderless">
                         <thead>
                             <tr>
                                 <th>Product</th>
@@ -40,9 +31,9 @@
                             <!-- IMAGE -->
                             <td class="p-3 w-25">
                                 {% if item.product.image %}
-                                    <img class="img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                <img class="img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                                 {% else %}
-                                    <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="No image available">
+                                <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="No image available">
                                 {% endif %}
                             </td>
 
@@ -66,32 +57,25 @@
 
                             <!-- QUANTITY -->
                             <td class="py-3 w-25">
-                                <form class="update-form" method="POST"
-                                      action="{% url 'adjust_bag' item.item_id %}">
+                                <form class="update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                     {% csrf_token %}
 
                                     <div class="input-group input-group-sm">
 
                                         <!-- Minus -->
-                                        <button class="btn quantity-btn decrement-qty"
-                                            data-item_id="{{ item.item_id }}"
+                                        <button class="btn quantity-btn decrement-qty" data-item_id="{{ item.item_id }}"
                                             id="decrement-qty_{{ item.item_id }}">
                                             <i class="fas fa-minus fa-sm"></i>
                                         </button>
 
                                         <!-- Quantity Input -->
-                                        <input class="form-control qty_input"
-                                            type="number"
-                                            name="quantity"
-                                            value="{{ item.quantity }}"
-                                            min="1"
-                                            max="99"
-                                            data-item_id="{{ item.item_id }}"
-                                            id="id_qty_{{ item.item_id }}">
+                                        <input class="form-control qty_input" type="number" name="quantity"
+                                            value="{{ item.quantity }}" min="1" max="99"
+                                            data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}"
+                                            aria-label="Quantity for {{ item.variant.product.name }}">
 
                                         <!-- Plus -->
-                                        <button class="btn quantity-btn increment-qty"
-                                            data-item_id="{{ item.item_id }}"
+                                        <button class="btn quantity-btn increment-qty" data-item_id="{{ item.item_id }}"
                                             id="increment-qty_{{ item.item_id }}">
                                             <i class="fas fa-plus fa-sm"></i>
                                         </button>
@@ -103,9 +87,8 @@
                                     <small>Update</small>
                                 </a>
 
-                                <a class="remove-item text-danger float-end"
-                                   id="remove_{{ item.item_id }}">
-                                   <small>Remove</small>
+                                <a class="remove-item text-danger float-end" id="remove_{{ item.item_id }}">
+                                    <small>Remove</small>
                                 </a>
                             </td>
 
@@ -127,7 +110,8 @@
 
                                 {% if free_delivery_delta > 0 %}
                                 <p class="mb-1 text-danger">
-                                    Spend <strong>${{ free_delivery_delta|floatformat:2 }}</strong> more to get free delivery!
+                                    Spend <strong>${{ free_delivery_delta|floatformat:2 }}</strong> more to get free
+                                    delivery!
                                 </p>
                                 {% endif %}
                             </td>
@@ -158,8 +142,8 @@
                 {% endif %}
             </div>
         </div>
-    </div>
-</div>
+    </section>
+</main>
 {% endblock %}
 
 {% block postloadjs %}
@@ -167,30 +151,31 @@
 {% include 'products/includes/quantity_input_script.html' %}
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
 
-    // Submit update form
-    document.querySelectorAll('.update-link').forEach(link => {
-        link.addEventListener('click', () => {
-            link.closest('td').querySelector('.update-form').submit();
+        // Submit update form
+        document.querySelectorAll('.update-link').forEach(link => {
+            link.addEventListener('click', () => {
+                link.closest('td').querySelector('.update-form').submit();
+            });
         });
-    });
 
-    // Remove item
-    document.querySelectorAll('.remove-item').forEach(link => {
-        link.addEventListener('click', () => {
-            const itemId = link.id.replace("remove_", "");
-            const csrfToken = "{{ csrf_token }}";
+        // Remove item
+        document.querySelectorAll('.remove-item').forEach(link => {
+            link.addEventListener('click', () => {
+                const itemId = link.id.replace("remove_", "");
+                const csrfToken = "{{ csrf_token }}";
 
-            fetch(`/bag/remove/${itemId}/`, {
-                method: "POST",
-                headers: { "X-CSRFToken": csrfToken }
-            }).then(response => {
-                if (response.ok) location.reload();
+                fetch(`/bag/remove/${itemId}/`, {
+                    method: "POST",
+                    headers: {
+                        "X-CSRFToken": csrfToken
+                    }
+                }).then(response => {
+                    if (response.ok) location.reload();
+                });
             });
         });
     });
-
-});
 </script>
 {% endblock %}

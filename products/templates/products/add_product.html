@@ -1,18 +1,9 @@
 {% extends "base.html" %}
-{% load static %}
-{% load crispy_forms_tags %}
-
-{% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
-</div>
-{% endblock %}
+{% load static crispy_forms_tags %}
 
 {% block content %}
-<div class="container-fluid">
-    <div class="wrapper">
+<main class="container-fluid">
+    <section class="wrapper">
     <div class="row">
         <div class="col-12 col-md-6 ps-5 mt-4 mb-3">
             <h2 class="mb-4">Product Management | <span class="text-muted custom-text-muted">Add Product</span></h2>
@@ -51,8 +42,8 @@
             </form>
         </div>
     </div>
-</div>
-</div>
+</section>
+</main>
 {% endblock %}
 
 {% block postloadjs %}

@@ -1,18 +1,8 @@
 {% extends "base.html" %}
-{% load static %}
-{% load bag_tools %}
-{% load crispy_forms_tags %}
+{% load static bag_tools crispy_forms_tags %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
-{% endblock %}
-
-{% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
-</div>
 {% endblock %}
 
 {% block content %}
