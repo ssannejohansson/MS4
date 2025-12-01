@@ -3,56 +3,75 @@
 {% load crispy_forms_tags %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="wrapper"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <hr>
-                <h2 class="mb-4">Product Management</h2>
-                <h5 class="text-muted custom-text-muted">Edit Product</h5>
-                <hr>
-            </div>
-        </div>
+<div class="container-fluid">
+    <div class="wrapper">
 
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <h3> Product Details</h3>
-                          <!-- Renders the form with crispy forms, but excludes the image field to make it possible to use custom widget -->
-        {% for field in form %}
-            {% if field.name != 'image' %}
-                {{ field|as_crispy_field }}
-            {% endif %}
-        {% endfor %}
-
-       <!-- Renders the image field manually so the custom widget is used -->
-        <div class="mb-3">
-            {{ form.image }}
-        </div>
-                    <hr>
-                    <h3> Product Variants</h3>
-                    {{ formset.management_form}}
-                    {% for form in formset %}
-                        <div class="variant-form">
-                            {{ form|crispy }}
-                        </div>
-                    {% endfor %}
-                    <div class="text-end">
-                        <button class="btn leather-btn" type="submit">Update Product</button>
-                        <a class="btn leather-btn rounded-0" href="{% url 'products' %}">Cancel</a>
-                        
-                    </div>
-                </form>
-            </div>            
+    <div class="row">
+        <div class="col-12 col-md-6 ps-5">
+            <hr>
+            <h2 class="mb-4">Product Management</h2>
+            <h5 class="text-muted custom-text-muted">Edit Product</h5>
+            <hr>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-12 col-md-6 ps-5">
+            <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2"
+                enctype="multipart/form-data">
+                {% csrf_token %}
+                <h3> Product Details</h3>
+                <!-- Renders the form with crispy forms, but excludes the image field to make it possible to use custom widget -->
+                {% for field in form %}
+                {% if field.name != 'image' %}
+                {{ field|as_crispy_field }}
+                {% endif %}
+                {% endfor %}
+
+                <!-- Renders the image field manually so the custom widget is used -->
+                <div class="mb-3">
+                    {{ form.image }}
+                </div>
+                <hr>
+                <h3> Product Variants</h3>
+                {{ formset.management_form}}
+                {% for form in formset %}
+                <div class="variant-form">
+                    {{ form|crispy }}
+                </div>
+                {% endfor %}
+                <div class="text-end">
+                    <button class="btn leather-btn" type="submit">Update Product</button>
+                    <a class="btn leather-btn rounded-0" href="{% url 'products' %}">Cancel</a>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+
+<script>
+const fileInput = document.querySelector('input[type="file"][name="image"]');
+const filenameDisplay = document.getElementById('filename');
+
+if (fileInput) {
+    fileInput.addEventListener('change', function() {
+        filenameDisplay.textContent = fileInput.files.length ? fileInput.files[0].name : '';
+    });
+}
+</script>
+
 {% endblock %}

@@ -12,7 +12,7 @@
 
             {% if not widget.is_required %}
                 <div class="form-check mt-2">
-                    <input type="checkbox" class="form-check-input" name="{{ widget.clear_checkbox_name }}" id="{{ widget.clear_checkbox_id }}">
+                    <input type="checkbox" class="form-check-input shadow-none rounded-0" name="{{ widget.name }}-clear" id="{{ widget.clear_checkbox_id }}">
                     <label class="form-check-label text-danger" for="{{ widget.clear_checkbox_id }}">
                         {{ widget.clear_checkbox_label }}
                     </label>

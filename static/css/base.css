@@ -335,6 +335,22 @@ max-height: 70%
     border: 2px solid var(--secondary-background-color);
 }
 
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
 /* -- SHOPPING BAG -- */ 
 .bag-content table {
     color: var(--primary-text-color);
