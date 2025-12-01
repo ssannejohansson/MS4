@@ -10,7 +10,7 @@
     --primary-background-color: #2c2e24;
     --secondary-background-color: #F1E9E4;
     --body-background-color: #080a05;
-    --nav-background-color: #141414;
+    --nav-background-color: #0b0a10;
     --primary-text-color: #F1E9E4;
     --ptc-h: #ddd1c9; /* Primary text color :hover */
     --secondary-text-color: #232120;
@@ -98,10 +98,9 @@ h2 {
     background-image: linear-gradient(to bottom right, #825F45 30%, #6B4E38);
     transform: skew(-1deg) rotate(0.2deg);
     box-shadow:
-        -2px -2px 7px 0 #8C6547 inset, 2px 2px 7px 0 #5E4632 inset,
-        /* Make the parts outside the seams appear to stand out */
-        1px 1px 5px 0 #4B3626;
-    /* Shadow */
+        -2px -2px 7px 0 #8C6547 inset, 2px 2px 7px 0 #5E4632 inset, /* Make the parts outside the seams appear to stand out */
+        1px 1px 5px 0 #4B3626;   /* Shadow */
+ 
     margin: 3px;
     color: var(--primary-text-color);
     text-decoration: none;
@@ -129,7 +128,7 @@ h2 {
 /* -- HEADER -- */
 /* Logo */ 
  #logo-text {
-    font-family: "Hatolie";
+    font-family: var(--logo-font);
     font-size: 4rem;
     letter-spacing: 0.3rem;
     color: var(--yellow);
@@ -291,11 +290,18 @@ nav a:hover {
 
 /* -- INDEX PAGE -- */
 #header-index {
-    background-image: url("../images/index-hero.jpg");
+    background-image: url("../images/index-hero-2.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 400px;
+}
+
+#hero-text {
+    color: var(--primary-text-color);
+    font-family: var(--logo-font);
+    font-size: 5rem;
+text-shadow: 3px 2px 7px rgba(44,46,36,0.71);
 }
 
 /* -- PRODUCT PAGE -- */ 

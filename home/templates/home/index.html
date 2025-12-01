@@ -4,7 +4,19 @@
 
   {% block page_header %}
   <section class="container-fluid">
-    <div id="header-index"></div>
+    <div class="d-flex flex-column align-items-center justify-content-center" id="header-index">
+
+            <div class="">
+                <h1 id="hero-text">
+                    Timeless Posters for Homes with Souls
+                </h1>
+                </div>
+                <div>
+                  <a href="{% url 'products' %}" class="btn leather-btn py-3">Shop Now</a>
+                </div>
+            </div>
+      
+
 </section>
 
 {% endblock %}
@@ -13,5 +25,4 @@
 
 
 {% block content %}
-
 {% endblock %}
