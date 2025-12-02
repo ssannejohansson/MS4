@@ -32,7 +32,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
-    'the-poster-vault-253ad204a25e.herokuapp.com'
+    'the-poster-vault-89343956ce2e.herokuapp.com',
 ]
 
 
