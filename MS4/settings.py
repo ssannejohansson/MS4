@@ -191,28 +191,21 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
-
 USE_AWS = os.getenv("USE_AWS", "False").lower() == "true"
 
 if USE_AWS:
-    # Bucket & credentials
     AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
     AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
     AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
-    AWS_S3_REGION_NAME = "eu-north-1" 
+    AWS_S3_REGION_NAME = os.environ.get("AWS_S3_REGION_NAME")
     AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+    AWS_DEFAULT_ACL = 'public-read'
 
-    # Folders inside bucket
-    STATICFILES_LOCATION = "static"
-    MEDIAFILES_LOCATION = "media"
-
-    # Use custom storage backends
     STATICFILES_STORAGE = "MS4.custom_storages.StaticStorage"
     DEFAULT_FILE_STORAGE = "MS4.custom_storages.MediaStorage"
 
-    # URLs
-    STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/"
-    MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/"
+    STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/"
+    MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/media/"
 else:
     STATIC_URL = "/static/"
     STATIC_ROOT = BASE_DIR / "staticfiles"

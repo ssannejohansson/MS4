@@ -1,13 +1,11 @@
 import os
-
-# Load env.py so the variables exist
 if os.path.isfile("env.py"):
     import env
 
 import boto3
 
 bucket_name = os.environ.get("AWS_STORAGE_BUCKET_NAME")
-print("Bucket name:", bucket_name)
+print("Bucket name:", bucket_name)  # must print 'sjcibucket6942'
 
 s3 = boto3.client(
     "s3",
