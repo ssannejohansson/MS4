@@ -1,7 +1,3 @@
-.wrapper h2,
-.wrapper p {
-    color: var(--primary-text-color) !important;
-}
 
 #loading-overlay {
 	position: fixed;
@@ -47,7 +43,10 @@ select option[value=""] {
     color: var(--muted-sec-text-color) !important;
 }
 
-
+#order-summary p, 
+#order-summary strong {
+    color: var(--primary-text-color);
+}
 
 .order-conf-wrapper {
     background-color: var(--secondary-background-color);
