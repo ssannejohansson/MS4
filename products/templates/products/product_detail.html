@@ -92,7 +92,7 @@
 
                             {% if request.user.is_superuser %}
                             <div class="mt-4 text-uppercase">
-                                <small class="ms-3">
+                                <small>
                                     <a href="{% url 'edit_product' product.id %}">Edit product</a> |
                                     <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete
                                         product</a>

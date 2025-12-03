@@ -44,6 +44,7 @@
 
  .wrapper {
      background-color: #141414b3;
+     padding-bottom: 30px;
  }
 
  .wrapper h2 {
@@ -355,7 +356,7 @@
  #hero-text {
      color: var(--primary-text-color);
      font-family: var(--logo-font);
-     font-size: 4rem;
+     font-size: 3.5rem;
      line-height: 3rem;
      letter-spacing: 0.3rem;
      text-shadow: -2px 2px 8px rgba(19, 20, 16, 0.88);
@@ -465,10 +466,16 @@
      color: var(--secondary-text-color);
  }
 
- .update-link:hover,
- .remove-item:hover {
+ .update-link,
+ .remove-item {
      cursor: pointer;
      text-decoration: none;
+ }
+
+.update-link:hover,
+ .remove-item:hover {
+     cursor: pointer;
+     font-weight: bold;
  }
 
  /* -- BOOTSTRAP TOASTS -- */
@@ -549,7 +556,12 @@
 
 
  /* Media query: tablet and larger (768px and up) */
- @media screen and (min-width: 768px) {}
+ @media screen and (min-width: 768px) {
+    #hero-text {
+        font-size: 5rem;
+        line-height: 4rem;
+    }
+ }
 
  /* Media query: laptop and larger (992px and up) */
  @media screen and (min-width: 992px) {

@@ -1,8 +1,8 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import HttpResponse
 from django.contrib import messages
 
 from products.models import ProductVariant
-from products.models import Product
 
 
 def view_bag(request):
@@ -34,7 +34,8 @@ def add_to_bag(request, product_id):
 
     messages.success(
         request,
-        f"Added {variant.product.name} ({variant.size}) × {quantity} to your bag!"
+        (f"Added {variant.product.name} ({variant.size}) x {quantity}"
+            "to your bag!")
     )
 
     return redirect(redirect_url)
@@ -72,6 +73,7 @@ def remove_from_bag(request, variant_id):
         variant = get_object_or_404(ProductVariant, pk=variant_id)
         bag = request.session.get('bag', {})
 
+        variant_id = str(variant_id)
         bag.pop(variant_id, None)
         request.session['bag'] = bag
 

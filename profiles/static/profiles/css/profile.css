@@ -18,6 +18,11 @@
     color: var(--muted-sec-text-color);
 }
 
+.profile-form-input {
+    outline: none; 
+    border: none;
+}
+
 /* Order history section */
 .order-history {
     max-height: 500px; 
