@@ -104,6 +104,7 @@
  }
 
  .leather-btn {
+    width: fit-content;
      background-color: var(--warm-brown);
      background-image: linear-gradient(to bottom right, #825F45 30%, #6B4E38);
      transform: skew(-1deg) rotate(0.2deg);
@@ -231,9 +232,6 @@
     font-size: 0.7rem;
     padding: 1px 5px;
  }
-
-
-
  .bag-count-badge {
      position: absolute;
      top: -10px;
@@ -275,13 +273,6 @@
      text-shadow: -1px -1px 3px rgba(0, 0, 0, .8), 1px 1px 2px rgba(255, 255, 255, .45);
      transition: all 0.5s;
  }
-
- .head-search input:focus {
-     width: 260px;
-     border-bottom: 2px solid var(--dark-yellow);
-     padding-left: 60px;
- }
-
 
  .head-search-input::placeholder {
      color: var(--dark-yellow);
@@ -478,6 +469,21 @@
  /* -- EDIT/ADD PRODUCT PAGES -- */
  #preview-img {
      border: 2px solid var(--secondary-background-color);
+
+ }
+ .variant-form input {
+    background-color: var(--secondary-background-color);
+     border-radius: 0;
+     outline: none;
+     border: none;
+     color: var(--secondary-text-color);
+ }
+
+.variant-form input:focus,
+ .variant-form input:active {
+     background-color: var(--secondary-background-color);
+     outline: none;
+     border: none;
  }
 
 

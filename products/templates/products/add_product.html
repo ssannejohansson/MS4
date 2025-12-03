@@ -14,7 +14,7 @@
         <div class="col-12 col-md-6 ps-5">
             <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
-                <h5> Product Details</h5>
+                <h3> Product Details</h3>
                 <!-- Renders the form with crispy forms, but excludes the image field to make it possible to use custom widget -->
                 {% for field in form %}
                 {% if field.name != 'image' %}
