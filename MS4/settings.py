@@ -190,10 +190,10 @@ if not DEBUG:
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
-    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
 
-    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
 else:
     STATIC_URL = '/static/'
@@ -203,7 +203,8 @@ else:
         BASE_DIR / "static",
     ]
 
-STATIC_ROOT = BASE_DIR / "staticfiles"  
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
 
 # Stripe 
 FREE_DELIVERY_THRESHOLD = 50
