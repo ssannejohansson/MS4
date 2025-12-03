@@ -222,3 +222,6 @@ DEFAULT_FROM_EMAIL = 'thepostervault@example.com'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+if os.environ.get('HEROKU'):
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
