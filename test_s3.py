@@ -1,18 +1,27 @@
 import os
-if os.path.isfile("env.py"):
-    import env
+import django
 
-import boto3
+# Set up Django environment
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'MS4.settings')
+django.setup()
 
-bucket_name = os.environ.get("AWS_STORAGE_BUCKET_NAME")
-print("Bucket name:", bucket_name)  # must print 'sjcibucket6942'
+from django.core.files.storage import default_storage
+from django.core.files.base import ContentFile
 
-s3 = boto3.client(
-    "s3",
-    aws_access_key_id=os.environ.get("AWS_ACCESS_KEY_ID"),
-    aws_secret_access_key=os.environ.get("AWS_SECRET_ACCESS_KEY"),
-    region_name="eu-north-1"
-)
+def test_s3_upload():
+    print("Default storage:", default_storage.__class__)
 
-response = s3.list_objects_v2(Bucket=bucket_name)
-print(response)
+    # Name of the test file
+    test_filename = 'heroku_test_file.txt'
+    test_content = b'Hello from Heroku!'
+
+    # Save file to default storage
+    file_path = default_storage.save(test_filename, ContentFile(test_content))
+    print("Saved file path:", file_path)
+
+    # Get the file URL
+    file_url = default_storage.url(test_filename)
+    print("File URL:", file_url)
+
+if __name__ == "__main__":
+    test_s3_upload()
