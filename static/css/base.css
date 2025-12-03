@@ -43,7 +43,7 @@
 
  h5 {
     font-family: var(--logo-font);
-     font-size: 4rem;
+     font-size: 3rem;
      letter-spacing: 0.3rem;
      color: var(--dark-yellow);
      text-shadow: -1px -1px 3px rgba(0, 0, 0, .8), 1px 1px 2px rgba(255, 255, 255, .45);
@@ -174,7 +174,7 @@
 
  /* -- HEADER -- */
  /* Logo */
- .logo-text {
+ #logo-text {
      font-family: var(--logo-font);
      font-size: 4rem;
      letter-spacing: 0.3rem;
@@ -216,14 +216,23 @@
      color: var(--dark-yellow-hover);
  }
 
- .custom-badge {
-     background-color: var(--dark-brown);
- }
-
  .bag-icon-wrapper {
      position: relative;
      display: inline-block;
+     padding-right: 12px; 
  }
+
+ .custom-badge {
+    position: absolute; 
+    top: 12px;
+    right: 4px; 
+     background-color: var(--secondary-background-color) !important;
+     color: var(--secondary-text-color) !important; 
+    font-size: 0.7rem;
+    padding: 1px 5px;
+ }
+
+
 
  .bag-count-badge {
      position: absolute;
@@ -598,6 +607,7 @@
 
  /* Media query: tablet and larger (768px and up) */
  @media screen and (min-width: 768px) {
+
     #hero-text {
         font-size: 5rem;
         line-height: 4rem;
@@ -606,10 +616,14 @@
 
  /* Media query: laptop and larger (992px and up) */
  @media screen and (min-width: 992px) {
-     .logo-text {
+     #logo-text {
          font-size: 6rem;
          line-height: 4.5rem;
      }
+
+     h5 {
+    font-size: 4rem; 
+}
 
      #header-index {
          height: 600px;
