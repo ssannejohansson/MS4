@@ -33,6 +33,9 @@ def all_products(request):
             if sortkey == 'category':
                 sortkey = 'category__name'
 
+            if sortkey == 'price':
+                sortkey = 'min_price'
+
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
