@@ -150,32 +150,6 @@
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
+<script src="{% static 'bag/js/update_remove.js' %}"></script>
 
-        // Submit update form
-        document.querySelectorAll('.update-link').forEach(link => {
-            link.addEventListener('click', () => {
-                link.closest('td').querySelector('.update-form').submit();
-            });
-        });
-
-        // Remove item
-        document.querySelectorAll('.remove-item').forEach(link => {
-            link.addEventListener('click', () => {
-                const itemId = link.id.replace("remove_", "");
-                const csrfToken = "{{ csrf_token }}";
-
-                fetch(`/bag/remove/${itemId}/`, {
-                    method: "POST",
-                    headers: {
-                        "X-CSRFToken": csrfToken
-                    }
-                }).then(response => {
-                    if (response.ok) location.reload();
-                });
-            });
-        });
-    });
-</script>
 {% endblock %}

@@ -15,7 +15,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% endblock %}
 
-    {% block extra_meta %}{% endblock %}
+    {% block extra_meta %}
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    {% endblock %}
 
     {% block corecss %}
     <!-- Bootstrap 5 CSS -->
