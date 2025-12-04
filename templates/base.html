@@ -2,16 +2,16 @@
 
 <!doctype html>
 <html lang="en">
-<head>
 
+<head>
     <link rel="apple-touch-icon" sizes="180x180" href="/static/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon-16x16.png">
 
     {% block meta %}
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% endblock %}
 
@@ -21,16 +21,15 @@
 
     {% block corecss %}
     <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-          crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200..900&family=Lato:wght@100;300;400;700;900&display=swap"
-          rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200..900&family=Lato:wght@100;300;400;700;900&display=swap"
+        rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
@@ -43,10 +42,10 @@
     <script src="https://kit.fontawesome.com/ad5c36405b.js" crossorigin="anonymous"></script>
 
     <!-- Bootstrap JS + Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
-            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" crossorigin="anonymous">
+    </script>
 
     <!-- Stripe -->
     <script src="https://js.stripe.com/v3/"></script>
@@ -61,113 +60,127 @@
 
 <body class="d-flex flex-column align-items-center">
 
-<header class="container-fluid">
+    <header class="container-fluid">
 
-    <!-- Desktop top nav -->
-    <div id="topnav" class="row pt-lg-4 d-none d-lg-flex align-items-center">
+        <!-- Desktop top nav -->
+        <div id="topnav" class="row pt-lg-4 d-none d-lg-flex align-items-center">
 
-        <!-- Search Bar -->
-        <div class="col-3 my-auto text-lg-start head-btns">
-            <form method="GET" action="{% url 'products' %}">
-                <div class="head-search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" class="head-search-input" name="q" placeholder="search..." />
-                </div>
-            </form>
-        </div>
+            <!-- Search Bar -->
+            <div class="col-3 my-auto text-lg-start head-btns">
+                <form method="GET" action="{% url 'products' %}">
+                    <div class="head-search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" class="head-search-input" name="q" placeholder="search..." />
+                    </div>
+                </form>
+            </div>
 
-        <!-- Logo -->
-        <div class="row col-6 justify-content-center text-center mt-3 mb-3" id="logo">
-            <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                <h1 id="logo-text">The Poster Vault</h1>
-            </a>
-        </div>
+            <!-- Logo -->
+            <div class="row col-6 justify-content-center text-center mt-3 mb-3" id="logo">
+                <a href="{% url 'home' %}" class="nav-link main-logo-link">
+                    <h1 id="logo-text">The Poster Vault</h1>
+                </a>
+            </div>
 
-        <!-- User / Bag -->
-        <div class="col-3 my-auto text-center text-lg-end head-btns">
+            <!-- User / Bag -->
+            <div class="col-3 my-auto text-center text-lg-end head-btns">
 
-            <ul class="list-inline list-unstyled my-0">
+                <ul class="list-inline list-unstyled my-0">
 
-                <!-- Account Dropdown -->
-                <li class="list-inline-item dropdown">
-                    <a class="nav-link" href="#" id="user-options"
-                       data-bs-toggle="dropdown" aria-expanded="false">
-                        <div class="text-center me-5">
-                            <div><i class="fas fa-user fa-lg"></i></div>
-                            <p class="my-0">My Account</p>
-                        </div>
-                    </a>
+                    <!-- Account Dropdown -->
+                    <li class="list-inline-item dropdown">
+                        <a class="nav-link" href="#" id="user-options" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="text-center me-5">
+                                <div><i class="fas fa-user fa-lg"></i></div>
+                                <p class="my-0">My Account</p>
+                            </div>
+                        </a>
 
-                    <ul class="dropdown-menu custom-dropdown-menu border-0" aria-labelledby="user-options">
-                        {% if request.user.is_authenticated %}
+                        <ul class="dropdown-menu custom-dropdown-menu border-0" aria-labelledby="user-options">
+                            {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
-                                <li><a class="dropdown-item custom-dropdown-item" href="{% url 'add_product' %}">Product Management</a></li>
+                            <li><a class="dropdown-item custom-dropdown-item" href="{% url 'add_product' %}">Product
+                                    Management</a></li>
                             {% endif %}
-                            <li><a class="dropdown-item custom-dropdown-item" href="{% url 'profile' %}">My Profile</a></li>
-                            <li><a class="dropdown-item custom-dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
-                        {% else %}
-                            <li><a class="dropdown-item custom-dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
-                            <li><a class="dropdown-item custom-dropdown-item" href="{% url 'account_login' %}">Login</a></li>
-                        {% endif %}
-                    </ul>
-                </li>
+                            <li><a class="dropdown-item custom-dropdown-item" href="{% url 'profile' %}">My Profile</a>
+                            </li>
+                            <li><a class="dropdown-item custom-dropdown-item"
+                                    href="{% url 'account_logout' %}">Logout</a></li>
+                            {% else %}
+                            <li><a class="dropdown-item custom-dropdown-item"
+                                    href="{% url 'account_signup' %}">Register</a></li>
+                            <li><a class="dropdown-item custom-dropdown-item" href="{% url 'account_login' %}">Login</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </li>
 
-                <!-- Bag -->
-                <li class="list-inline-item">
-                    <a class="nav-link" href="{% url 'view_bag' %}">
-                        <div class="text-center">
-                            <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                            <p class="my-0">
-                                {% if grand_total %}
+                    <!-- Bag -->
+                    <li class="list-inline-item">
+                        <a class="nav-link" href="{% url 'view_bag' %}">
+                            <div class="text-center">
+                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                <p class="my-0">
+                                    {% if grand_total %}
                                     ${{ grand_total|floatformat:2 }}
-                                {% else %}
+                                    {% else %}
                                     $0.00
-                                {% endif %}
-                            </p>
-                        </div>
-                    </a>
-                </li>
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </a>
+                    </li>
 
-            </ul>
+                </ul>
 
+            </div>
         </div>
-    </div>
 
-    <!-- MOBILE TOP HEADER -->
-    {% include 'includes/mobile-top-header.html' %}
+        <!-- MOBILE TOP HEADER -->
+        {% include 'includes/mobile-top-header.html' %}
 
-    <!-- MAIN NAV -->
-    <div class="navbar navbar-expand-lg navbar-dark w-100 p-0">
-        {% include 'includes/main-nav.html' %}
-    </div>
+        <!-- MAIN NAV -->
+        <div class="navbar navbar-expand-lg navbar-dark w-100 p-0">
+            {% include 'includes/main-nav.html' %}
+        </div>
 
-</header>
+    </header>
 
-
-<!-- TOAST MESSAGES -->
-{% if messages %}
-<div class="message-container">
-    {% for message in messages %}
+    <!-- TOAST MESSAGES -->
+    {% if messages %}
+    <div class="message-container">
+        {% for message in messages %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        {% include 'includes/toasts/toast_error.html' %}
+        {% elif level == 30 %}
+        {% include 'includes/toasts/toast_warning.html' %}
+        {% elif level == 25 %}
         {% include 'includes/toasts/toast_success.html' %}
-    {% endfor %}
-</div>
-{% endif %}
+        {% else %}
+        {% include 'includes/toasts/toast_info.html' %}
+        {% endif %}
+        {% endwith %}
+        {% endfor %}
+    </div>
+    {% endif %}
 
-{% block page_header %}{% endblock %}
-{% block content %}{% endblock %}
+    {% block page_header %}{% endblock %}
+    {% block content %}{% endblock %}
 
 
-{% include 'includes/footer.html' %}
+    {% include 'includes/footer.html' %}
 
-{% block postloadjs %}
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll('.toast').forEach(toastEl => {
-        new bootstrap.Toast(toastEl).show();
-    });
-});
-</script>
-{% endblock %}
+    {% block postloadjs %}
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll('.toast').forEach(toastEl => {
+                new bootstrap.Toast(toastEl).show();
+            });
+        });
+    </script>
+    {% endblock %}
 
 </body>
+
 </html>

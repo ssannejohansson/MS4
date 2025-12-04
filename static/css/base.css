@@ -12,7 +12,8 @@
      --body-background-color: #080a05;
      --nav-background-color: #0b0a10;
      --primary-text-color: #F1E9E4;
-     --ptc-h: #ddd1c9; /* Primary text color :hover */
+     --ptc-h: #ddd1c9;
+     /* Primary text color :hover */
      --secondary-text-color: #232120;
      --muted-sec-text-color: #81726c;
      --warm-brown: #825F45;
@@ -30,6 +31,8 @@
  body {
      height: 100vh;
      max-width: 1920px;
+     margin-left: auto;
+     margin-right: auto;
      background-color: var(--body-background-color);
      background-image: url("../images/leather.png");
      font-family: var(--primary-font);
@@ -42,9 +45,10 @@
  }
 
  h5 {
-    font-family: var(--logo-font);
+     font-family: var(--logo-font);
      font-size: 3rem;
      letter-spacing: 0.3rem;
+     line-height: 3.2rem;
      color: var(--dark-yellow);
      text-shadow: -1px -1px 3px rgba(0, 0, 0, .8), 1px 1px 2px rgba(255, 255, 255, .45);
  }
@@ -104,16 +108,13 @@
  }
 
  .leather-btn {
-    width: fit-content;
+     width: fit-content;
      background-color: var(--warm-brown);
      background-image: linear-gradient(to bottom right, #825F45 30%, #6B4E38);
-     transform: skew(-1deg) rotate(0.2deg);
      box-shadow:
          -2px -2px 7px 0 #8C6547 inset, 2px 2px 7px 0 #5E4632 inset,
          /* Make the parts outside the seams appear to stand out */
          1px 1px 5px 0 #4B3626;
-     /* Shadow */
-
      margin: 3px;
      color: var(--primary-text-color);
      text-decoration: none;
@@ -219,18 +220,19 @@
  .bag-icon-wrapper {
      position: relative;
      display: inline-block;
-     padding-right: 12px; 
+     padding-right: 12px;
  }
 
  .custom-badge {
-    position: absolute; 
-    top: 12px;
-    right: 4px; 
+     position: absolute;
+     top: 12px;
+     right: 4px;
      background-color: var(--secondary-background-color) !important;
-     color: var(--secondary-text-color) !important; 
-    font-size: 0.7rem;
-    padding: 1px 5px;
+     color: var(--secondary-text-color) !important;
+     font-size: 0.7rem;
+     padding: 1px 5px;
  }
+
  .bag-count-badge {
      position: absolute;
      top: -10px;
@@ -304,17 +306,17 @@
      text-shadow: -1px -1px 3px rgba(0, 0, 0, .8), 1px 1px 2px rgba(255, 255, 255, .45);
  }
 
-/* Custom table styling */
-.custom-table,
-.custom-table th,
-.custom-table td {
-    background-color: var(--secondary-background-color);
-    color: var(--secondary-text-color);
-}
+ /* Custom table styling */
+ .custom-table,
+ .custom-table th,
+ .custom-table td {
+     background-color: var(--secondary-background-color);
+     color: var(--secondary-text-color);
+ }
 
-.custom-table td a {
-    color: var(--muted-sec-text-color);
-}
+ .custom-table td a {
+     color: var(--muted-sec-text-color);
+ }
 
 
  /* -- NAVIGATION -- */
@@ -350,39 +352,39 @@
      color: #ffcc00;
  }
 
- /* -- FOOTER -- */ 
-#footer h4 {
-    font-family: var(--secondary-font);
-    text-transform: uppercase;
-    color: var(--dark-yellow);
-    text-shadow: -1px -1px 3px rgba(0, 0, 0, .8), 1px 1px 2px rgba(255, 255, 255, .45);
-}
+ /* -- FOOTER -- */
+ #footer h4 {
+     font-family: var(--secondary-font);
+     text-transform: uppercase;
+     color: var(--dark-yellow);
+     text-shadow: -1px -1px 3px rgba(0, 0, 0, .8), 1px 1px 2px rgba(255, 255, 255, .45);
+ }
 
  #footer li a {
-    color: var(--dark-yellow);
-    font-family: var(--primary-font);
-    font-size: 1rem; 
-    text-decoration: none;
-    text-transform: none; 
+     color: var(--dark-yellow);
+     font-family: var(--primary-font);
+     font-size: 1rem;
+     text-decoration: none;
+     text-transform: none;
  }
 
-  #footer li a:hover {
-    color: var(--dark-yellow-hover);
-  }
+ #footer li a:hover {
+     color: var(--dark-yellow-hover);
+ }
 
  #footer i {
-    color: var(--dark-yellow);
-    font-size: 30px; 
+     color: var(--dark-yellow);
+     font-size: 30px;
  }
 
-  #footer i:hover {
-    color: var(--dark-yellow-hover);
+ #footer i:hover {
+     color: var(--dark-yellow-hover);
  }
 
-#footer p {
-    color: var(--dark-yellow);
+ #footer p {
+     color: var(--dark-yellow);
      text-shadow: -1px -1px 3px rgba(0, 0, 0, .8), 1px 1px 2px rgba(255, 255, 255, .45);
-}
+ }
 
  /* -- INDEX PAGE -- */
  #header-index {
@@ -470,15 +472,16 @@
      border: 2px solid var(--secondary-background-color);
 
  }
+
  .variant-form input {
-    background-color: var(--secondary-background-color);
+     background-color: var(--secondary-background-color);
      border-radius: 0;
      outline: none;
      border: none;
      color: var(--secondary-text-color);
  }
 
-.variant-form input:focus,
+ .variant-form input:focus,
  .variant-form input:active {
      background-color: var(--secondary-background-color);
      outline: none;
@@ -502,12 +505,12 @@
  }
 
  /* -- SHOPPING BAG -- */
-.bag-table,
-.bag-table th,
-.bag-table td {
-    background-color: transparent;
-    color: var(--primary-text-color);
-}
+ .bag-table,
+ .bag-table th,
+ .bag-table td {
+     background-color: transparent;
+     color: var(--primary-text-color);
+ }
 
 
  .quantity-btn {
@@ -527,7 +530,7 @@
      text-decoration: none;
  }
 
-.update-link:hover,
+ .update-link:hover,
  .remove-item:hover {
      cursor: pointer;
      font-weight: bold;
@@ -547,8 +550,9 @@
      color: var(--secondary-text-color);
  }
 
- .toast-capper {
-     height: 2px;
+ .toast-header {
+     background-color: var(--secondary-background-color);
+     color: var(--secondary-text-color);
  }
 
  .bag-notification-wrapper {
@@ -613,10 +617,10 @@
  /* Media query: tablet and larger (768px and up) */
  @media screen and (min-width: 768px) {
 
-    #hero-text {
-        font-size: 5rem;
-        line-height: 4rem;
-    }
+     #hero-text {
+         font-size: 5rem;
+         line-height: 4rem;
+     }
  }
 
  /* Media query: laptop and larger (992px and up) */
@@ -627,8 +631,8 @@
      }
 
      h5 {
-    font-size: 4rem; 
-}
+         font-size: 4rem;
+     }
 
      #header-index {
          height: 600px;
@@ -641,4 +645,8 @@
  }
 
  /* Media query: desktop and larger (1200px and up) */
- @media screen and (min-width: 1200px) {}
+ @media screen and (min-width: 1200px) {
+     #header-index {
+         height: 800px;
+     }
+ }
