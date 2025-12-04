@@ -68,7 +68,11 @@ card.addEventListener('change', function (event) {
 });
 
 /**
-NEW DOCSTRING! 
+    * Handles Stripe card submission.
+    * Prevents default form submit, sends checkout data to Django for caching.
+    * Shows loading overlay and disables inputs. 
+    * Confirms payment with Stripe and restores forms on stripe errors or 
+    * submits on success. 
  */
 const form = document.getElementById('payment-form');
 const submitButton = document.getElementById('submit-button');

@@ -12,7 +12,7 @@
                         <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                     </a>
                     {% else %}
-                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="No image available">
+                        <img class="card-img-top img-fluid" src="{% static 'images/noimage.png' %}" alt="No image available">
                     {% endif %}
                 </div>
             </div>

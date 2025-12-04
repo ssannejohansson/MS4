@@ -34,8 +34,10 @@ def add_to_bag(request, product_id):
 
     messages.success(
         request,
-        (f"Added {variant.product.name} ({variant.size}) x {quantity}"
-            "to your bag!")
+        (
+            f"Added {variant.product.name} ({variant.size}) "
+            f" x {quantity} to your bag!"
+        )
     )
 
     return redirect(redirect_url)
