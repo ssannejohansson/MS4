@@ -200,6 +200,9 @@ if os.environ.get('USE_AWS') == 'true':
 
     AWS_DEFAULT_ACL = None
     AWS_QUERYSTRING_AUTH = False
+    AWS_S3_OBJECT_PARAMETERS = {
+        "ACL": "public-read"
+    }
 
     # Static & media storage
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
