@@ -72,7 +72,7 @@
                 <p>Please fill out the form below to complete your order</p>
                 <form action="{% url 'checkout' %}" method="POST" id="payment-form" class="fade-toggle">
                     {% csrf_token %}
-                    
+
                     <fieldset class="px-3 mb-5">
                         <legend class="fieldset-label small w-auto">Details</legend>
                         {{ order_form.full_name | as_crispy_field }}
@@ -97,7 +97,7 @@
                             </label>
                             {% else %}
                             <label class="form-check-label" for="id-save-info">
-                                <a href="{% url 'account_signup' %}">Create an account</a> or 
+                                <a href="{% url 'account_signup' %}">Create an account</a> or
                                 <a href="{% url 'account_login' %}">login</a> to save this information
                             </label>
                             {% endif %}

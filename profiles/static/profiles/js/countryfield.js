@@ -1,3 +1,7 @@
+/**
+ * Updates the text color of the country select field.
+ */
+
 const countrySelect = document.getElementById('id_default_country');
 
 function updateColor() {

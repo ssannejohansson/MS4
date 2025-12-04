@@ -12,7 +12,8 @@
                         <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                     </a>
                     {% else %}
-                        <img class="card-img-top img-fluid" src="{% static 'images/noimage.png' %}" alt="No image available">
+                    <img class="card-img-top img-fluid" src="{% static 'images/noimage.png' %}"
+                        alt="No image available">
                     {% endif %}
                 </div>
             </div>
@@ -52,7 +53,7 @@
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
                         {% if variants %}
-                        <div class="form-row">
+                        <div class="row">
                             <div class="col-12">
                                 <p><strong>Size:</strong></p>
 

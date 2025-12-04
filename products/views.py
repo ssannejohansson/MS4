@@ -10,7 +10,7 @@ from .forms import ProductForm, ProductVariantFormSet
 
 # Create your views here.
 def all_products(request):
-    """ A view to show all products, including sorting and search queries"""
+    """A view to show all products, including sorting and search queries"""
 
     # Annotate each product with min and max price from its variants
     products = Product.objects.all().annotate(
@@ -104,8 +104,9 @@ def add_product(request):
             messages.success(request, 'Product successfully added!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error
-            (request, 'Failed to upload product. Please check your form.')
+            messages.error(request,
+                           'Failed to upload product. Please check your form.')
+
     else:
         form = ProductForm()
         formset = ProductVariantFormSet()

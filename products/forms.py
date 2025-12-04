@@ -5,11 +5,8 @@ from .models import Product, ProductVariant, Category
 
 
 class ProductForm(forms.ModelForm):
-    """
-    Form to add/edit Products.
-    Uses a custom clearable file input for the main product image.
-    """
-
+    """Form to add/edit Products.
+    Uses a custom clearable file input for the main product image."""
     # Use custom widget for the main product image
     image = forms.ImageField(
         label='Image',
@@ -35,10 +32,7 @@ class ProductForm(forms.ModelForm):
 
 
 class ProductVariantForm(forms.ModelForm):
-    """
-    Form for ProductVariant (size + price)
-    """
-
+    """Form for ProductVariant (size + price)"""
     class Meta:
         model = ProductVariant
         fields = ('size', 'price')

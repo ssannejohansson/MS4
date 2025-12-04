@@ -2,30 +2,32 @@
 
 <div class="custom-clearable-file-input">
 
-    {# Show existing file if there is one #}
+    <!-- Show existing file if there is one -->
     {% if widget.value %}
-        <div class="mb-2">
-            <p>Current Image:</p>
-            <a href="{{ widget.value.url }}" target="_blank">
-                <img src="{{ widget.value.url }}" width="96" height="96" id="preview-img">
-            </a>
+    <div class="mb-2">
+        <p>Current Image:</p>
+        <a href="{{ widget.value.url }}" target="_blank">
+            <img src="{{ widget.value.url }}" width="96" height="96" id="preview-img">
+        </a>
 
-            {% if not widget.is_required %}
-                <div class="form-check mt-2">
-                    <input type="checkbox" class="form-check-input shadow-none rounded-0" name="{{ widget.name }}-clear" id="{{ widget.clear_checkbox_id }}">
-                    <label class="form-check-label text-danger" for="{{ widget.clear_checkbox_id }}">
-                        {{ widget.clear_checkbox_label }}
-                    </label>
-                </div>
-            {% endif %}
+        {% if not widget.is_required %}
+        <div class="form-check mt-2">
+            <input type="checkbox" class="form-check-input shadow-none rounded-0" name="{{ widget.name }}-clear"
+                id="{{ widget.clear_checkbox_id }}">
+            <label class="form-check-label text-danger" for="{{ widget.clear_checkbox_id }}">
+                {{ widget.clear_checkbox_label }}
+            </label>
         </div>
+        {% endif %}
+    </div>
     {% endif %}
 
-    {# File input button #}
+    <!-- File input button -->
     <span class="btn leather-btn btn-file m-0">
         Select Image
         <input type="{{ widget.type }}" name="{{ widget.name }}" {% include "django/forms/widgets/attrs.html" %}>
     </span>
 
-    <strong><p class="text-danger" id="filename"></p></strong>
+    <p class="text-danger fw-bold" id="filename"></p>
+
 </div>
