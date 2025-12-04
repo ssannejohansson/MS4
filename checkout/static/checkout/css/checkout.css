@@ -51,3 +51,11 @@ select option[value=""] {
     background-color: var(--secondary-background-color);
     color: var(--secondary-text-color);
 }
+
+#save-info a {
+    color: var(--dark-yellow);
+}
+
+#save info a:hover {
+    color: var(--dark-yellow-hover);
+}

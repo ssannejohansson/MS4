@@ -51,7 +51,7 @@
 
         <!-- Totals -->
         <div class="row">
-            <div class="col">
+            <div class="col" id="toast-btn">
 
                 <p class="mt-3 mb-1 fw-bold">
                     Total{% if free_delivery_delta > 0 %} (Exc. delivery){% endif %}:
@@ -59,7 +59,7 @@
                 </p>
 
                 {% if free_delivery_delta > 0 %}
-                <p class="mb-0 p-2 bg-warning shadow-sm text-black text-center">
+                <p class="mb-0 p-2 bg-warning shadow-sm text-center">
                     Spend <strong>${{ free_delivery_delta }}</strong> more to get free next day delivery!
                 </p>
                 {% endif %}

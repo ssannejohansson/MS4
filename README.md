@@ -29,9 +29,6 @@ Alternatively, open your project in Gitpod and run the server. Once the site is 
 
 source: [MS4 amiresponsive](https://ui.dev/amiresponsive?url=https://the-poster-vault-89343956ce2e.herokuapp.com)
 
-> [!IMPORTANT]  
-> The examples in these templates are strongly influenced by the Code Institute walkthrough project called "Boutique Ado".
-
 ## UX
 
 ### The 5 Planes of UX
