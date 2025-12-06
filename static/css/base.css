@@ -539,6 +539,11 @@
      font-weight: bold;
  }
 
+ #mobile-checkout-btns .leather-btn {
+    width: 163px;
+    font-size: 1rem;
+ } 
+
  /* -- BOOTSTRAP TOASTS -- */
  .message-container {
      position: fixed;

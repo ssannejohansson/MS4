@@ -11,10 +11,44 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col ps-5 pe-5">
+        <div class="row ps-5 pe-5">
+            <div class="col-12">
                 {% if bag_items %}
-                <div class="table-responsive bag-content">
+                <div class="d-block d-md-none">
+                    <div class="row">
+                        <div class="col">
+                            {% include "bag/bag-total.html" %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" id="mobile-checkout-btns">
+                            {% include "bag/checkout-btns.html" %}
+                            <hr>
+                            <h2 class="mt-3 mb-4">Bag contents:</h2>
+                        </div>
+                    </div> {% for item in bag_items %}
+                    <div class="row mt-5">
+                        <div class="col-12 col-sm-6 mb-2">
+                            {% include "bag/product-img.html" %}
+                        </div>
+                        <div class="col-12 col-sm-6 mb-2">
+                            {% include "bag/product-info.html" %}
+                        </div>
+                        <div class="col-12 col-sm-6 order-sm-last">
+                            <p class="my-0">Price Each: ${{ item.variant.price }}</p>
+                            <p><strong>Subtotal: </strong>${{ item.variant.price | calc_subtotal:item.quantity }}</p>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            {% include "bag/quantity-form.html" %}
+                        </div>
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+
+                <div class="table-responsive bag-content d-none d-md-block">
                     <table class="table bag-table table-sm table-borderless">
                         <thead>
                             <tr>
@@ -30,24 +64,12 @@
                         <tr>
                             <!-- IMAGE -->
                             <td class="p-3 w-25">
-                                {% if item.product.image %}
-                                <img class="img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                                {% else %}
-                                <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="No image available">
-                                {% endif %}
+                                {% include 'bag/product-img.html' %}
                             </td>
 
                             <!-- PRODUCT INFO -->
                             <td class="py-3 text-start">
-                                <p class="my-0">
-                                    <strong>{{ item.variant.product.name }}</strong>
-                                </p>
-                                <p class="my-0">
-                                    <strong>Size:</strong> {{ item.variant.size }}
-                                </p>
-                                <p class="my-0 small text-muted">
-                                    SKU: {{ item.variant.product.sku|upper }}
-                                </p>
+                                {% include 'bag/product-info.html' %}
                             </td>
 
                             <!-- PRICE -->
@@ -57,39 +79,7 @@
 
                             <!-- QUANTITY -->
                             <td class="py-3 w-25">
-                                <form class="update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
-                                    {% csrf_token %}
-
-                                    <div class="input-group input-group-sm">
-
-                                        <!-- Minus -->
-                                        <button class="btn quantity-btn decrement-qty" data-item_id="{{ item.item_id }}"
-                                            id="decrement-qty_{{ item.item_id }}">
-                                            <i class="fas fa-minus fa-sm"></i>
-                                        </button>
-
-                                        <!-- Quantity Input -->
-                                        <input class="form-control qty_input" type="number" name="quantity"
-                                            value="{{ item.quantity }}" min="1" max="99"
-                                            data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}"
-                                            aria-label="Quantity for {{ item.variant.product.name }}">
-
-                                        <!-- Plus -->
-                                        <button class="btn quantity-btn increment-qty" data-item_id="{{ item.item_id }}"
-                                            id="increment-qty_{{ item.item_id }}">
-                                            <i class="fas fa-plus fa-sm"></i>
-                                        </button>
-
-                                    </div>
-                                </form>
-
-                                <a class="update-link custom-text-muted float-start">
-                                    <small>Update</small>
-                                </a>
-
-                                <a class="remove-item text-danger float-end" id="remove_{{ item.item_id }}">
-                                    <small>Remove</small>
-                                </a>
+                                {% include 'bag/quantity-form.html' %}
                             </td>
 
                             <!-- SUBTOTAL -->
@@ -104,29 +94,14 @@
                         <!-- TOTALS -->
                         <tr>
                             <td colspan="5" class="pt-5 text-end">
-                                <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
-                                <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
-                                <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
-
-                                {% if free_delivery_delta > 0 %}
-                                <p class="mb-1 text-danger">
-                                    Spend <strong>${{ free_delivery_delta|floatformat:2 }}</strong> more to get free
-                                    delivery!
-                                </p>
-                                {% endif %}
+                                {% include 'bag/bag-total.html' %}
                             </td>
                         </tr>
 
                         <!-- BUTTONS -->
                         <tr>
                             <td colspan="5" class="text-end">
-                                <a href="{% url 'products' %}" class="btn leather-btn btn-lg me-2">
-                                    <i class="fas fa-chevron-left"></i> Keep Shopping
-                                </a>
-
-                                <a href="{% url 'checkout' %}" class="btn leather-btn btn-lg">
-                                    Secure Checkout <i class="fas fa-lock ms-1"></i>
-                                </a>
+                                {% include 'bag/checkout-btns.html' %}
                             </td>
                         </tr>
 
