@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Server Error{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-column align-items-center">
+    <div class="wrapper">
+    <h1>500</h1>
+    <p>Oops! Something went wrong on our end.</p>
+    <a href="{% url 'home' %}" class="btn leather-btn">Go back home</a>
+</div></div>
+{% endblock %}

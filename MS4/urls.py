@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from home import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,3 +30,7 @@ urlpatterns = [
     path('contact/', include('contact.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = views.custom_404_view
+handler500 = views.custom_500_view
+handler403 = views.custom_403_view

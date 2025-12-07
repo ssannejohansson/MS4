@@ -38,7 +38,7 @@ def contact_view(request):
                     "Your message:\n"
                     f"{contact.message}"
                 ),
-                from_email=settings.DEFAULT_FROM_EMAIL,
+                from_email="The Poster Vault <sannejohansson7@gmail.com>",
                 recipient_list=[contact.email],
                 fail_silently=False,
             )
