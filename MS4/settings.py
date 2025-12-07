@@ -224,7 +224,7 @@ STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 
 # Email settings
-CONTACT_RECEIVER_EMAIL = "thepostervault@example.com"
+CONTACT_RECEIVER_EMAIL = "sannejohansson7@gmail.com"
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
