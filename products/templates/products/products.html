@@ -132,3 +132,9 @@
     </section>
 </main>
 {% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script src="{% static 'products/js/sort-selector.js' %}"></script>
+
+{% endblock %}
