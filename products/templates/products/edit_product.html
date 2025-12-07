@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static crispy_forms_tags %}
 
+{% block extra_title %}Edit Product{% endblock %}
+
 {% block content %}
 <main class="container-fluid">
     <section class="wrapper">
@@ -51,7 +53,6 @@
 
 {% block postloadjs %}
 {{ block.super }}
-
 <script>
     const fileInput = document.querySelector('input[type="file"][name="image"]');
     const filenameDisplay = document.getElementById('filename');
