@@ -143,8 +143,8 @@ def edit_product(request, product_id):
         if form.is_valid() and formset.is_valid():
             form.save()
             formset.save()
-            messages.success
-            (request, f"Successfully updated product '{product.name}'")
+            messages.success(
+                request, f"Successfully updated product '{product.name}'")
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error

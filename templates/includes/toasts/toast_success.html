@@ -18,7 +18,7 @@
             </div>
         </div>
 
-        {% if grand_total and not on_profile_page %}
+       {% if "bag" in message.tags and grand_total and not on_profile_page %}
         <!-- Bag Summary -->
         <p class="pt-3 fw-bold">Your Bag ({{ product_count }})</p>
 
