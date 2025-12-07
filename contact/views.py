@@ -13,17 +13,20 @@ def contact_view(request):
             contact = form.save()
 
             # Send an email notification to store owner
-            send_mail(
-                subject=f"New contact message: {contact.subject}",
-                message=(
-                    f"Name: {contact.name}\n"
-                    f"Email: {contact.email}\n\n"
-                    f"Message:\n{contact.message}"
-                ),
-                from_email=settings.DEFAULT_FROM_EMAIL,   
-                recipient_list=[settings.CONTACT_RECEIVER_EMAIL],
-                fail_silently=False,
-            )
+            try:
+                send_mail(
+                    subject=f"New contact message: {contact.subject}",
+                    message=(
+                        f"Name: {contact.name}\n"
+                        f"Email: {contact.email}\n\n"
+                        f"Message:\n{contact.message}"
+                    ),
+                    from_email=settings.DEFAULT_FROM_EMAIL,   
+                    recipient_list=[settings.CONTACT_RECEIVER_EMAIL],
+                    fail_silently=False,
+                )
+            except Exception as e:
+                print("Failed to send notification email:", e)
 
             # Send a confirmation email to the user
             send_mail(
