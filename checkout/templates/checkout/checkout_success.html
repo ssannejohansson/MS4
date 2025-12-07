@@ -16,15 +16,14 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-12">
-                <div class="order-conf-wrapper p-5">
+        <div class="container ps-1 pe-1 d-flex flex-column align-items-center">
+            <div class="col-12 col-md-6 order-conf-wrapper pt-2 pb-2 ps-md-3 pe-md-3">
                     <!-- Order Info -->
                     <div class="mb-2"><small class="text-muted">Order Info:</small></div>
 
                     <div class="row">
                         <div class="col-12 col-md-4 fw-bold text-md-start">Order Number</div>
-                        <div class="col-12 col-md-8 text-md-end">{{ order.order_number }}</div>
+                        <div class="col-12 col-md-8 text-md-end text-wrap text-break">{{ order.order_number }}</div>
                     </div>
 
                     <div class="row">
@@ -109,8 +108,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-
+        
         <div class="row mt-4">
             <div class="col-12 text-end">
                 {% if from_profile %}

@@ -184,6 +184,7 @@
      font-family: var(--logo-font);
      font-size: 4rem;
      letter-spacing: 0.3rem;
+     line-height: 3rem;
      color: var(--dark-yellow);
      text-shadow: -1px -1px 3px rgba(0, 0, 0, .8), 1px 1px 2px rgba(255, 255, 255, .45);
  }
@@ -399,7 +400,7 @@
      height: 400px;
  }
 
- #hero-text {
+ .hero-text {
      color: var(--primary-text-color);
      font-family: var(--logo-font);
      font-size: 3.5rem;
@@ -409,7 +410,7 @@
  }
 
  .leather-btn-index {
-     width: 200px;
+     width: 150px;
      background-color: var(--warm-brown);
      background-image: linear-gradient(to bottom right, #825F45 30%, #6B4E38);
      transform: skew(-1deg) rotate(0.2deg);
@@ -629,7 +630,7 @@
  /* Media query: tablet and larger (768px and up) */
  @media screen and (min-width: 768px) {
 
-     #hero-text {
+     .hero-text {
          font-size: 5rem;
          line-height: 4rem;
      }
@@ -650,7 +651,7 @@
          height: 600px;
      }
 
-     #hero-text {
+     .hero-text {
          font-size: 8rem;
          line-height: 7rem;
      }
