@@ -10,18 +10,40 @@ def contact_view(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.save()
+            contact = form.save()
 
+            # Send an email notification to store owner
             send_mail(
-                subject=f"New Contact Message: {form.cleaned_data['subject']}",
-                message=form.cleaned_data['message'],
-                from_email=form.cleaned_data['email'],
-                recipient_list=[settings.DEFAULT_FROM_EMAIL],
+                subject=f"New contact message: {contact.subject}",
+                message=(
+                    f"Name: {contact.name}\n"
+                    f"Email: {contact.email}\n\n"
+                    f"Message:\n{contact.message}"
+                ),
+                from_email=settings.DEFAULT_FROM_EMAIL,   
+                recipient_list=[settings.CONTACT_RECEIVER_EMAIL],
+                fail_silently=False,
             )
 
-            messages.success(request, "Your message has been sent successfully!")
-            return redirect('contact')
+            # Send a confirmation email to the user
+            send_mail(
+                subject="Thanks for reaching out!",
+                message=(
+                    f"Hi {contact.name},\n\n"
+                    "Thank you for contacting us! We have received your "
+                    "message and will get back to you shortly.\n\n"
+                    "Your message:\n"
+                    f"{contact.message}"
+                ),
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[contact.email],
+                fail_silently=False,
+            )
+
+            messages.success(request,
+                             "Your message has been sent successfully!")
+            return redirect("contact")
     else:
         form = ContactForm()
 
-    return render(request, 'contact/contact.html', {'form': form})
+    return render(request, "contact/contact.html", {"form": form})

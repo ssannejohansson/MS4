@@ -112,6 +112,7 @@
 
  .leather-btn {
      width: fit-content;
+     min-width: 100px;
      background-color: var(--warm-brown);
      background-image: linear-gradient(to bottom right, #825F45 30%, #6B4E38);
      box-shadow:
