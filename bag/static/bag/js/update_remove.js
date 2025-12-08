@@ -1,4 +1,6 @@
-    /**
+   /* jshint esversion: 11 */
+   
+   /**
      *  Updating Item Quantity: Clicking an element with the class `.update-link` will
      *  submit the corresponding quantity update form.
      *  Removing an Item from the Bag: Clicking an element with the class `.remove-item` 

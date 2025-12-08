@@ -49,7 +49,7 @@
                             {% endif %}</p>
                         <p class="my-0 small">Qty: {{ item.quantity }}</p>
                     </div>
-                    <div class="col-3">
+                    <div class="col-3 text-end">
                         <p class="my-0 small">${{ item.variant.price | calc_subtotal:item.quantity }}</p>
                     </div>
                 </div>

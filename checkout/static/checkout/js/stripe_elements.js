@@ -1,3 +1,5 @@
+/* jshint esversion: 11 */
+
 /**
  * Retrieves the Stripe public key and client secret values that were injected
  * into the template using Django's `json_script` tag. The values are stored in
