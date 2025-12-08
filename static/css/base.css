@@ -180,7 +180,7 @@
 
  /* -- HEADER -- */
  /* Logo */
- #logo-text {
+ .logo-text {
      font-family: var(--logo-font);
      font-size: 4rem;
      letter-spacing: 0.3rem;
@@ -638,7 +638,7 @@
 
  /* Media query: laptop and larger (992px and up) */
  @media screen and (min-width: 992px) {
-     #logo-text {
+     .logo-text {
          font-size: 6rem;
          line-height: 4.5rem;
      }
