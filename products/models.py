@@ -34,7 +34,7 @@ class Product(models.Model):
         return self.variants.exists()
 
 
-class ProductVariant(models.Model): 
+class ProductVariant(models.Model):
     product = models.ForeignKey(Product, related_name='variants',
                                 on_delete=models.CASCADE)
     size = models.CharField(max_length=20)

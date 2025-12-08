@@ -1,3 +1,5 @@
+/* jshint esversion: 11 */
+
 /**
  * Updates the text color of the country select field.
  */

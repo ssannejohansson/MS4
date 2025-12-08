@@ -1,3 +1,5 @@
+/* jshint esversion: 11 */
+
 document.addEventListener('DOMContentLoaded', function() {
     const selector = document.getElementById('sort-selector');
 

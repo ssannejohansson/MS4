@@ -125,11 +125,10 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 
 | Directory | File | URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-| bag | [update_remove.js](https://github.com/ssannejohansson/MS4/blob/main/bag/static/bag/js/update_remove.js) |  | ![screenshot](documentation/validation/js-bag-update_remove.png) | ⚠️ Notes (if applicable) |
-| checkout | [stripe_elements.js](https://github.com/ssannejohansson/MS4/blob/main/checkout/static/checkout/js/stripe_elements.js) |  | ![screenshot](documentation/validation/js-checkout-stripe_elements.png) | ⚠️ Notes (if applicable) |
-| products | [sort-selector.js](https://github.com/ssannejohansson/MS4/blob/main/products/static/products/js/sort-selector.js) |  | ![screenshot](documentation/validation/js-products-sort-selector.png) | ⚠️ Notes (if applicable) |
-| profiles | [countryfield.js](https://github.com/ssannejohansson/MS4/blob/main/profiles/static/profiles/js/countryfield.js) |  | ![screenshot](documentation/validation/js-profiles-countryfield.png) | ⚠️ Notes (if applicable) |
-| static | [script.js](https://github.com/ssannejohansson/MS4/blob/main/static/js/script.js) |  | ![screenshot](documentation/validation/js-static-script.png) | ⚠️ Notes (if applicable) |
+| bag | [update_remove.js](https://github.com/ssannejohansson/MS4/blob/main/bag/static/bag/js/update_remove.js) |  | ![screenshot](documentation/validation/js-bag-update_remove.png) | |
+| checkout | [stripe_elements.js](https://github.com/ssannejohansson/MS4/blob/main/checkout/static/checkout/js/stripe_elements.js) |  | ![screenshot](documentation/validation/js-checkout-stripe_elements.png) | |
+| products | [sort-selector.js](https://github.com/ssannejohansson/MS4/blob/main/products/static/products/js/sort-selector.js) |  | ![screenshot](documentation/validation/js-products-sort-selector.png) |  |
+| profiles | [countryfield.js](https://github.com/ssannejohansson/MS4/blob/main/profiles/static/profiles/js/countryfield.js) |  | ![screenshot](documentation/validation/js-profiles-countryfield.png) |  |
 
 
 ### Python

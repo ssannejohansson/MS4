@@ -45,7 +45,7 @@ def contact_view(request):
                 fail_silently=False,
             )
 
-            messages.success(request, 
+            messages.success(request,
                              "Your message has been sent successfully!")
             return redirect("contact")
     else:
