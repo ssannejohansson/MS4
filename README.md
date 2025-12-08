@@ -254,95 +254,102 @@ I have used `Mermaid` to generate an interactive ERD of my project.
 
 ```mermaid
 erDiagram
-    User {
+
+    USER {
         int id PK
-        varchar username
-        varchar email
-        varchar password
+        string username
+        ... other Django User fields ...
     }
 
-    UserProfile {
+    USERPROFILE {
         int id PK
-        varchar default_phone_number
-        varchar default_street_address1
-        varchar default_street_address2
-        varchar default_town_or_city
-        varchar default_county
-        varchar default_postcode
-        varchar default_country
+        int user_id FK
+        string full_name
+        string default_phone_number
+        string default_street_address1
+        string default_street_address2
+        string default_town_or_city
+        string default_county
+        string default_postcode
+        string default_country
     }
 
-    User ||--|| UserProfile : has_one
-
-    Category {
+    ORDER {
         int id PK
-        varchar name
-        varchar friendly_name
-    }
-
-    Product {
-        int id PK
-        varchar sku
-        varchar name
-        text description
-        bool has_sizes
-        decimal price
-        decimal rating
-        varchar image_url
-        image image
-    }
-
-    Product ||--o| Category : belongs_to
-
-    Order {
-        int id PK
-        varchar order_number
-        varchar full_name
-        varchar email
-        varchar phone_number
-        varchar country
-        varchar postcode
-        varchar town_or_city
-        varchar street_address1
-        varchar street_address2
-        varchar county
+        string order_number
+        int user_profile_id FK
+        string full_name
+        string email
+        string phone_number
+        string country
+        string postcode
+        string town_or_city
+        string street_address1
+        string street_address2
+        string county
         datetime date
         decimal delivery_cost
         decimal order_total
         decimal grand_total
         text original_bag
-        varchar stripe_pid
+        string stripe_pid
     }
 
-    OrderLineItem {
+    ORDERLINEITEM {
         int id PK
+        int order_id FK
+        int variant_id FK
         int quantity
         decimal lineitem_total
-        varchar product_size
     }
 
-    Order ||--o| OrderLineItem : has_many
-    OrderLineItem ||--o| Product : belongs_to
-
-    Order ||--o| UserProfile : belongs_to
-
-    Newsletter {
+    CONTACT {
         int id PK
-        varchar email
-    }
-
-    Contact {
-        int id PK
-        varchar name
-        varchar email
+        string name
+        string email
+        string subject
         text message
+        datetime created_at
     }
 
-    FAQ {
+    CATEGORY {
         int id PK
-        varchar question
-        text answer
+        string name
+        string friendly_name
     }
+
+    PRODUCT {
+        int id PK
+        int category_id FK
+        string sku
+        string name
+        text description
+        image image
+    }
+
+    PRODUCTVARIANT {
+        int id PK
+        int product_id FK
+        string size
+        decimal price
+    }
+
+    %% ============================
+    %% RELATIONSHIPS
+    %% ============================
+
+    USER ||--|| USERPROFILE : "has profile"
+
+    USERPROFILE ||--o{ ORDER : "orders"
+
+    ORDER ||--o{ ORDERLINEITEM : "lineitems"
+
+    PRODUCT ||--o{ PRODUCTVARIANT : "variants"
+
+    PRODUCTVARIANT ||--o{ ORDERLINEITEM : "order_items"
+
+    CATEGORY ||--o{ PRODUCT : "products"
+
 ```
 
 source: [Mermaid](https://mermaid.live/edit#pako:eNqVVcFu2zAM_RVD57RIHLdpfRs6DBg2bB2GXYYAhmIxjlBZcimqqdvk3yfbSVPHceP5kBh8TyRFPtKvLDUCWMwAP0ueIc_nOvDPHwsYvDbv1SM1BVIE998OpieO6Ypj4DxV8xy6CORcqq654NauDYoG2c71IeQ9mqVUMDCygCV3ipJiZTQk2uULwH6WJQSghAuBYO1kKDHsJ5JZ68Rgkkoq-1mpcfojvDCWqiac8YDliXoFm83FxWbTql0crLhNfEX2xDtOkBksB1b1dC-XKEELVSYH-C0TH1m4lAb6tw_uXFCCZ_K3tynKgqTRB2RhjKrvZ-UL2INdQCpzroICZQpdM3KSOuuG9WAGicN3Kq1NzW_PNauam82hrHGwAGV0Zr0g9tyfKAYPkKm4vfJdOqWS_5uvD8ehJabWsV4dfqzzs3N1dp6OJ0T4ypLMoX7pNlOAkk-ApZ8LS124KScZ4qoL-g2nxTFYy82gzKTmKlnw7OQdZAFJIY-3Vt3o71LDV4L8TMMr06Pjmlp13KemvBPpnRxn99afRn618k8lsddlO6NmG-Rcl6fy3R3ZK7tfyTtie890yT9gbRUQDdb-Owm_3ebOaOKD18mg0ag7nHv1daf6y6dfAyM9OrDtbVS75dqu94O2ZSOWA_rgwn9Ta7dzRivwKbLYvwqOD3M21xWPOzK_S52ymNDBiLmikvvuK8ziJVfWWwuuWfzKnlk8jSaXN9ez8HoyHc_C8TiajVjJ4ovp5XUUTqMovLqdXd2Et-FsO2Ivxngfk8vxZBpGkT_m_zxW-_tbY01QNC5b7YJt_wE0ZoQj)
@@ -430,13 +437,6 @@ Deployment steps are as follows, after account setup:
 
 > [!IMPORTANT]  
 > This is a sample only; you would replace the values with your own if cloning/forking my repository.
-
-🛑 !!! ATTENTION ssannejohansson !!! 🛑
-
-⚠️ DO NOT update the environment variables to your own! These should never be public; only use the demo values below! ⚠️
-⚠️ Replace the keys below with your own actual keys used; example: if not using AWS, then replace those keys with Cloudinary keys, or similar. ⚠️
-
-🛑 --- END --- 🛑
 
 | Key | Value |
 | --- | --- |
@@ -690,13 +690,6 @@ You will need to create a new file called `env.py` at the root-level, and includ
 > [!IMPORTANT]  
 > This is a sample only; you would replace the values with your own if cloning/forking my repository.
 
-🛑 !!! ATTENTION ssannejohansson !!! 🛑
-
-⚠️ DO NOT update the environment variables to your own! These should never be public; only use the demo values below! ⚠️
-⚠️ Replace the keys below with your own actual keys used; example: if not using Cloudinary | AWS, then replace those keys with whatever keys you're using. ⚠️
-
-🛑 --- END --- 🛑
-
 Sample `env.py` file:
 
 ```python
@@ -762,31 +755,11 @@ By forking the GitHub Repository, you make a copy of the original repository on 
 
 ### Local VS Deployment
 
-⚠️ INSTRUCTIONS ⚠️
-
-Use this space to discuss any differences between the local version you've developed, and the live deployment site. Generally, there shouldn't be [m]any major differences, so if you honestly cannot find any differences, feel free to use the following example:
-
-⚠️ --- END --- ⚠️
-
 There are no remaining major differences between the local version when compared to the deployed version online.
 
 ## Credits
 
-⚠️ INSTRUCTIONS ⚠️
-
-In the following sections, you need to reference where you got your content, media, and any extra help. It is common practice to use code from other repositories and tutorials (which is totally acceptable), however, it is important to be very specific about these sources to avoid potential plagiarism.
-
-⚠️ --- END ---⚠️
-
 ### Content
-
-⚠️ INSTRUCTIONS ⚠️
-
-Use this space to provide attribution links for any borrowed code snippets, elements, and resources. Ideally, you should provide an actual link to every resource used, not just a generic link to the main site. If you've used multiple components from the same source (such as Bootstrap), then you only need to list it once, but if it's multiple Codepen samples, then you should list each example individually. If you've used AI for some assistance (such as ChatGPT or Perplexity), be sure to mention that as well. A few examples have been provided below to give you some ideas.
-
-Eventually you'll want to learn how to use Git branches. Here's a helpful tutorial called [Learn Git Branching](https://learngitbranching.js.org) to bookmark for later.
-
-⚠️ --- END ---⚠️
 
 | Source | Notes |
 | --- | --- |
@@ -798,13 +771,13 @@ Eventually you'll want to learn how to use Git branches. Here's a helpful tutori
 | [Gmail API](https://developers.google.com/gmail/api/guides) | Sending payment confirmation emails |
 | [ChatGPT](https://chatgpt.com) | Help with code logic and explanations |
 
+Lägg till länkar!
+
+
+
 ### Media
-
-⚠️ INSTRUCTIONS ⚠️
-
-Use this space to provide attribution links to any media files borrowed from elsewhere (images, videos, audio, etc.). If you're the owner (or a close acquaintance) of some/all media files, then make sure to specify this information. Let the assessors know that you have explicit rights to use the media files within your project. Ideally, you should provide an actual link to every media file used, not just a generic link to the main site, unless it's AI-generated artwork.
-
-Looking for some media files? Here are some popular sites to use. The list of examples below is by no means exhaustive.
+- Background
+    - [TransparentTextures](https://www.transparenttextures.com/leather.html)
 
 - Images
     - [Pexels](https://www.pexels.com)

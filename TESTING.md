@@ -11,16 +11,6 @@ In the following sections, you need to convince the assessors that you have cond
 
 ## Code Validation
 
-⚠️ INSTRUCTIONS ⚠️
-
-Use the space below to discuss code validation for all of your own code files (*where applicable*). You are not required to validate external libraries/frameworks.
-
-**MANDATORY**: You must provide a screenshot for each file you validate.
-
-**PRO TIP**: Where possible, always validate the live URL pages/files, not your local code using copy/paste. There could be subtle/hidden differences.
-
-⚠️ --- END --- ⚠️
-
 ### HTML
 
 ⚠️ INSTRUCTIONS ⚠️
@@ -73,23 +63,6 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 ### CSS
 
-⚠️ INSTRUCTIONS ⚠️
-
-1. [*recommended*] If you are using the live deployed site, use this link: https://jigsaw.w3.org/css-validator/#validate_by_uri
-2. If you are copying/pasting your CSS code, use this link: https://jigsaw.w3.org/css-validator/#validate_by_input
-
-It's recommended to validate the live site for your primary CSS file on the deployed URL. This will give you a custom URL as well, which you can use below on your testing documentation. It makes it easier to return back to a page for validating it again in the future. The URL will look something like this:
-
-- https://jigsaw.w3.org/css-validator/validator?uri=https://the-poster-vault-89343956ce2e.herokuapp.com
-
-If you have additional/multiple CSS files, then individual "[validation by input](https://jigsaw.w3.org/css-validator/#validate_by_input)" is recommended for the extra CSS files.
-
-**IMPORTANT**: Third-Party tools
-
-If you're using external libraries/frameworks (e.g: Bootstrap, Materialize, Font Awesome, etc.), then sometimes the tool will attempt to also validate these, even though it's not part of your own actual code that you wrote. You are not required to validate the external libraries or frameworks!
-
-⚠️ --- END --- ⚠️
-
 I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
 
 | Directory | File | URL | Screenshot | Notes |
@@ -100,26 +73,6 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 
 
 ### JavaScript
-
-⚠️ INSTRUCTIONS ⚠️
-
-If using modern JavaScript (ES6) methods, then make sure to include the following line at the very top of every single JavaScript file in your project (this should remain in your files for submission as well):
-
-`/* jshint esversion: 11 */`
-
-If you are also including jQuery (`$`), then the updated format will be:
-
-`/* jshint esversion: 11, jquery: true */`
-
-This allows the JShint validator to recognize modern ES6 methods, such as: `let`, `const`, `template literals`, `arrow functions (=>)`, etc.
-
-**IMPORTANT**: External resources
-
-Sometimes we'll write JavaScript that imports variables from other files, such as "an array of questions" from `questions.js`, which are used within the main `script.js` file elsewhere. If that's the case, the JShint validation tool doesn't know how to recognize "unused variables" that would normally be imported locally when running your own project. These warnings are acceptable, so showcase on your screenshot(s).
-
-The same thing applies when using external libraries such as Stripe, Leaflet, Bootstrap, Materialize, etc. To instantiate these components, we need to use their respective declarator. Again, the JShint validation tool would flag these as "undefined/unused variables". These warnings are acceptable, so showcase on your screenshot(s).
-
-⚠️ --- END --- ⚠️
 
 I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.
 
@@ -133,105 +86,54 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 
 ### Python
 
-⚠️ INSTRUCTIONS ⚠️
-
-The [CI Python Linter](https://pep8ci.herokuapp.com) can be used two different ways.
-
-- Copy/Paste your Python code directly into the linter.
-- As an API, using the "raw" URL appended to the linter URL.
-    - To find the "raw" URL, navigate to your file directly on the GitHub repo.
-    - On that page, GitHub provides a button on the right called "Raw" that you can click.
-    - From that new page, copy the full URL, and paste it after the CI Python Linter URL (with a `/` separator).
-
-It's recommended to validate each file using the API URL. This will give you a custom URL which you can use on your testing documentation. It makes it easier to return back to a file for validating it again in the future. Use the steps above to generate your own custom URLs for each Python file.
-
-**IMPORTANT**: `E501 line too long` errors
-
-You must strive to fix all Python lines that are too long (>80 characters). In rare cases where you cannot break the lines [*without breaking the functionality*], adding "`  # noqa`" (*NO Quality Assurance*) to the end of those lines will ignore linting validation. Do not use "`  # noqa`" all over your project just to clear down validation errors! This can still cause a project to fail, for failing to fix actual PEP8 validation errors.
-
-Sometimes variables can get too long, or excessive `if/else` conditional statements. These are acceptable instances to use the "`  # noqa`" comment.
-
-When trying to fix "line too long" errors, try to avoid using `/` to split lines. A better approach would be to use any type of opening bracket, and hit `<Enter>` just after that. Any opening bracket type will work: `(`, `[`, `{`. By using an opening bracket, Python knows where to appropriately indent the next line of code, without having to *guess* for yourself and attempt to "tab" to the correct indentation level.
-
-⚠️ --- END --- ⚠️
-
-🛑 IMPORTANT 🛑
-
-**IMPORTANT**: Django settings
-
-The Django `settings.py` file comes with 4 lines that are quite long, and will throw the `E501 line too long` error. This is default behavior, but can be fixed by adding the "`  # noqa`" comment at the end of those lines.
-
-```python
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",  # noqa
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",  # noqa
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",  # noqa
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",  # noqa
-    },
-]
-```
-
-**IMPORTANT**: *migration* and *pycache* files
-
-You do not have to validate files from the `migrations/` or `pycache/` folders! Ignore these `.py` files, and validate just the files that you've created or modified.
-
-🛑 --- END --- 🛑
-
 I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
 
 | Directory | File | URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-| MS4 | [settings.py](https://github.com/ssannejohansson/MS4/blob/main/MS4/settings.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/MS4/settings.py) | ![screenshot](documentation/validation/py-MS4-settings.png) | ⚠️ Notes (if applicable) |
-| MS4 | [urls.py](https://github.com/ssannejohansson/MS4/blob/main/MS4/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/MS4/urls.py) | ![screenshot](documentation/validation/py-MS4-urls.png) | ⚠️ Notes (if applicable) |
-| bag | [admin.py](https://github.com/ssannejohansson/MS4/blob/main/bag/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/bag/admin.py) | ![screenshot](documentation/validation/py-bag-admin.png) | ⚠️ Notes (if applicable) |
-| bag | [contexts.py](https://github.com/ssannejohansson/MS4/blob/main/bag/contexts.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/bag/contexts.py) | ![screenshot](documentation/validation/py-bag-contexts.png) | ⚠️ Notes (if applicable) |
-| bag | [models.py](https://github.com/ssannejohansson/MS4/blob/main/bag/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/bag/models.py) | ![screenshot](documentation/validation/py-bag-models.png) | ⚠️ Notes (if applicable) |
-| bag | [bag_tools.py](https://github.com/ssannejohansson/MS4/blob/main/bag/templatetags/bag_tools.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/bag/templatetags/bag_tools.py) | ![screenshot](documentation/validation/py-bag-bag_tools.png) | ⚠️ Notes (if applicable) |
-| bag | [tests.py](https://github.com/ssannejohansson/MS4/blob/main/bag/tests.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/bag/tests.py) | ![screenshot](documentation/validation/py-bag-tests.png) | ⚠️ Notes (if applicable) |
-| bag | [urls.py](https://github.com/ssannejohansson/MS4/blob/main/bag/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/bag/urls.py) | ![screenshot](documentation/validation/py-bag-urls.png) | ⚠️ Notes (if applicable) |
-| bag | [views.py](https://github.com/ssannejohansson/MS4/blob/main/bag/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/bag/views.py) | ![screenshot](documentation/validation/py-bag-views.png) | ⚠️ Notes (if applicable) |
-| checkout | [admin.py](https://github.com/ssannejohansson/MS4/blob/main/checkout/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/checkout/admin.py) | ![screenshot](documentation/validation/py-checkout-admin.png) | ⚠️ Notes (if applicable) |
-| checkout | [forms.py](https://github.com/ssannejohansson/MS4/blob/main/checkout/forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/checkout/forms.py) | ![screenshot](documentation/validation/py-checkout-forms.png) | ⚠️ Notes (if applicable) |
-| checkout | [models.py](https://github.com/ssannejohansson/MS4/blob/main/checkout/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/checkout/models.py) | ![screenshot](documentation/validation/py-checkout-models.png) | ⚠️ Notes (if applicable) |
-| checkout | [signals.py](https://github.com/ssannejohansson/MS4/blob/main/checkout/signals.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/checkout/signals.py) | ![screenshot](documentation/validation/py-checkout-signals.png) | ⚠️ Notes (if applicable) |
-| checkout | [tests.py](https://github.com/ssannejohansson/MS4/blob/main/checkout/tests.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/checkout/tests.py) | ![screenshot](documentation/validation/py-checkout-tests.png) | ⚠️ Notes (if applicable) |
-| checkout | [urls.py](https://github.com/ssannejohansson/MS4/blob/main/checkout/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/checkout/urls.py) | ![screenshot](documentation/validation/py-checkout-urls.png) | ⚠️ Notes (if applicable) |
-| checkout | [views.py](https://github.com/ssannejohansson/MS4/blob/main/checkout/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/checkout/views.py) | ![screenshot](documentation/validation/py-checkout-views.png) | ⚠️ Notes (if applicable) |
-| checkout | [webhook_handler.py](https://github.com/ssannejohansson/MS4/blob/main/checkout/webhook_handler.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/checkout/webhook_handler.py) | ![screenshot](documentation/validation/py-checkout-webhook_handler.png) | ⚠️ Notes (if applicable) |
-| checkout | [webhooks.py](https://github.com/ssannejohansson/MS4/blob/main/checkout/webhooks.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/checkout/webhooks.py) | ![screenshot](documentation/validation/py-checkout-webhooks.png) | ⚠️ Notes (if applicable) |
-| contact | [admin.py](https://github.com/ssannejohansson/MS4/blob/main/contact/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/contact/admin.py) | ![screenshot](documentation/validation/py-contact-admin.png) | ⚠️ Notes (if applicable) |
-| contact | [forms.py](https://github.com/ssannejohansson/MS4/blob/main/contact/forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/contact/forms.py) | ![screenshot](documentation/validation/py-contact-forms.png) | ⚠️ Notes (if applicable) |
-| contact | [models.py](https://github.com/ssannejohansson/MS4/blob/main/contact/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/contact/models.py) | ![screenshot](documentation/validation/py-contact-models.png) | ⚠️ Notes (if applicable) |
-| contact | [tests.py](https://github.com/ssannejohansson/MS4/blob/main/contact/tests.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/contact/tests.py) | ![screenshot](documentation/validation/py-contact-tests.png) | ⚠️ Notes (if applicable) |
-| contact | [urls.py](https://github.com/ssannejohansson/MS4/blob/main/contact/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/contact/urls.py) | ![screenshot](documentation/validation/py-contact-urls.png) | ⚠️ Notes (if applicable) |
-| contact | [views.py](https://github.com/ssannejohansson/MS4/blob/main/contact/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/contact/views.py) | ![screenshot](documentation/validation/py-contact-views.png) | ⚠️ Notes (if applicable) |
-|  | [custom_storages.py](https://github.com/ssannejohansson/MS4/blob/main/custom_storages.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/custom_storages.py) | ![screenshot](documentation/validation/py--custom_storages.png) | ⚠️ Notes (if applicable) |
-| home | [admin.py](https://github.com/ssannejohansson/MS4/blob/main/home/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/home/admin.py) | ![screenshot](documentation/validation/py-home-admin.png) | ⚠️ Notes (if applicable) |
-| home | [models.py](https://github.com/ssannejohansson/MS4/blob/main/home/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/home/models.py) | ![screenshot](documentation/validation/py-home-models.png) | ⚠️ Notes (if applicable) |
-| home | [tests.py](https://github.com/ssannejohansson/MS4/blob/main/home/tests.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/home/tests.py) | ![screenshot](documentation/validation/py-home-tests.png) | ⚠️ Notes (if applicable) |
-| home | [urls.py](https://github.com/ssannejohansson/MS4/blob/main/home/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/home/urls.py) | ![screenshot](documentation/validation/py-home-urls.png) | ⚠️ Notes (if applicable) |
-| home | [views.py](https://github.com/ssannejohansson/MS4/blob/main/home/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/home/views.py) | ![screenshot](documentation/validation/py-home-views.png) | ⚠️ Notes (if applicable) |
-|  | [manage.py](https://github.com/ssannejohansson/MS4/blob/main/manage.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/manage.py) | ![screenshot](documentation/validation/py--manage.png) | ⚠️ Notes (if applicable) |
-| products | [admin.py](https://github.com/ssannejohansson/MS4/blob/main/products/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/products/admin.py) | ![screenshot](documentation/validation/py-products-admin.png) | ⚠️ Notes (if applicable) |
-| products | [forms.py](https://github.com/ssannejohansson/MS4/blob/main/products/forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/products/forms.py) | ![screenshot](documentation/validation/py-products-forms.png) | ⚠️ Notes (if applicable) |
-| products | [models.py](https://github.com/ssannejohansson/MS4/blob/main/products/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/products/models.py) | ![screenshot](documentation/validation/py-products-models.png) | ⚠️ Notes (if applicable) |
-| products | [tests.py](https://github.com/ssannejohansson/MS4/blob/main/products/tests.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/products/tests.py) | ![screenshot](documentation/validation/py-products-tests.png) | ⚠️ Notes (if applicable) |
-| products | [urls.py](https://github.com/ssannejohansson/MS4/blob/main/products/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/products/urls.py) | ![screenshot](documentation/validation/py-products-urls.png) | ⚠️ Notes (if applicable) |
-| products | [views.py](https://github.com/ssannejohansson/MS4/blob/main/products/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/products/views.py) | ![screenshot](documentation/validation/py-products-views.png) | ⚠️ Notes (if applicable) |
-| products | [widgets.py](https://github.com/ssannejohansson/MS4/blob/main/products/widgets.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/products/widgets.py) | ![screenshot](documentation/validation/py-products-widgets.png) | ⚠️ Notes (if applicable) |
-| profiles | [admin.py](https://github.com/ssannejohansson/MS4/blob/main/profiles/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/profiles/admin.py) | ![screenshot](documentation/validation/py-profiles-admin.png) | ⚠️ Notes (if applicable) |
-| profiles | [forms.py](https://github.com/ssannejohansson/MS4/blob/main/profiles/forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/profiles/forms.py) | ![screenshot](documentation/validation/py-profiles-forms.png) | ⚠️ Notes (if applicable) |
-| profiles | [models.py](https://github.com/ssannejohansson/MS4/blob/main/profiles/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/profiles/models.py) | ![screenshot](documentation/validation/py-profiles-models.png) | ⚠️ Notes (if applicable) |
-| profiles | [tests.py](https://github.com/ssannejohansson/MS4/blob/main/profiles/tests.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/profiles/tests.py) | ![screenshot](documentation/validation/py-profiles-tests.png) | ⚠️ Notes (if applicable) |
-| profiles | [urls.py](https://github.com/ssannejohansson/MS4/blob/main/profiles/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/profiles/urls.py) | ![screenshot](documentation/validation/py-profiles-urls.png) | ⚠️ Notes (if applicable) |
-| profiles | [views.py](https://github.com/ssannejohansson/MS4/blob/main/profiles/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/profiles/views.py) | ![screenshot](documentation/validation/py-profiles-views.png) | ⚠️ Notes (if applicable) |
+| MS4 | [settings.py](https://github.com/ssannejohansson/MS4/blob/main/MS4/settings.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/MS4/settings.py) | ![screenshot](documentation/validation/py-MS4-settings.png) | |
+| MS4 | [urls.py](https://github.com/ssannejohansson/MS4/blob/main/MS4/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/MS4/urls.py) | ![screenshot](documentation/validation/py-MS4-urls.png) |  |
+| bag | [admin.py](https://github.com/ssannejohansson/MS4/blob/main/bag/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/bag/admin.py) |  | Empty file |
+| bag | [contexts.py](https://github.com/ssannejohansson/MS4/blob/main/bag/contexts.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/bag/contexts.py) | ![screenshot](documentation/validation/py-bag-contexts.png) |  |
+| bag | [models.py](https://github.com/ssannejohansson/MS4/blob/main/bag/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/bag/models.py) |  | Empty file |
+| bag | [bag_tools.py](https://github.com/ssannejohansson/MS4/blob/main/bag/templatetags/bag_tools.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/bag/templatetags/bag_tools.py) | ![screenshot](documentation/validation/py-bag-bag_tools.png) |  |
+| bag | [tests.py](https://github.com/ssannejohansson/MS4/blob/main/bag/tests.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/bag/tests.py) | | Empty file |
+| bag | [urls.py](https://github.com/ssannejohansson/MS4/blob/main/bag/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/bag/urls.py) | ![screenshot](documentation/validation/py-bag-urls.png) |  |
+| bag | [views.py](https://github.com/ssannejohansson/MS4/blob/main/bag/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/bag/views.py) | ![screenshot](documentation/validation/py-bag-views.png) | |
+| checkout | [admin.py](https://github.com/ssannejohansson/MS4/blob/main/checkout/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/checkout/admin.py) | ![screenshot](documentation/validation/py-checkout-admin.png) |  |
+| checkout | [forms.py](https://github.com/ssannejohansson/MS4/blob/main/checkout/forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/checkout/forms.py) | ![screenshot](documentation/validation/py-checkout-forms.png) |  |
+| checkout | [models.py](https://github.com/ssannejohansson/MS4/blob/main/checkout/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/checkout/models.py) | ![screenshot](documentation/validation/py-checkout-models.png) |  |
+| checkout | [signals.py](https://github.com/ssannejohansson/MS4/blob/main/checkout/signals.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/checkout/signals.py) | ![screenshot](documentation/validation/py-checkout-signals.png) |  |
+| checkout | [tests.py](https://github.com/ssannejohansson/MS4/blob/main/checkout/tests.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/checkout/tests.py) |  | Empty file |
+| checkout | [urls.py](https://github.com/ssannejohansson/MS4/blob/main/checkout/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/checkout/urls.py) | ![screenshot](documentation/validation/py-checkout-urls.png) | |
+| checkout | [views.py](https://github.com/ssannejohansson/MS4/blob/main/checkout/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/checkout/views.py) | ![screenshot](documentation/validation/py-checkout-views.png) |  |
+| checkout | [webhook_handler.py](https://github.com/ssannejohansson/MS4/blob/main/checkout/webhook_handler.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/checkout/webhook_handler.py) | ![screenshot](documentation/validation/py-checkout-webhook_handler.png) |  |
+| checkout | [webhooks.py](https://github.com/ssannejohansson/MS4/blob/main/checkout/webhooks.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/checkout/webhooks.py) | ![screenshot](documentation/validation/py-checkout-webhooks.png) | |
+| contact | [admin.py](https://github.com/ssannejohansson/MS4/blob/main/contact/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/contact/admin.py) | | Empty file |
+| contact | [forms.py](https://github.com/ssannejohansson/MS4/blob/main/contact/forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/contact/forms.py) | ![screenshot](documentation/validation/py-contact-forms.png) |  |
+| contact | [models.py](https://github.com/ssannejohansson/MS4/blob/main/contact/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/contact/models.py) | ![screenshot](documentation/validation/py-contact-models.png) |  |
+| contact | [tests.py](https://github.com/ssannejohansson/MS4/blob/main/contact/tests.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/contact/tests.py) |  | Empty file |
+| contact | [urls.py](https://github.com/ssannejohansson/MS4/blob/main/contact/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/contact/urls.py) | ![screenshot](documentation/validation/py-contact-urls.png) |  |
+| contact | [views.py](https://github.com/ssannejohansson/MS4/blob/main/contact/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/contact/views.py) | ![screenshot](documentation/validation/py-contact-views.png) |  |
+|  | [custom_storages.py](https://github.com/ssannejohansson/MS4/blob/main/custom_storages.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/custom_storages.py) | ![screenshot](documentation/validation/py--custom_storages.png) | |
+| home | [admin.py](https://github.com/ssannejohansson/MS4/blob/main/home/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/home/admin.py) | | Empty file |
+| home | [models.py](https://github.com/ssannejohansson/MS4/blob/main/home/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/home/models.py) | | Empty file |
+| home | [tests.py](https://github.com/ssannejohansson/MS4/blob/main/home/tests.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/home/tests.py) |  | Empty file |
+| home | [urls.py](https://github.com/ssannejohansson/MS4/blob/main/home/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/home/urls.py) | ![screenshot](documentation/validation/py-home-urls.png) |  |
+| home | [views.py](https://github.com/ssannejohansson/MS4/blob/main/home/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/home/views.py) | ![screenshot](documentation/validation/py-home-views.png) |  |
+|  | [manage.py](https://github.com/ssannejohansson/MS4/blob/main/manage.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/manage.py) | ![screenshot](documentation/validation/py--manage.png) | |
+| products | [admin.py](https://github.com/ssannejohansson/MS4/blob/main/products/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/products/admin.py) | ![screenshot](documentation/validation/py-products-admin.png) |  |
+| products | [forms.py](https://github.com/ssannejohansson/MS4/blob/main/products/forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/products/forms.py) | ![screenshot](documentation/validation/py-products-forms.png) | |
+| products | [models.py](https://github.com/ssannejohansson/MS4/blob/main/products/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/products/models.py) | ![screenshot](documentation/validation/py-products-models.png) | |
+| products | [tests.py](https://github.com/ssannejohansson/MS4/blob/main/products/tests.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/products/tests.py) |  | Empty file |
+| products | [urls.py](https://github.com/ssannejohansson/MS4/blob/main/products/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/products/urls.py) | ![screenshot](documentation/validation/py-products-urls.png) | |
+| products | [views.py](https://github.com/ssannejohansson/MS4/blob/main/products/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/products/views.py) | ![screenshot](documentation/validation/py-products-views.png) | |
+| products | [widgets.py](https://github.com/ssannejohansson/MS4/blob/main/products/widgets.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/products/widgets.py) | ![screenshot](documentation/validation/py-products-widgets.png) | |
+| profiles | [admin.py](https://github.com/ssannejohansson/MS4/blob/main/profiles/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/profiles/admin.py) | | Empty file |
+| profiles | [forms.py](https://github.com/ssannejohansson/MS4/blob/main/profiles/forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/profiles/forms.py) | ![screenshot](documentation/validation/py-profiles-forms.png) |  |
+| profiles | [models.py](https://github.com/ssannejohansson/MS4/blob/main/profiles/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/profiles/models.py) | ![screenshot](documentation/validation/py-profiles-models.png) | |
+| profiles | [tests.py](https://github.com/ssannejohansson/MS4/blob/main/profiles/tests.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/profiles/tests.py) | | Empty file |
+| profiles | [urls.py](https://github.com/ssannejohansson/MS4/blob/main/profiles/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/profiles/urls.py) | ![screenshot](documentation/validation/py-profiles-urls.png) |  |
+| profiles | [views.py](https://github.com/ssannejohansson/MS4/blob/main/profiles/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/profiles/views.py) | ![screenshot](documentation/validation/py-profiles-views.png) |  |
 
 
 ## Responsiveness
