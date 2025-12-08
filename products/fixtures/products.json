@@ -17,7 +17,7 @@
          "sku":"product02",
         "name":"Gritty Found Objects",
          "description":"Gritty, close-up shot of dirty, decaying cloth and paper scraps, including a vintage ticket marked '20'.",
-         "category":1,
+         "category":3,
          "image":"2.jpg"
       }
    },
@@ -28,7 +28,7 @@
          "sku":"product03",
            "name":"Wall of Sound",
          "description":"A wall installation of music amplifiers (Marshall, Epiphone, Vox) and stacks of CDs/tapes surrounding a retro TV.",
-         "category":1,
+         "category":3,
          "image":"3.jpg"
       }
    },
@@ -61,7 +61,6 @@
          "sku":"product06",
            "name":"Soft-Focus White Blossoms",
          "description":"Soft-focus, brightly lit close-up of clusters of small white spring blossoms on a tree branch.",
-
          "category":2,
          "image":"6.jpg"
       }
@@ -73,7 +72,6 @@
          "sku":"product07",
             "name":"Rocky Vista at Sunset",
          "description":"A rugged hilltop landscape bathed in the warm, hazy glow of sunset.",
-
          "category":3,
          "image":"7.jpg"
       }
@@ -85,8 +83,7 @@
          "sku":"product08",
             "name":"Woman in Rapeseed Field",
          "description":"A cinematic view of a woman running through a vast, golden field at twilight.",
-
-         "category":3,
+         "category":1,
          "image":"8.jpg"
       }
    },
@@ -97,7 +94,6 @@
          "sku":"product09",
             "name":"Love Locks on Rusty Grid",
          "description":"Padlocks symbolizing lasting romance fastened to a dark, rusted metal grid.",
-
          "category":3,
          "image":"9.jpg"
       }
@@ -109,8 +105,7 @@
          "sku":"product10",
             "name":"Classic Yellow Mercedes-Benz",
          "description":"A detailed, moody shot of a vintage yellow Mercedes-Benz coupe on an overcast day.",
-
-         "category":3,
+         "category":1,
          "image":"10.jpg"
       }
    },
@@ -121,7 +116,6 @@
          "sku":"product11",
             "name":"Eclectic Interior Still Life",
          "description":"A vibrant, bohemian stack of books, plants, and antiques against a brick wall and gold mirror.",
-
          "category":3,
          "image":"11.jpg"
       }
@@ -133,7 +127,6 @@
          "sku":"product12",
             "name":"Vintage Film Projector and Reels",
          "description":"A nostalgic collection of a classic film projector and large movie reels with a moody, retro vibe.",
-
          "category":3,
          "image":"12.jpg"
       }
@@ -145,7 +138,6 @@
          "sku":"product13",
             "name":"Denim Jacket on Vintage 4x4",
          "description":"An old-school Land Rover parked in scrubland, with a denim jacket hanging on the door.",
-
          "category":3,
          "image":"13.jpg"
       }
@@ -157,8 +149,7 @@
          "sku":"product14",
             "name":"Soft Focus Sunflower in Field",
          "description":"A close-up of a warm-toned sunflower, focusing on its texture against a dark, dramatic background.",
-
-         "category":3,
+         "category":1,
          "image":"14.jpg"
       }
    },
@@ -169,8 +160,7 @@
          "sku":"product15",
             "name":"Flowers Through Gold Frame",
          "description":"A hand holding a small, ornate gold frame to capture delicate white blossoms.",
-
-         "category":3,
+         "category":1,
          "image":"15.jpg"
       }
    },
