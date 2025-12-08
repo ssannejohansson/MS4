@@ -258,7 +258,6 @@ erDiagram
     USER {
         int id PK
         string username
-        ... other Django User fields ...
     }
 
     USERPROFILE {
@@ -324,7 +323,7 @@ erDiagram
         string sku
         string name
         text description
-        image image
+        string image
     }
 
     PRODUCTVARIANT {
@@ -334,21 +333,13 @@ erDiagram
         decimal price
     }
 
-    %% ============================
-    %% RELATIONSHIPS
-    %% ============================
+    USER ||--|| USERPROFILE : has_profile
+    USERPROFILE ||--o{ ORDER : orders
+    ORDER ||--o{ ORDERLINEITEM : lineitems
+    PRODUCT ||--o{ PRODUCTVARIANT : variants
+    PRODUCTVARIANT ||--o{ ORDERLINEITEM : order_items
+    CATEGORY ||--o{ PRODUCT : products
 
-    USER ||--|| USERPROFILE : "has profile"
-
-    USERPROFILE ||--o{ ORDER : "orders"
-
-    ORDER ||--o{ ORDERLINEITEM : "lineitems"
-
-    PRODUCT ||--o{ PRODUCTVARIANT : "variants"
-
-    PRODUCTVARIANT ||--o{ ORDERLINEITEM : "order_items"
-
-    CATEGORY ||--o{ PRODUCT : "products"
 
 ```
 
