@@ -7,7 +7,7 @@
          "name":"Vintage Library Shelves",
          "description":"Vertical view of multiple shelves packed with antique, leather-bound books in a library.",
          "category":1,
-         "image":"1.jpg"
+         "image":"1.webp"
       }
    },
    {
@@ -18,7 +18,7 @@
         "name":"Gritty Found Objects",
          "description":"Gritty, close-up shot of dirty, decaying cloth and paper scraps, including a vintage ticket marked '20'.",
          "category":3,
-         "image":"2.jpg"
+         "image":"2.webp"
       }
    },
    {
@@ -29,7 +29,7 @@
            "name":"Wall of Sound",
          "description":"A wall installation of music amplifiers (Marshall, Epiphone, Vox) and stacks of CDs/tapes surrounding a retro TV.",
          "category":3,
-         "image":"3.jpg"
+         "image":"3.webp"
       }
    },
    {
@@ -40,7 +40,7 @@
          "name":"Rusted Garden Gate",
          "description":"Close-up of a rusted, weathered metal gate/doorframe with out-of-focus palm plants in the background.",
          "category":2,
-         "image":"4.jpg"
+         "image":"4.webp"
       }
    },
    {
@@ -51,7 +51,7 @@
               "name":"Stack of Vintage Suitcases",
          "description":"A stacked pile of colorful, vintage leather and fabric suitcases with travel stickers.",
          "category":2,
-         "image":"5.jpg"
+         "image":"5.webp"
       }
    },
    {
@@ -62,7 +62,7 @@
            "name":"Soft-Focus White Blossoms",
          "description":"Soft-focus, brightly lit close-up of clusters of small white spring blossoms on a tree branch.",
          "category":2,
-         "image":"6.jpg"
+         "image":"6.webp"
       }
    },
    {
@@ -73,7 +73,7 @@
             "name":"Rocky Vista at Sunset",
          "description":"A rugged hilltop landscape bathed in the warm, hazy glow of sunset.",
          "category":3,
-         "image":"7.jpg"
+         "image":"7.webp"
       }
    },
    {
@@ -84,7 +84,7 @@
             "name":"Woman in Rapeseed Field",
          "description":"A cinematic view of a woman running through a vast, golden field at twilight.",
          "category":1,
-         "image":"8.jpg"
+         "image":"8.webp"
       }
    },
       {
@@ -95,7 +95,7 @@
             "name":"Love Locks on Rusty Grid",
          "description":"Padlocks symbolizing lasting romance fastened to a dark, rusted metal grid.",
          "category":3,
-         "image":"9.jpg"
+         "image":"9.webp"
       }
    },
       {
@@ -106,7 +106,7 @@
             "name":"Classic Yellow Mercedes-Benz",
          "description":"A detailed, moody shot of a vintage yellow Mercedes-Benz coupe on an overcast day.",
          "category":1,
-         "image":"10.jpg"
+         "image":"10.webp"
       }
    },
       {
@@ -117,7 +117,7 @@
             "name":"Eclectic Interior Still Life",
          "description":"A vibrant, bohemian stack of books, plants, and antiques against a brick wall and gold mirror.",
          "category":3,
-         "image":"11.jpg"
+         "image":"11.webp"
       }
    },
       {
@@ -128,7 +128,7 @@
             "name":"Vintage Film Projector and Reels",
          "description":"A nostalgic collection of a classic film projector and large movie reels with a moody, retro vibe.",
          "category":3,
-         "image":"12.jpg"
+         "image":"12.webp"
       }
    },
       {
@@ -139,7 +139,7 @@
             "name":"Denim Jacket on Vintage 4x4",
          "description":"An old-school Land Rover parked in scrubland, with a denim jacket hanging on the door.",
          "category":3,
-         "image":"13.jpg"
+         "image":"13.webp"
       }
    },
       {
@@ -150,7 +150,7 @@
             "name":"Soft Focus Sunflower in Field",
          "description":"A close-up of a warm-toned sunflower, focusing on its texture against a dark, dramatic background.",
          "category":1,
-         "image":"14.jpg"
+         "image":"14.webp"
       }
    },
       {
@@ -161,7 +161,7 @@
             "name":"Flowers Through Gold Frame",
          "description":"A hand holding a small, ornate gold frame to capture delicate white blossoms.",
          "category":1,
-         "image":"15.jpg"
+         "image":"15.webp"
       }
    },
       {
@@ -171,9 +171,8 @@
          "sku":"product16",
             "name":"Vinyl Records and Woman",
          "description":"An overhead view of a woman surrounded by and posing with classic vinyl records on a patterned rug.",
-
          "category":3,
-         "image":"16.jpg"
+         "image":"16.webp"
       }
    }
 ]
