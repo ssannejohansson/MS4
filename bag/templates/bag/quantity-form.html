@@ -1,30 +1,42 @@
-<form class="update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
-    {% csrf_token %}
-    <div class="input-group input-group-sm">
-        <!-- Minus -->
-        <button class="btn quantity-btn decrement-qty" data-item_id="{{ item.item_id }}"
-            id="decrement-qty_{{ item.item_id }}">
-            <i class="fas fa-minus fa-sm"></i>
-        </button>
+<div class="bag-item-row" data-item_id="{{ item.item_id }}">
 
-        <!-- Quantity Input -->
-        <input class="form-control qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99"
-            data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}"
-            aria-label="Quantity for {{ item.variant.product.name }}">
+    <form class="update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
+        {% csrf_token %}
+        <div class="input-group input-group-sm">
 
-        <!-- Plus -->
-        <button class="btn quantity-btn increment-qty" data-item_id="{{ item.item_id }}"
-            id="increment-qty_{{ item.item_id }}">
-            <i class="fas fa-plus fa-sm"></i>
-        </button>
+            <!-- Minus -->
+            <button type="button"
+                class="btn quantity-btn decrement-qty"
+                data-item_id="{{ item.item_id }}">
+                <i class="fas fa-minus fa-sm"></i>
+            </button>
 
-    </div>
-</form>
+            <!-- Quantity Input -->
+            <input class="form-control qty_input"
+                type="number"
+                name="quantity"
+                value="{{ item.quantity }}"
+                min="1"
+                max="99"
+                data-item_id="{{ item.item_id }}"
+                aria-label="Quantity for {{ item.variant.product.name }}">
 
-<a class="update-link custom-text-muted float-start">
-    <small>Update</small>
-</a>
+            <!-- Plus -->
+            <button type="button"
+                class="btn quantity-btn increment-qty"
+                data-item_id="{{ item.item_id }}">
+                <i class="fas fa-plus fa-sm"></i>
+            </button>
 
-<a class="remove-item text-danger float-end" id="remove_{{ item.item_id }}">
-    <small>Remove</small>
-</a>
+        </div>
+    </form>
+
+    <a class="update-link custom-text-muted float-start" data-item_id="{{ item.item_id }}">
+        <small>Update</small>
+    </a>
+
+    <a class="remove-item text-danger float-end" data-item_id="{{ item.item_id }}">
+        <small>Remove</small>
+    </a>
+
+</div>

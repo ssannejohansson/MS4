@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import ContactForm
+from profiles.models import UserProfile
 from django.core.mail import send_mail
 from django.conf import settings
 
@@ -43,7 +44,8 @@ def contact_view(request):
                 fail_silently=False,
             )
 
-            messages.success(request, "Your message has been sent successfully!")
+            messages.success(request, 
+                             "Your message has been sent successfully!")
             return redirect("contact")
     else:
         if request.user.is_authenticated:
@@ -59,7 +61,5 @@ def contact_view(request):
                     "email": request.user.email,
                 }
             form = ContactForm(initial=initial_data)
-        else:
-            form = ContactForm()
 
     return render(request, "contact/contact.html", {"form": form})
