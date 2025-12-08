@@ -578,6 +578,9 @@
      border: none;
  }
 
+ .variant-form .asteriskField {
+    display: none !important;
+}
 
  .btn-file {
      position: relative;
