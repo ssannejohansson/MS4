@@ -843,7 +843,7 @@ Looking for some media files? Here are some popular sites to use. The list of ex
 | [Pexels](https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg) | Hero image |
 | [Wallhere](https://c.wallhere.com/images/9c/c8/da4b4009f070c8e1dfee43d25f99-2318808.jpg!d) | Background wallpaper |
 | [TinyPNG](https://tinypng.com) | Compressing images < 5MB |
-| [CloudConvert](https://cloudconvert.com/webp-converter) | Converting images to `.webp` |
+| [img2go](https://www.img2go.com/resize-image) | Resizing and convert images to `.webp` |
 
 ### Acknowledgements
 
