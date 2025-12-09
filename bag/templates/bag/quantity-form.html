@@ -6,13 +6,13 @@
 
             <!-- Minus -->
             <button type="button"
-                class="btn quantity-btn decrement-qty"
+                class="btn quantity-btn decrement-qty rounded-0"
                 data-item_id="{{ item.item_id }}">
                 <i class="fas fa-minus fa-sm"></i>
             </button>
 
             <!-- Quantity Input -->
-            <input class="form-control qty_input"
+            <input class="form-control custom-form-control qty_input"
                 type="number"
                 name="quantity"
                 value="{{ item.quantity }}"
@@ -23,7 +23,7 @@
 
             <!-- Plus -->
             <button type="button"
-                class="btn quantity-btn increment-qty"
+                class="btn quantity-btn increment-qty rounded-0"
                 data-item_id="{{ item.item_id }}">
                 <i class="fas fa-plus fa-sm"></i>
             </button>

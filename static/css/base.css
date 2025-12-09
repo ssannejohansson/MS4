@@ -607,13 +607,14 @@
 
 
  .quantity-btn {
-     background-color: var(--secondary-background-color);
+     background-color: #e1d6cf;
      color: var(--secondary-text-color);
      border-radius: 0;
  }
 
- .quantity-btn:hover {
-     background-color: #e1d6cf;
+ .quantity-btn:hover,
+ .quantity-btn:active {
+     background-color: #cdc1ba;
      color: var(--secondary-text-color);
  }
 
