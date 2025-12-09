@@ -3,44 +3,9 @@
 > [!NOTE]  
 > Return back to the [README.md](README.md) file.
 
-⚠️ INSTRUCTIONS ⚠️
-
-In the following sections, you need to convince the assessors that you have conducted enough manual testing to legitimately believe that the site works well. Essentially, in this part, you should go over all of your project's features, and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
-
-⚠️ --- END --- ⚠️
-
 ## Code Validation
 
 ### HTML
-
-⚠️ INSTRUCTIONS ⚠️
-
-1. [*recommended*] If you are using the live deployed site URLs, validate using this link: https://validator.w3.org/#validate_by_uri
-2. Otherwise, if you are copying/pasting your HTML code manually, use this link: https://validator.w3.org/#validate_by_input
-
-It's recommended to validate the live pages (all of them) using the deployed URL. This will give you a custom URL as well, which you can use below on your testing documentation. It makes it easier to return back to a page for validating it again in the future. The URL will look something like this:
-
-- https://validator.w3.org/nu/?doc=https://ssannejohansson.github.io/MS4/index.html
-
-⚠️ --- END --- ⚠️
-
-🛑 IMPORTANT 🛑
-
-RE: Python/Jinja syntax in HTML
-
-Python projects that use Jinja syntax, such as `{% for loops %}`, `{% url 'home' %}`, and `{{ variable|filter }}` will not validate properly if you're copying/pasting into the HTML validator.
-
-In order to properly validate these types of files, it's recommended to [validate by uri](https://validator.w3.org/#validate_by_uri) from the deployed Heroku pages.
-
-Unfortunately, pages that require a user to be "logged-in" and authenticated (CRUD functionality) will not work using this method, due to the fact that the HTML Validator (W3C) doesn't have access to login to an account on your project. In order to properly validate HTML pages with Jinja syntax for authenticated pages, follow these steps:
-
-- Navigate to the deployed pages which require authentication.
-- Right-click anywhere on the page, and select **View Page Source** (usually `CTRL+U` or `⌘+U` on Mac).
-- This will display the entire "compiled" code, without any Jinja syntax.
-- Copy everything, and use the [validate by input](https://validator.w3.org/#validate_by_input) method.
-- Repeat this process for every page that requires a user to be logged-in/authenticated (e.g.: CRUD functionality).
-
-🛑 ---- END --- 🛑
 
 I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
 
@@ -56,10 +21,6 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 | products | [product_detail.html](https://github.com/ssannejohansson/MS4/blob/main/products/templates/products/product_detail.html) | https://validator.w3.org/nu/?doc=https%3A%2F%2Fthe-poster-vault-89343956ce2e.herokuapp.com%2Fproducts%2F4%2F | ![screenshot](documentation/validation/html-products-product_detail.png) | ⚠️ Notes (if applicable) |
 | products | [products.html](https://github.com/ssannejohansson/MS4/blob/main/products/templates/products/products.html) | https://validator.w3.org/nu/?doc=https%3A%2F%2Fthe-poster-vault-89343956ce2e.herokuapp.com%2Fproducts%2F | ![screenshot](documentation/validation/html-products-products.png) | ⚠️ Notes (if applicable) |
 | profiles | [profile.html](https://github.com/ssannejohansson/MS4/blob/main/profiles/templates/profiles/profile.html) | ⚠️ Validated by direct input| ![screenshot](documentation/validation/html-profiles-profile.png) | ⚠️ Notes (if applicable) |
-| templates | [403.html](https://github.com/ssannejohansson/MS4/blob/main/templates/errors/403.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-templates-403.png) | ⚠️ Notes (if applicable) |
-| templates | [404.html](https://github.com/ssannejohansson/MS4/blob/main/templates/errors/404.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-templates-404.png) | ⚠️ Notes (if applicable) |
-| templates | [500.html](https://github.com/ssannejohansson/MS4/blob/main/templates/errors/500.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-templates-500.png) | ⚠️ Notes (if applicable) |
-
 
 ### CSS
 
