@@ -7,14 +7,14 @@
 <main class="container-fluid">
     <section class="wrapper">
 
-        <div class="row">
-            <div class="col-12 col-lg-6 ps-5 pe-5 mt-4 mb-3">
-                <h2 class="mb-4">Product Management | <span class="text-muted custom-text-muted">Edit Product</span>
+        <div class="row justify-content-lg-center">
+            <div class="col-12 col-lg-8 ps-5 pe-5 mt-4 mb-3">
+                <h2 class="mb-4 text-center">Product Management | <span class="text-muted custom-text-muted">Edit Product</span>
                 </h2>
             </div>
         </div>
 
-        <div class="row">
+        <div class="row justify-content-lg-center">
             <div class="col-12 col-lg-6 ps-5 pe-5">
                 <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2"
                     enctype="multipart/form-data">
