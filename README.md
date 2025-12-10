@@ -148,7 +148,7 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 | Add to Bag | Users can add items to their shopping bag, with support for selecting different sizes if applicable. | ![screenshot](documentation/features/add-to-bag.png) |
 | View Bag | Users can view the contents of their shopping bag, adjust quantities, or remove items. | ![screenshot](documentation/features/view-bag.png) |
 | Checkout | Users can proceed to checkout, where they provide their delivery details and payment information using Stripe integration. | ![screenshot](documentation/features/checkout.png) |
-| Order Confirmation | Users receive an on-screen and email confirmation with details of their purchase. | ![screenshot](documentation/features/order-confirmation.png) |
+| Order Confirmation | Users receive an on-screen and email confirmation with details of their purchase. | ![screenshot](documentation/features/order-confirmation.png)![screenshot](documentation/features/order-confirmation2.png) |
 | Profile Management | Users can manage their profile information, including their default delivery address and order history. | ![screenshot](documentation/features/profile-management.png) |
 | Product Management | Superusers can add, edit, and delete products from the site via a CRUD interface. | ![screenshot](documentation/features/product-management.png) ![screenshot](documentation/features/product-management2.png) ![screenshot](documentation/features/product-management3.png) |
 | Contact | Users can submit a message via the contact form | ![screenshot](documentation/features/contact.png) |
