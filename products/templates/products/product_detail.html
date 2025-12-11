@@ -60,7 +60,7 @@
                                 <p><strong>Size:</strong></p>
 
                                 <select name="variant_id" id="variant_id"
-                                    class="form-select custom-form-control shadow-none w-60 mb-3" required>
+                                    class="form-select custom-form-control shadow-none w-60 mb-3" aria-label="Select size" required>
                                      <option value="">Select size:</option>
                                     {% for v in variants %}
                                     <option value="{{ v.id }}">
@@ -84,10 +84,11 @@
 
                                         <input class="form-control custom-form-control qty_input" type="number"
                                             name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}"
-                                            id="id_qty_{{ product.id }}">
+                                            id="id_qty_{{ product.id }}" aria-label="Quantity for {{ product.name }}">
 
                                         <button class="increment-qty btn quantity-btn" type="button"
-                                            data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                            data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}"
+                                            aria-label="Increase quantity">
                                             <i class="fas fa-plus"></i>
                                         </button>
                                     </div>
@@ -105,10 +106,10 @@
                             {% endif %}
 
                             <div class="col-12 mt-4">
-                                <a href="{% url 'products' %}" class="btn leather-btn ms-0">
+                                <a href="{% url 'products' %}" class="btn leather-btn ms-0" aria-label="Keep shopping">
                                     <i class="fas fa-chevron-left"></i> Keep Shopping
                                 </a>
-                                <button type="submit" class="btn leather-btn m-0">Add to Bag</button>
+                                <button type="submit" class="btn leather-btn m-0" aria-label="Add to bag">Add to Bag</button>
                             </div>
 
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">

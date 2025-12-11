@@ -7,7 +7,7 @@
             <!-- Minus -->
             <button type="button"
                 class="btn quantity-btn decrement-qty rounded-0"
-                data-item_id="{{ item.item_id }}">
+                data-item_id="{{ item.item_id }}" aria-label="Decrease quantity">
                 <i class="fas fa-minus fa-sm"></i>
             </button>
 
@@ -24,18 +24,18 @@
             <!-- Plus -->
             <button type="button"
                 class="btn quantity-btn increment-qty rounded-0"
-                data-item_id="{{ item.item_id }}">
+                data-item_id="{{ item.item_id }}" aria-label="Increase quantity">
                 <i class="fas fa-plus fa-sm"></i>
             </button>
 
         </div>
     </form>
 
-    <a class="update-link custom-text-muted float-start" data-item_id="{{ item.item_id }}">
+    <a class="update-link custom-text-muted float-start" data-item_id="{{ item.item_id }}" aria-label="Update quantity">
         <small>Update</small>
     </a>
 
-    <a class="remove-item text-danger float-end" data-item_id="{{ item.item_id }}">
+    <a class="remove-item text-danger float-end" data-item_id="{{ item.item_id }}" aria-label="Remove item from bag">
         <small>Remove</small>
     </a>
 
