@@ -3,28 +3,28 @@
     <ul class="navbar-nav mx-auto">
         <!-- All Products -->
         <li class="nav-item">
-            <a class="nav-link me-4" id="all-products-link" href="{% url 'products' %}">
+            <a class="nav-link me-4" id="all-products-link" aria-label="All products" href="{% url 'products' %}">
                 All Products
             </a>
         </li>
 
         <!-- New Arrivals -->
         <li class="nav-item">
-            <a class="nav-link me-4" id="new-arrivals-link" href="{% url 'products' %}?category=new_arrivals">
+            <a class="nav-link me-4" id="new-arrivals-link" aria-label="New arrivals" href="{% url 'products' %}?category=new_arrivals">
                 New Arrivals
             </a>
         </li>
 
         <!-- Best Sellers -->
         <li class="nav-item">
-            <a class="nav-link me-4" id="best-sellers-link" href="{% url 'products' %}?category=best_sellers">
+            <a class="nav-link me-4" id="best-sellers-link" aria-label="Best sellers" href="{% url 'products' %}?category=best_sellers">
                 Best Sellers
             </a>
         </li>
 
         <!-- Deals -->
         <li class="nav-item">
-            <a class="nav-link" id="deals-link" href="{% url 'products' %}?category=deals">
+            <a class="nav-link" id="deals-link" aria-label="Deals" href="{% url 'products' %}?category=deals">
                 Deals
             </a>
         </li>

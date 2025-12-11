@@ -20,7 +20,3 @@ def custom_500_view(request):
 
 def custom_403_view(request, exception):
     return render(request, "errors/403.html", status=403)
-
-
-def custom_405_view(request, exception):
-    return render(request, "errors/405.html", status=405)

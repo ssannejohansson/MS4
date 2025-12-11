@@ -73,7 +73,7 @@
                 <form method="GET" action="{% url 'products' %}">
                     <div class="head-search">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" class="head-search-input" name="q" placeholder="search...">
+                        <input type="text" class="head-search-input" aria-label="Search products" name="q" placeholder="search...">
                     </div>
                 </form>
             </div>
@@ -92,7 +92,7 @@
 
                     <!-- Account Dropdown -->
                     <li class="list-inline-item dropdown">
-                        <a class="nav-link" href="#" id="user-options" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link" href="#" id="user-options" aria-label="User options" data-bs-toggle="dropdown" aria-expanded="false">
                             <div class="text-center me-3">
                                 <div><i class="fas fa-user fa-lg me-1"></i></div>
                                 <p class="my-0">My Account</p>
@@ -120,7 +120,7 @@
 
                     <!-- Bag -->
                     <li class="list-inline-item">
-                        <a class="nav-link" href="{% url 'view_bag' %}">
+                        <a class="nav-link" aria-label="Shopping bag" href="{% url 'view_bag' %}">
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                 <p class="my-0">
