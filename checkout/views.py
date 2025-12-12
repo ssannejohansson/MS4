@@ -1,6 +1,5 @@
-from django.shortcuts import (
-    render, redirect, reverse, get_object_or_404, HttpResponse
-)
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.http import HttpResponse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -144,6 +143,20 @@ def checkout_success(request, order_number):
     save_info = request.session.get("save_info")
     order = get_object_or_404(Order, order_number=order_number)
 
+    # Security check to ensure the order belongs to the logged-in user
+    if request.user.is_authenticated:
+        if order.user_profile and order.user_profile.user != request.user:
+            messages.error(request, "You are not allowed to view this order.")
+            return redirect("home")
+
+    else:
+        # Only allow user to see this order if it matches the session’s last
+        # order
+        if request.session.get("last_order") != order_number:
+            messages.error(request, "This order does not belong to you.")
+            return redirect("home")
+
+    # Attach user profile to order
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
         order.user_profile = profile
