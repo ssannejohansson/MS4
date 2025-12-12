@@ -152,8 +152,8 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 | Profile Management | Users can manage their profile information, including their default delivery address and order history. | ![screenshot](documentation/features/profile-management.png) |
 | Product Management | Superusers can add, edit, and delete products from the site via a CRUD interface. | ![screenshot](documentation/features/product-management.png) ![screenshot](documentation/features/product-management2.png) ![screenshot](documentation/features/product-management3.png) |
 | Contact | Users can submit a message via the contact form | ![screenshot](documentation/features/contact.png) |
-| User Feedback | Clear and concise Django messages are used to provide feedback to users when interacting with various features (e.g., adding products to the bag, checking out, etc.). | ![screenshot](documentation/features/user-feedback.png) |
-| 404 | The 404 error page will indicate when a user has navigated to a page that doesn't exist, replacing the default Heroku 404 page with one that ties into the site's look and feel. | ![screenshot](documentation/features/404.png) |
+| User Feedback | Clear and concise Django messages are used to provide feedback to users when interacting with various features | ![screenshot](documentation/features/toast-login.png) ![screenshot](documentation/features/toast-profile.png) ![screenshot](documentation/features/toast-add-to-bag.png) ![screenshot](documentation/features/toast-update-bag.png) ![screenshot](documentation/features/toast-remove-from-bag.png) ![screenshot](documentation/features/toast-order-confirmation.png) |
+| 404 | The 404 error page will indicate when a user has navigated to a page that doesn't exist, replacing the default Heroku 404 page with one that ties into the site's look and feel. | ![screenshot](documentation/browsers/chrome-404.png) |
 
 ### Future Features
 

@@ -69,7 +69,7 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | checkout | [views.py](https://github.com/ssannejohansson/MS4/blob/main/checkout/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/checkout/views.py) | ![screenshot](documentation/validation/py-checkout-views.png) |  |
 | checkout | [webhook_handler.py](https://github.com/ssannejohansson/MS4/blob/main/checkout/webhook_handler.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/checkout/webhook_handler.py) | ![screenshot](documentation/validation/py-checkout-webhook_handler.png) |  |
 | checkout | [webhooks.py](https://github.com/ssannejohansson/MS4/blob/main/checkout/webhooks.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/checkout/webhooks.py) | ![screenshot](documentation/validation/py-checkout-webhooks.png) | |
-| contact | [admin.py](https://github.com/ssannejohansson/MS4/blob/main/contact/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/contact/admin.py) | | Empty file |
+| contact | [admin.py](https://github.com/ssannejohansson/MS4/blob/main/contact/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/contact/admin.py) | ![screenshot](documentation/validation/py-contact-admin.png)  |
 | contact | [forms.py](https://github.com/ssannejohansson/MS4/blob/main/contact/forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/contact/forms.py) | ![screenshot](documentation/validation/py-contact-forms.png) |  |
 | contact | [models.py](https://github.com/ssannejohansson/MS4/blob/main/contact/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/contact/models.py) | ![screenshot](documentation/validation/py-contact-models.png) |  |
 | contact | [tests.py](https://github.com/ssannejohansson/MS4/blob/main/contact/tests.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/ssannejohansson/MS4/main/contact/tests.py) |  | Empty file |
@@ -139,8 +139,6 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 
 ## Lighthouse Audit
 
-⚠️ INSTRUCTIONS ⚠️
-
 I've tested my deployed project using the Lighthouse Audit tool to check for any major issues. Some warnings are outside of my control, and mobile results tend to be lower than desktop.
 
 | Page | Mobile | Desktop |
@@ -158,6 +156,7 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Edit Product | ![screenshot](documentation/lighthouse/mobile-edit-product.png) | ![screenshot](documentation/lighthouse/desktop-edit-product.png) |
 | Contact | ![screenshot](documentation/lighthouse/mobile-contact.png) | ![screenshot](documentation/lighthouse/desktop-contact.png) |
 | 404 | ![screenshot](documentation/lighthouse/mobile-404.png) | ![screenshot](documentation/lighthouse/desktop-404.png) |
+
 
 ## Defensive Programming
 
@@ -247,12 +246,6 @@ All previously closed/fixed bugs can be tracked [here](https://www.github.com/ss
 ![screenshot](documentation/gh-issues.png)
 
 ### Known Issues
-
-| Issue | Screenshot |
-| --- | --- |
-| The project is designed to be responsive from `375px` and upwards, in line with the material taught on the course LMS. Minor layout inconsistencies may occur on extra-wide (e.g. 4k/8k monitors), or smart-display devices (e.g. Nest Hub, Smart Watches, Gameboy Color, etc.), as these resolutions are outside the project’s scope, as taught by Code Institute. | ![screenshot](documentation/issues/poor-responsiveness.png) |
-| When validating HTML with a semantic `<section>` element, the validator warns about lacking a header `h2-h6`. This is acceptable. | ![screenshot](documentation/issues/section-header.png) |
-| Validation errors on "signup.html" coming from the Django Allauth package. | ![screenshot](documentation/issues/allauth.png) |
 
 > [!IMPORTANT]  
 > There are no remaining bugs that I am aware of, though, even after thorough testing, I cannot rule out the possibility.
