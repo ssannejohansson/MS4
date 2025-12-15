@@ -160,19 +160,6 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 ## Defensive Programming
 
-All Projects:
-
-- Users cannot submit an empty form (add the `required` attribute)
-- Users must enter valid field types (ensure the correct input `type=""` is used)
-- Users cannot brute-force a URL to navigate to a restricted pages
-
-Python Projects:
-
-- Users cannot perform CRUD functionality if not authenticated (if login functionality exists)
-- User-A should not be able to manipulate data belonging to User-B, or vice versa
-- Non-Authenticated users should not be able to access pages that require authentication
-- Standard users should not be able to access pages intended for superusers/admins
-
 Defensive programming was manually tested with the below user acceptance testing:
 
 | Page | Expectation | Test | Result | Screenshot |
